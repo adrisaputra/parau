@@ -9236,8 +9236,7 @@ nav.display-none.search-sm .nav-wrapper form .input-field i
     margin: 0;
 
     color: #fff;
-    background: -webkit-linear-gradient(45deg, #303f9f, #1976d2);
-    background:         linear-gradient(45deg, #303f9f, #1976d2);
+    background: linear-gradient(45deg, #0288d1, #26c6da) !important;
     box-shadow: 0 6px 20px 0 rgb(25 118 210 / 50%);
 }
 
@@ -10511,7 +10510,7 @@ Cards
 
 .card .card-title
 {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 400;
 
     margin: 0;

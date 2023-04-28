@@ -28,8 +28,10 @@ class User extends Authenticatable
         'email',
         'password',
         'group_id',
+        'outlet_id',
         'foto',
         'status',
+        'status_delete',
     ];
 
     /**
@@ -66,14 +68,19 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\Models\Log');
     }
-    
-    public function group(){
+
+    public function group()
+    {
         return $this->belongsTo(Group::class, 'group_id');
+    }
+
+    public function outlet()
+    {
+        return $this->belongsTo(Outlet::class, 'outlet_id');
     }
 
     public function access()
     {
         return $this->hasOne('App\Models\Access');
     }
-    
 }

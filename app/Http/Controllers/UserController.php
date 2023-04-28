@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;   //nama model
 use App\Models\Group;   //nama model
+use App\Models\Outlet;   //nama model
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB; //untuk membuat query di controller
 use Illuminate\Support\Facades\Auth;
@@ -21,7 +22,7 @@ class UserController extends Controller
     public function index()
     {
         $title = "User";
-		$user = User::orderBy('id','DESC')->paginate(10);
+		$user = User::where('status_delete', 1)->orderBy('id','DESC')->paginate(10);
 		return view('admin.user.index',compact('title','user'));
     }
 	
@@ -30,7 +31,7 @@ class UserController extends Controller
     {
         $title = "User";
         $user = $request->get('search');
-		$user = User::
+		$user = User::where('status_delete', 1)->
                 where(function ($query) use ($user) {
                     $query->where('name', 'LIKE', '%'.$user.'%')
                         ->orWhere('email', 'LIKE', '%'.$user.'%');
@@ -43,7 +44,8 @@ class UserController extends Controller
     {
         $title = "User";
         $group = Group::get();
-        $view=view('admin.user.create',compact('title','group'));
+        $outlet = Outlet::get();
+        $view=view('admin.user.create',compact('title','group', 'outlet'));
         $view=$view->render();
         return $view;
     }
@@ -56,12 +58,14 @@ class UserController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
             'group_id' => 'required',
+            'outlet_id' => 'required',
             'status' => 'required'
 		]);
 		
         $input['name'] = $request->name;
         $input['email'] = $request->email;
         $input['password'] = Hash::make($request->password);
+        $input['outlet_id'] = $request->outlet_id;
         $input['group_id'] = $request->group_id;
         $input['status'] = $request->status;
         User::create($input);
@@ -76,7 +80,8 @@ class UserController extends Controller
     {
         $title = "User";
         $group = Group::get();
-        $view=view('admin.user.edit', compact('title','user','group'));
+        $outlet = Outlet::get();
+        $view=view('admin.user.edit', compact('title','user','group','outlet'));
         $view=$view->render();
 		return $view;
     }
@@ -107,12 +112,14 @@ class UserController extends Controller
             $user->name = $request->name;
             $user->email = $request->email;
             $user->password = Hash::make($request->password);
+            $user->outlet_id = $request->outlet_id;
             $user->group_id = $request->group_id;
             $user->status = $request->status;
 		} else {
             $user->name = $request->name;
             $user->email = $request->email;
             $user->group_id = $request->group_id;
+            $user->outlet_id = $request->outlet_id;
             $user->status = $request->status;
         }
         $user->save();
@@ -124,7 +131,9 @@ class UserController extends Controller
     ## Hapus Data
     public function delete(User $user)
     {
-        $user->delete();
+        $user->status_delete = 0;
+    	$user->save();
+        // $user->delete();
         activity()->log('Hapus Data User dengan ID = '.$user->id);
 		return redirect('/user')->with('status', 'Data Berhasil Dihapus');
     }
@@ -194,6 +203,6 @@ class UserController extends Controller
         $user->save();
         
         activity()->log('Ubah Data Profil dengan ID = '.$user->id);
-        return redirect('/user/edit_profil/'.Auth::user()->id)->with('status', 'Data Berhasil Diubah');
+        return redirect('/profil/'.Auth::user()->id)->with('status', 'Data Berhasil Diubah');
     }
 }

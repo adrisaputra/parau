@@ -15,7 +15,7 @@ class LoginController extends Controller
         $remember_me = $request->has('remember_me') ? true : false; 
         $user = User::where('name', $request->name)->first();
 
-        if ($user && \Hash::check($request->password, $user->password) && $user->status == 1) {
+        if ($user && \Hash::check($request->password, $user->password) && $user->status == 1 && $user->status_delete == 1) {
             if (Auth::attempt(['name' => $request->name, 'password' => $request->password],  $remember_me)) {
                 // Jika berhasil login
                 $user = Auth::user();
@@ -23,9 +23,11 @@ class LoginController extends Controller
                 return redirect('/dashboard');
             } 
         } else if ($user && \Hash::check($request->password, $user->password) && $user->status == 0) {
-            return redirect('/')->with('status','User Tidak Aktif, Silahkan Hubungi Admin !');
+            return redirect('/login')->with('status2','User Tidak Aktif, Silahkan Hubungi Admin !');
+        } else if ($user && \Hash::check($request->password, $user->password) && $user->status_delete == 0) {
+            return redirect('/login')->with('status2','User Tidak Ada !');
         } else {
-            return redirect('/')->with('status','Nama User atau Password Tidak Sesuai !');
+            return redirect('/login')->with('status2','Nama User atau Password Tidak Sesuai !');
         }
 
     }

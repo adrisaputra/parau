@@ -56,6 +56,7 @@ class MenuController extends Controller
         $this->validate($request, [
             'menu_name' => 'required',
             'link' => 'required',
+            'position' => 'numeric|required',
             'position' => 'numeric|unique:menu_tbl|required',
             'status' => 'required',
         ]);
@@ -87,21 +88,12 @@ class MenuController extends Controller
     ## Edit Data
     public function update(Request $request, Menu $menu)
     {
-        if($menu->position==$request->position){
-            $this->validate($request, [
-                'menu_name' => 'required',
-                'link' => 'required',
-                'position' => 'numeric|required',
-                'status' => 'required',
-            ]);
-        } else {
-            $this->validate($request, [
-                'menu_name' => 'required',
-                'link' => 'required',
-                'position' => 'numeric|unique:menu_tbl|required',
-                'status' => 'required',
-            ]);
-        }
+        $this->validate($request, [
+            'menu_name' => 'required',
+            'link' => 'required',
+            'position' => 'numeric|required',
+            'status' => 'required',
+        ]);
 
         $menu->fill($request->all());
         

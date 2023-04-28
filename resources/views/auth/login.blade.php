@@ -2,7 +2,7 @@
 
 @section('content')
 @php 
-    $pengaturan = DB::table('pengaturan_tbl')->find(1);
+    $setting = DB::table('settings')->find(1);
 @endphp
 <div class="row">
       <div class="col s12">
@@ -12,9 +12,19 @@
      @csrf
     
       <div class="row margin">
-      <center><img src="{{ asset('upload/pengaturan/'.$pengaturan->logo_besar) }}" alt="Chris Wood" class="img-fluid" style="height: 100px;max-width: 100%;max-height: 100%;margin-top:15px;pxmargin-bottom:15px" ></center>
+      <center><img src="{{ asset('upload/setting/'.$setting->logo_besar) }}" alt="Chris Wood" class="img-fluid" style="height: 100px;max-width: 100%;max-height: 100%;margin-top:15px;pxmargin-bottom:15px" ></center>
           
         @if ($message = Session::get('status'))
+            <div class="card-alert card green">
+                <div class="card-content white-text">
+                  <p>{{ $message }}</p>
+                </div>
+                <button type="button" class="close white-text" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+        @endif
+        @if ($message = Session::get('status2'))
             <div class="card-alert card red">
                 <div class="card-content white-text">
                   <p>{{ $message }}</p>
@@ -55,7 +65,7 @@
       </div>
       <div class="row">
         <div class="input-field col s12 m12 l12">
-          <p class="margin center-align medium-small"><a href="user-forgot-password.html">Forgot password ?</a></p>
+          <p class="margin center-align medium-small"><a href="{{ url('forgot-password') }}">Forgot password ?</a></p>
         </div>
       </div>
     </form>

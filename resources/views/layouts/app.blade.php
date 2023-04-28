@@ -13,7 +13,7 @@ License: You must have a valid license purchased only from themeforest(the above
 -->
 <html class="loading" lang="en" data-textdirection="ltr">
 @php
-    $pengaturan = DB::table('pengaturan_tbl')->find(1);
+    $setting = DB::table('settings')->find(1);
 @endphp
   <!-- BEGIN: Head-->
   <head>
@@ -23,9 +23,9 @@ License: You must have a valid license purchased only from themeforest(the above
     <meta name="description" content="Materialize is a Material Design Admin Template,It's modern, responsive and based on Material Design by Google.">
     <meta name="keywords" content="materialize, admin template, dashboard template, flat admin template, responsive admin template, eCommerce dashboard, analytic dashboard">
     <meta name="author" content="ThemeSelect">
-    <title>{{ $pengaturan->nama_aplikasi }}</title>
-    <link rel="apple-touch-icon" href="{{ asset('upload/pengaturan/'.$pengaturan->logo_kecil) }}">
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('upload/pengaturan/'.$pengaturan->logo_kecil) }}">
+    <title>{{ $setting->nama_aplikasi }}</title>
+    <link rel="apple-touch-icon" href="{{ asset('upload/setting/'.$setting->logo_kecil) }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('upload/setting/'.$setting->logo_kecil) }}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- BEGIN: VENDOR CSS-->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendors/vendors.min.css') }}">
@@ -40,7 +40,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <!-- END: Custom CSS-->
   </head>
   <!-- END: Head-->
-  <body class="vertical-layout vertical-menu-collapsible page-header-dark vertical-modern-menu preload-transitions 1-column login-bg   blank-page blank-page" data-open="click" data-menu="vertical-modern-menu" data-col="1-column"  style="background-image: url({{ asset('upload/pengaturan/'.$pengaturan->background_login) }});background-size: cover;background-position: center;">
+  <body class="vertical-layout vertical-menu-collapsible page-header-dark vertical-modern-menu preload-transitions 1-column login-bg   blank-page blank-page" data-open="click" data-menu="vertical-modern-menu" data-col="1-column"  style="background-image: url({{ asset('upload/setting/'.$setting->background_login) }});background-size: cover;background-position: center;">
   @yield('content')  
     <!-- BEGIN VENDOR JS-->
     <script src="{{ asset('assets/js/vendors.min.js') }}"></script>

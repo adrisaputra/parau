@@ -29,9 +29,9 @@ CREATE TABLE IF NOT EXISTS `activity_log` (
   KEY `subject` (`subject_type`,`subject_id`),
   KEY `causer` (`causer_type`,`causer_id`),
   KEY `activity_log_log_name_index` (`log_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=366 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=945 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Membuang data untuk tabel db_parau.activity_log: ~359 rows (lebih kurang)
+-- Membuang data untuk tabel db_parau.activity_log: ~757 rows (lebih kurang)
 /*!40000 ALTER TABLE `activity_log` DISABLE KEYS */;
 INSERT INTO `activity_log` (`id`, `log_name`, `description`, `subject_type`, `event`, `subject_id`, `causer_type`, `causer_id`, `properties`, `batch_uuid`, `created_at`, `updated_at`) VALUES
 	(1, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 482, '[]', NULL, '2021-10-29 10:30:24', '2021-10-29 10:30:24'),
@@ -398,8 +398,610 @@ INSERT INTO `activity_log` (`id`, `log_name`, `description`, `subject_type`, `ev
 	(362, 'default', 'Tambah Data Sub Menu Akses', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-19 12:37:05', '2022-01-19 12:37:05'),
 	(363, 'default', 'Tambah Data Sub Menu Akses', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-19 12:37:24', '2022-01-19 12:37:24'),
 	(364, 'default', 'Tambah Data Sub Menu', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-19 12:56:35', '2022-01-19 12:56:35'),
-	(365, 'default', 'Tambah Data Sub Menu Akses', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-19 12:57:01', '2022-01-19 12:57:01');
+	(365, 'default', 'Tambah Data Sub Menu Akses', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-19 12:57:01', '2022-01-19 12:57:01'),
+	(366, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-19 14:08:06', '2022-01-19 14:08:06'),
+	(367, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-19 14:08:30', '2022-01-19 14:08:30'),
+	(368, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-19 14:11:52', '2022-01-19 14:11:52'),
+	(369, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 482, '[]', NULL, '2022-01-19 14:54:37', '2022-01-19 14:54:37'),
+	(370, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 482, '[]', NULL, '2022-01-19 14:54:41', '2022-01-19 14:54:41'),
+	(371, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-19 15:21:24', '2022-01-19 15:21:24'),
+	(372, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-19 15:22:07', '2022-01-19 15:22:07'),
+	(373, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-19 15:27:40', '2022-01-19 15:27:40'),
+	(374, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-19 15:27:45', '2022-01-19 15:27:45'),
+	(375, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 482, '[]', NULL, '2022-01-19 15:27:52', '2022-01-19 15:27:52'),
+	(376, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 482, '[]', NULL, '2022-01-19 15:27:58', '2022-01-19 15:27:58'),
+	(377, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-19 21:29:15', '2022-01-19 21:29:15'),
+	(378, 'default', 'Tambah Data Product', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-19 22:44:18', '2022-01-19 22:44:18'),
+	(379, 'default', 'Ubah Data Sub Menu Akses dengan ID = 31', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-19 23:06:49', '2022-01-19 23:06:49'),
+	(380, 'default', 'Ubah Data Sub Menu Akses dengan ID = 31', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-19 23:07:09', '2022-01-19 23:07:09'),
+	(381, 'default', 'Ubah Data Sub Menu Akses dengan ID = 31', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-19 23:07:30', '2022-01-19 23:07:30'),
+	(382, 'default', 'Ubah Data Sub Menu Akses dengan ID = 31', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-19 23:07:43', '2022-01-19 23:07:43'),
+	(383, 'default', 'Ubah Data Menu dengan ID = 13', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-19 23:09:41', '2022-01-19 23:09:41'),
+	(384, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 07:33:55', '2022-01-20 07:33:55'),
+	(385, 'default', 'Ubah Data Sub Menu dengan ID = 19', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 07:34:19', '2022-01-20 07:34:19'),
+	(386, 'default', 'Tambah Data Category', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 07:39:39', '2022-01-20 07:39:39'),
+	(387, 'default', 'Ubah Data Category dengan ID = 1', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 07:41:03', '2022-01-20 07:41:03'),
+	(388, 'default', 'Ubah Data Category dengan ID = 1', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 07:41:20', '2022-01-20 07:41:20'),
+	(389, 'default', 'Ubah Data Category dengan ID = 1', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 07:42:14', '2022-01-20 07:42:14'),
+	(390, 'default', 'Tambah Data Category', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 07:42:20', '2022-01-20 07:42:20'),
+	(391, 'default', 'Tambah Data Category', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 07:42:26', '2022-01-20 07:42:26'),
+	(392, 'default', 'Tambah Data Product', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 08:55:15', '2022-01-20 08:55:15'),
+	(393, 'default', 'Tambah Data Product', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 08:56:18', '2022-01-20 08:56:18'),
+	(394, 'default', 'Tambah Data Product', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 09:05:35', '2022-01-20 09:05:35'),
+	(395, 'default', 'Tambah Data Product', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 09:06:09', '2022-01-20 09:06:09'),
+	(396, 'default', 'Hapus Data Product dengan ID = 17', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 09:16:29', '2022-01-20 09:16:29'),
+	(397, 'default', 'Hapus Data Product dengan ID = 16', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 09:16:32', '2022-01-20 09:16:32'),
+	(398, 'default', 'Hapus Data Product dengan ID = 15', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 09:16:34', '2022-01-20 09:16:34'),
+	(399, 'default', 'Hapus Data Product dengan ID = 14', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 09:16:36', '2022-01-20 09:16:36'),
+	(400, 'default', 'Hapus Data Product dengan ID = 13', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 09:16:38', '2022-01-20 09:16:38'),
+	(401, 'default', 'Hapus Data Product dengan ID = 12', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 09:16:40', '2022-01-20 09:16:40'),
+	(402, 'default', 'Hapus Data Product dengan ID = 11', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 09:16:42', '2022-01-20 09:16:42'),
+	(403, 'default', 'Tambah Data Product', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 10:02:37', '2022-01-20 10:02:37'),
+	(404, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 10:08:58', '2022-01-20 10:08:58'),
+	(405, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 482, '[]', NULL, '2022-01-20 10:12:02', '2022-01-20 10:12:02'),
+	(406, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 482, '[]', NULL, '2022-01-20 10:12:35', '2022-01-20 10:12:35'),
+	(407, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 10:12:42', '2022-01-20 10:12:42'),
+	(408, 'default', 'Ubah Data Sub Menu Akses dengan ID = 31', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 10:15:21', '2022-01-20 10:15:21'),
+	(409, 'default', 'Ubah Data Sub Menu Akses dengan ID = 31', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 10:16:12', '2022-01-20 10:16:12'),
+	(410, 'default', 'Tambah Data Category', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 10:20:11', '2022-01-20 10:20:11'),
+	(411, 'default', 'Tambah Data Product', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 10:25:32', '2022-01-20 10:25:32'),
+	(412, 'default', 'Ubah Data Product dengan ID = 19', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 14:39:10', '2022-01-20 14:39:10'),
+	(413, 'default', 'Ubah Data Product dengan ID = 19', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 14:39:33', '2022-01-20 14:39:33'),
+	(414, 'default', 'Ubah Data Product dengan ID = 19', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 14:39:41', '2022-01-20 14:39:41'),
+	(415, 'default', 'Ubah Data Product dengan ID = 19', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 14:41:14', '2022-01-20 14:41:14'),
+	(416, 'default', 'Ubah Data Product dengan ID = 19', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 14:41:22', '2022-01-20 14:41:22'),
+	(417, 'default', 'Ubah Data Product dengan ID = 19', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 14:43:36', '2022-01-20 14:43:36'),
+	(418, 'default', 'Ubah Data Product dengan ID = 19', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 14:43:47', '2022-01-20 14:43:47'),
+	(419, 'default', 'Ubah Data Product dengan ID = 19', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 14:43:56', '2022-01-20 14:43:56'),
+	(420, 'default', 'Ubah Data Product dengan ID = 19', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 14:44:02', '2022-01-20 14:44:02'),
+	(421, 'default', 'Ubah Data Product dengan ID = 19', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 14:47:24', '2022-01-20 14:47:24'),
+	(422, 'default', 'Ubah Data Product dengan ID = 19', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 14:50:26', '2022-01-20 14:50:26'),
+	(423, 'default', 'Hapus Data Product dengan ID = 18', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 15:14:01', '2022-01-20 15:14:01'),
+	(424, 'default', 'Hapus Data Product dengan ID = 19', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 15:14:31', '2022-01-20 15:14:31'),
+	(425, 'default', 'Hapus Data Product dengan ID = 20', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 15:22:07', '2022-01-20 15:22:07'),
+	(426, 'default', 'Hapus Data Product dengan ID = 21', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 15:22:10', '2022-01-20 15:22:10'),
+	(427, 'default', 'Tambah Data Product', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 15:23:04', '2022-01-20 15:23:04'),
+	(428, 'default', 'Hapus Data Product dengan ID = 22', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 15:23:08', '2022-01-20 15:23:08'),
+	(429, 'default', 'Hapus Data Product dengan ID = 23', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 15:23:10', '2022-01-20 15:23:10'),
+	(430, 'default', 'Tambah Data Product', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 15:23:21', '2022-01-20 15:23:21'),
+	(431, 'default', 'Ubah Data Product dengan ID = 24', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 15:24:02', '2022-01-20 15:24:02'),
+	(432, 'default', 'Ubah Data Product dengan ID = 24', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 15:24:07', '2022-01-20 15:24:07'),
+	(433, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 18:24:21', '2022-01-20 18:24:21'),
+	(434, 'default', 'Tambah Data Product', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 19:05:16', '2022-01-20 19:05:16'),
+	(435, 'default', 'Ubah Data Product dengan ID = 25', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 19:05:49', '2022-01-20 19:05:49'),
+	(436, 'default', 'Ubah Data Product dengan ID = 25', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 19:06:14', '2022-01-20 19:06:14'),
+	(437, 'default', 'Tambah Data Product', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 19:06:37', '2022-01-20 19:06:37'),
+	(438, 'default', 'Hapus Data Product dengan ID = 26', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 19:07:21', '2022-01-20 19:07:21'),
+	(439, 'default', 'Hapus Data Product dengan ID = 24', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 19:07:26', '2022-01-20 19:07:26'),
+	(440, 'default', 'Tambah Data Product', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 19:07:49', '2022-01-20 19:07:49'),
+	(441, 'default', 'Ubah Data Product dengan ID = 27', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 19:07:59', '2022-01-20 19:07:59'),
+	(442, 'default', 'Tambah Data Supplier', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 19:33:52', '2022-01-20 19:33:52'),
+	(443, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 19:46:25', '2022-01-20 19:46:25'),
+	(444, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 482, '[]', NULL, '2022-01-20 20:06:02', '2022-01-20 20:06:02'),
+	(445, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 482, '[]', NULL, '2022-01-20 20:06:06', '2022-01-20 20:06:06'),
+	(446, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 20:06:09', '2022-01-20 20:06:09'),
+	(447, 'default', 'Ubah Data User dengan ID = 482', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 20:06:23', '2022-01-20 20:06:23'),
+	(448, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-20 20:06:27', '2022-01-20 20:06:27'),
+	(449, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-21 08:00:51', '2022-01-21 08:00:51'),
+	(450, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-24 10:45:12', '2022-01-24 10:45:12'),
+	(451, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-24 10:50:00', '2022-01-24 10:50:00'),
+	(452, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-24 10:50:27', '2022-01-24 10:50:27'),
+	(453, 'default', 'Ubah Data Sub Menu dengan ID = 15', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-24 12:08:32', '2022-01-24 12:08:32'),
+	(454, 'default', 'Tambah Data Menu', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-24 15:20:57', '2022-01-24 15:20:57'),
+	(455, 'default', 'Ubah Data Menu dengan ID = 15', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-24 15:21:53', '2022-01-24 15:21:53'),
+	(456, 'default', 'Ubah Data Menu dengan ID = 5', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-24 15:22:02', '2022-01-24 15:22:02'),
+	(457, 'default', 'Ubah Data Menu dengan ID = 4', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-24 15:22:19', '2022-01-24 15:22:19'),
+	(458, 'default', 'Ubah Data Menu dengan ID = 15', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-24 15:22:44', '2022-01-24 15:22:44'),
+	(459, 'default', 'Tambah Data Sub Menu', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-24 15:23:31', '2022-01-24 15:23:31'),
+	(460, 'default', 'Tambah Data Menu Akses', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-24 15:23:55', '2022-01-24 15:23:55'),
+	(461, 'default', 'Ubah Data Menu dengan ID = 15', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-24 15:24:15', '2022-01-24 15:24:15'),
+	(462, 'default', 'Ubah Data Menu dengan ID = 14', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-24 15:24:21', '2022-01-24 15:24:21'),
+	(463, 'default', 'Ubah Data Menu dengan ID = 15', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-24 15:24:33', '2022-01-24 15:24:33'),
+	(464, 'default', 'Tambah Data Sub Menu Akses', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-24 15:24:54', '2022-01-24 15:24:54'),
+	(465, 'default', 'Ubah Data Product dengan ID = 33', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-25 09:36:48', '2022-01-25 09:36:48'),
+	(466, 'default', 'Ubah Data Product dengan ID = 57', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-25 10:42:36', '2022-01-25 10:42:36'),
+	(467, 'default', 'Tambah Data Product', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-25 10:48:43', '2022-01-25 10:48:43'),
+	(468, 'default', 'Ubah Data Product dengan ID = 58', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-25 10:48:54', '2022-01-25 10:48:54'),
+	(469, 'default', 'Ubah Data Product dengan ID = 58', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-25 10:49:05', '2022-01-25 10:49:05'),
+	(470, 'default', 'Tambah Data Project', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-25 17:18:41', '2022-01-25 17:18:41'),
+	(471, 'default', 'Ubah Data Project dengan ID = 11', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-25 17:23:23', '2022-01-25 17:23:23'),
+	(472, 'default', 'Ubah Data Project dengan ID = 11', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-25 17:23:39', '2022-01-25 17:23:39'),
+	(473, 'default', 'Ubah Data Project dengan ID = 11', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-25 19:24:41', '2022-01-25 19:24:41'),
+	(474, 'default', 'Tambah Data Project Detail', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-25 20:16:24', '2022-01-25 20:16:24'),
+	(475, 'default', 'Ubah Data Project Detail dengan ID = 10', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-25 20:38:10', '2022-01-25 20:38:10'),
+	(476, 'default', 'Ubah Data Project Detail dengan ID = 10', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-25 20:38:52', '2022-01-25 20:38:52'),
+	(477, 'default', 'Ubah Data Project Detail dengan ID = 10', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-25 20:39:06', '2022-01-25 20:39:06'),
+	(478, 'default', 'Ubah Data Project Detail dengan ID = 10', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-25 20:41:57', '2022-01-25 20:41:57'),
+	(479, 'default', 'Ubah Data Project Detail dengan ID = 10', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-25 20:42:02', '2022-01-25 20:42:02'),
+	(480, 'default', 'Ubah Data Project Detail dengan ID = 10', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-25 20:42:21', '2022-01-25 20:42:21'),
+	(481, 'default', 'Ubah Data Project Detail dengan ID = 10', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-25 20:43:02', '2022-01-25 20:43:02'),
+	(482, 'default', 'Ubah Data Sub Menu dengan ID = 22', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-25 20:43:47', '2022-01-25 20:43:47'),
+	(483, 'default', 'Ubah Data Project Detail dengan ID = 10', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-25 20:44:14', '2022-01-25 20:44:14'),
+	(484, 'default', 'Ubah Data Sub Menu dengan ID = 22', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-25 20:44:25', '2022-01-25 20:44:25'),
+	(485, 'default', 'Ubah Data Project Detail dengan ID = 14', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-25 20:45:27', '2022-01-25 20:45:27'),
+	(486, 'default', 'Ubah Data Project Detail dengan ID = 14', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-25 20:45:37', '2022-01-25 20:45:37'),
+	(487, 'default', 'Ubah Data Project Detail dengan ID = 14', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-25 20:45:50', '2022-01-25 20:45:50'),
+	(488, 'default', 'Ubah Data Project Detail dengan ID = 14', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-25 20:46:13', '2022-01-25 20:46:13'),
+	(489, 'default', 'Hapus Data Project Detail dengan ID = 14', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-25 20:46:21', '2022-01-25 20:46:21'),
+	(490, 'default', 'Tambah Data Project Detail', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-25 20:47:45', '2022-01-25 20:47:45'),
+	(491, 'default', 'Hapus Data Project Detail dengan ID = 15', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-25 20:50:24', '2022-01-25 20:50:24'),
+	(492, 'default', 'Tambah Data Project Detail', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-25 20:51:05', '2022-01-25 20:51:05'),
+	(493, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-26 11:34:33', '2022-01-26 11:34:33'),
+	(494, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-26 11:42:53', '2022-01-26 11:42:53'),
+	(495, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-26 13:48:20', '2022-01-26 13:48:20'),
+	(496, 'default', 'Tambah Data Project Detail', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-26 14:02:55', '2022-01-26 14:02:55'),
+	(497, 'default', 'Ubah Data Project Detail dengan ID = 16', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-26 14:10:37', '2022-01-26 14:10:37'),
+	(498, 'default', 'Ubah Data Project Detail dengan ID = 10', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-26 14:12:29', '2022-01-26 14:12:29'),
+	(499, 'default', 'Ubah Data Project Detail dengan ID = 10', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-26 14:14:42', '2022-01-26 14:14:42'),
+	(500, 'default', 'Hapus Data Project Detail dengan ID = 17', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-26 14:15:53', '2022-01-26 14:15:53'),
+	(501, 'default', 'Tambah Data Project Detail', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-26 14:17:21', '2022-01-26 14:17:21'),
+	(502, 'default', 'Ubah Data Project Detail dengan ID = 18', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-26 14:17:28', '2022-01-26 14:17:28'),
+	(503, 'default', 'Tambah Data Project', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-26 14:24:39', '2022-01-26 14:24:39'),
+	(504, 'default', 'Tambah Data Project Detail', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-26 15:03:11', '2022-01-26 15:03:11'),
+	(505, 'default', 'Ubah Data Project Detail dengan ID = 12', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-26 15:11:16', '2022-01-26 15:11:16'),
+	(506, 'default', 'Ubah Data Project Detail dengan ID = 12', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-26 15:11:27', '2022-01-26 15:11:27'),
+	(507, 'default', 'Ubah Data Project Detail dengan ID = 12', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-26 15:11:35', '2022-01-26 15:11:35'),
+	(508, 'default', 'Ubah Data Project Detail dengan ID = 12', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-26 15:12:23', '2022-01-26 15:12:23'),
+	(509, 'default', 'Ubah Data Project Detail dengan ID = 12', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-26 15:58:32', '2022-01-26 15:58:32'),
+	(510, 'default', 'Ubah Data Project Detail dengan ID = 12', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-26 16:13:46', '2022-01-26 16:13:46'),
+	(511, 'default', 'Ubah Data Project Detail dengan ID = 13', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-26 16:14:24', '2022-01-26 16:14:24'),
+	(512, 'default', 'Tambah Data Project Detail', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-26 17:00:34', '2022-01-26 17:00:34'),
+	(513, 'default', 'Tambah Data Project Detail', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-26 17:01:12', '2022-01-26 17:01:12'),
+	(514, 'default', 'Tambah Data Project Detail', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-26 17:09:04', '2022-01-26 17:09:04'),
+	(515, 'default', 'Ubah Data Project Detail dengan ID = 16', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-26 17:09:37', '2022-01-26 17:09:37'),
+	(516, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-26 21:17:27', '2022-01-26 21:17:27'),
+	(517, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-27 05:11:07', '2022-01-27 05:11:07'),
+	(518, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-27 06:05:02', '2022-01-27 06:05:02'),
+	(519, 'default', 'Tambah Data Project', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-27 06:15:40', '2022-01-27 06:15:40'),
+	(520, 'default', 'Ubah Data Project dengan ID = 13', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-27 06:19:03', '2022-01-27 06:19:03'),
+	(521, 'default', 'Hapus Data Project Detail dengan ID = 16', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-27 06:26:46', '2022-01-27 06:26:46'),
+	(522, 'default', 'Hapus Data Project Detail dengan ID = 15', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-27 06:26:49', '2022-01-27 06:26:49'),
+	(523, 'default', 'Hapus Data Project Detail dengan ID = 14', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-27 06:26:51', '2022-01-27 06:26:51'),
+	(524, 'default', 'Hapus Data Project Detail dengan ID = 13', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-27 06:26:54', '2022-01-27 06:26:54'),
+	(525, 'default', 'Tambah Data Project Detail', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-27 06:58:51', '2022-01-27 06:58:51'),
+	(526, 'default', 'Ubah Data Project Detail dengan ID = 17', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-27 06:59:00', '2022-01-27 06:59:00'),
+	(527, 'default', 'Ubah Data Project Detail dengan ID = 17', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-27 07:01:47', '2022-01-27 07:01:47'),
+	(528, 'default', 'Ubah Data Project Detail dengan ID = 17', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-27 07:03:55', '2022-01-27 07:03:55'),
+	(529, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-27 10:04:02', '2022-01-27 10:04:02'),
+	(530, 'default', 'Tambah Data Project Detail', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-27 10:05:30', '2022-01-27 10:05:30'),
+	(531, 'default', 'Ubah Data Project dengan ID = 13', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-27 10:06:18', '2022-01-27 10:06:18'),
+	(532, 'default', 'Hapus Data Project dengan ID = 13', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-27 10:06:45', '2022-01-27 10:06:45'),
+	(533, 'default', 'Tambah Data Project Detail', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-27 14:10:22', '2022-01-27 14:10:22'),
+	(534, 'default', 'Hapus Data Project Detail dengan ID = 12', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-27 14:10:58', '2022-01-27 14:10:58'),
+	(535, 'default', 'Hapus Data Project Detail dengan ID = 17', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-27 14:11:01', '2022-01-27 14:11:01'),
+	(536, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-28 00:13:02', '2022-01-28 00:13:02'),
+	(537, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-28 10:06:12', '2022-01-28 10:06:12'),
+	(538, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-29 16:43:04', '2022-01-29 16:43:04'),
+	(539, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-29 22:51:15', '2022-01-29 22:51:15'),
+	(540, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-30 07:05:16', '2022-01-30 07:05:16'),
+	(541, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-30 19:12:07', '2022-01-30 19:12:07'),
+	(542, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-31 10:29:57', '2022-01-31 10:29:57'),
+	(543, 'default', 'Tambah Data Sub Menu', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-31 10:33:08', '2022-01-31 10:33:08'),
+	(544, 'default', 'Ubah Data Sub Menu dengan ID = 24', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-31 10:33:21', '2022-01-31 10:33:21'),
+	(545, 'default', 'Ubah Data Sub Menu dengan ID = 6', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-31 10:33:56', '2022-01-31 10:33:56'),
+	(546, 'default', 'Ubah Data Sub Menu dengan ID = 8', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-31 10:34:03', '2022-01-31 10:34:03'),
+	(547, 'default', 'Ubah Data Sub Menu dengan ID = 8', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-31 10:34:10', '2022-01-31 10:34:10'),
+	(548, 'default', 'Tambah Data Sub Menu Akses', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-31 10:36:27', '2022-01-31 10:36:27'),
+	(549, 'default', 'Ubah Data Project Detail dengan ID = 19', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-31 11:30:57', '2022-01-31 11:30:57'),
+	(550, 'default', 'Ubah Data Project Detail dengan ID = 19', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-01-31 11:46:44', '2022-01-31 11:46:44'),
+	(551, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-01 21:10:27', '2022-02-01 21:10:27'),
+	(552, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-01 22:29:06', '2022-02-01 22:29:06'),
+	(553, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-01 22:35:50', '2022-02-01 22:35:50'),
+	(554, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-01 22:59:48', '2022-02-01 22:59:48'),
+	(555, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-01 23:01:14', '2022-02-01 23:01:14'),
+	(556, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-01 23:03:02', '2022-02-01 23:03:02'),
+	(557, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-01 23:03:59', '2022-02-01 23:03:59'),
+	(558, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-01 23:05:27', '2022-02-01 23:05:27'),
+	(559, 'default', 'Ubah Data Material dengan ID = 1', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-01 23:05:56', '2022-02-01 23:05:56'),
+	(560, 'default', 'Ubah Data Material dengan ID = 1', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-01 23:06:31', '2022-02-01 23:06:31'),
+	(561, 'default', 'Ubah Data Material dengan ID = 1', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-01 23:06:38', '2022-02-01 23:06:38'),
+	(562, 'default', 'Ubah Data Material dengan ID = 1', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-01 23:06:47', '2022-02-01 23:06:47'),
+	(563, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-02 05:40:30', '2022-02-02 05:40:30'),
+	(564, 'default', 'Ubah Data Material dengan ID = 1', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-02 05:44:46', '2022-02-02 05:44:46'),
+	(565, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-02 05:45:16', '2022-02-02 05:45:16'),
+	(566, 'default', 'Ubah Data Material dengan ID = 2', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-02 05:46:48', '2022-02-02 05:46:48'),
+	(567, 'default', 'Ubah Data Material dengan ID = 2', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-02 05:51:55', '2022-02-02 05:51:55'),
+	(568, 'default', 'Hapus Data Material dengan ID = 2', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-02 05:52:05', '2022-02-02 05:52:05'),
+	(569, 'default', 'Hapus Data Material dengan ID = 2', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-02 05:53:07', '2022-02-02 05:53:07'),
+	(570, 'default', 'Ubah Data Material dengan ID = 1', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-02 05:53:29', '2022-02-02 05:53:29'),
+	(571, 'default', 'Ubah Data Material dengan ID = 1', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-02 05:53:50', '2022-02-02 05:53:50'),
+	(572, 'default', 'Hapus Data Material dengan ID = 1', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-02 05:53:58', '2022-02-02 05:53:58'),
+	(573, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-02 06:19:59', '2022-02-02 06:19:59'),
+	(574, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-02 09:00:09', '2022-02-02 09:00:09'),
+	(575, 'default', 'Tambah Data Sub Menu', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-02 09:02:33', '2022-02-02 09:02:33'),
+	(576, 'default', 'Tambah Data Sub Menu Akses', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-02 09:03:42', '2022-02-02 09:03:42'),
+	(577, 'default', 'Tambah Data Project Detail', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-02 09:24:58', '2022-02-02 09:24:58'),
+	(578, 'default', 'Ubah Data Project Detail dengan ID = 11', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-02 09:43:43', '2022-02-02 09:43:43'),
+	(579, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-02 13:32:40', '2022-02-02 13:32:40'),
+	(580, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-03 09:38:28', '2022-02-03 09:38:28'),
+	(581, 'default', 'Tambah Data User', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-03 09:48:10', '2022-02-03 09:48:10'),
+	(582, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-03 09:48:19', '2022-02-03 09:48:19'),
+	(583, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 483, '[]', NULL, '2022-02-03 09:48:28', '2022-02-03 09:48:28'),
+	(584, 'default', 'Tambah Data Group', NULL, NULL, NULL, 'App\\Models\\User', 483, '[]', NULL, '2022-02-03 09:52:32', '2022-02-03 09:52:32'),
+	(585, 'default', 'Tambah Data Menu Akses', NULL, NULL, NULL, 'App\\Models\\User', 483, '[]', NULL, '2022-02-03 09:53:01', '2022-02-03 09:53:01'),
+	(586, 'default', 'Ubah Data User dengan ID = 1', NULL, NULL, NULL, 'App\\Models\\User', 483, '[]', NULL, '2022-02-03 09:53:40', '2022-02-03 09:53:40'),
+	(587, 'default', 'Hapus Data Menu Akses dengan ID = 1', NULL, NULL, NULL, 'App\\Models\\User', 483, '[]', NULL, '2022-02-03 09:54:16', '2022-02-03 09:54:16'),
+	(588, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 483, '[]', NULL, '2022-02-03 10:04:11', '2022-02-03 10:04:11'),
+	(589, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-03 10:04:17', '2022-02-03 10:04:17'),
+	(590, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-03 10:05:40', '2022-02-03 10:05:40'),
+	(591, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 483, '[]', NULL, '2022-02-03 10:06:04', '2022-02-03 10:06:04'),
+	(592, 'default', 'Tambah Data Project Detail', NULL, NULL, NULL, 'App\\Models\\User', 483, '[]', NULL, '2022-02-03 10:10:41', '2022-02-03 10:10:41'),
+	(593, 'default', 'Tambah Data Project Detail', NULL, NULL, NULL, 'App\\Models\\User', 483, '[]', NULL, '2022-02-03 10:16:28', '2022-02-03 10:16:28'),
+	(594, 'default', 'Tambah Data Product', NULL, NULL, NULL, 'App\\Models\\User', 483, '[]', NULL, '2022-02-03 10:43:51', '2022-02-03 10:43:51'),
+	(595, 'default', 'Tambah Data Product', NULL, NULL, NULL, 'App\\Models\\User', 483, '[]', NULL, '2022-02-03 10:45:24', '2022-02-03 10:45:24'),
+	(596, 'default', 'Ubah Data Product dengan ID = 60', NULL, NULL, NULL, 'App\\Models\\User', 483, '[]', NULL, '2022-02-03 10:51:09', '2022-02-03 10:51:09'),
+	(597, 'default', 'Ubah Data Product dengan ID = 60', NULL, NULL, NULL, 'App\\Models\\User', 483, '[]', NULL, '2022-02-03 13:14:03', '2022-02-03 13:14:03'),
+	(598, 'default', 'Ubah Data Product dengan ID = 60', NULL, NULL, NULL, 'App\\Models\\User', 483, '[]', NULL, '2022-02-03 13:14:28', '2022-02-03 13:14:28'),
+	(599, 'default', 'Ubah Data Product dengan ID = 60', NULL, NULL, NULL, 'App\\Models\\User', 483, '[]', NULL, '2022-02-03 13:17:55', '2022-02-03 13:17:55'),
+	(600, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 483, '[]', NULL, '2022-02-03 14:11:00', '2022-02-03 14:11:00'),
+	(601, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-03 14:11:11', '2022-02-03 14:11:11'),
+	(602, 'default', 'Tambah Data Sub Menu Akses', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-03 14:13:58', '2022-02-03 14:13:58'),
+	(603, 'default', 'Tambah Data Sub Menu Akses', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-03 14:14:13', '2022-02-03 14:14:13'),
+	(604, 'default', 'Tambah Data Sub Menu Akses', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-03 14:14:25', '2022-02-03 14:14:25'),
+	(605, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-03 14:14:44', '2022-02-03 14:14:44'),
+	(606, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-03 14:14:48', '2022-02-03 14:14:48'),
+	(607, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-03 14:14:55', '2022-02-03 14:14:55'),
+	(608, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 483, '[]', NULL, '2022-02-03 14:15:02', '2022-02-03 14:15:02'),
+	(609, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-03 14:15:12', '2022-02-03 14:15:12'),
+	(610, 'default', 'Tambah Data Menu Akses', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-03 14:15:39', '2022-02-03 14:15:39'),
+	(611, 'default', 'Tambah Data Menu Akses', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-03 14:16:03', '2022-02-03 14:16:03'),
+	(612, 'default', 'Tambah Data Sub Menu Akses', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-03 14:16:20', '2022-02-03 14:16:20'),
+	(613, 'default', 'Tambah Data Sub Menu Akses', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-03 14:16:31', '2022-02-03 14:16:31'),
+	(614, 'default', 'Tambah Data Sub Menu Akses', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-03 14:16:44', '2022-02-03 14:16:44'),
+	(615, 'default', 'Tambah Data Sub Menu Akses', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-03 14:16:56', '2022-02-03 14:16:56'),
+	(616, 'default', 'Tambah Data Sub Menu Akses', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-03 14:17:07', '2022-02-03 14:17:07'),
+	(617, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-03 14:17:17', '2022-02-03 14:17:17'),
+	(618, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 483, '[]', NULL, '2022-02-03 14:17:23', '2022-02-03 14:17:23'),
+	(619, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 483, '[]', NULL, '2022-02-03 14:17:34', '2022-02-03 14:17:34'),
+	(620, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 483, '[]', NULL, '2022-02-03 14:17:38', '2022-02-03 14:17:38'),
+	(621, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 483, '[]', NULL, '2022-02-03 14:17:41', '2022-02-03 14:17:41'),
+	(622, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-03 14:17:51', '2022-02-03 14:17:51'),
+	(623, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-03 14:19:03', '2022-02-03 14:19:03'),
+	(624, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 483, '[]', NULL, '2022-02-03 14:19:09', '2022-02-03 14:19:09'),
+	(625, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 483, '[]', NULL, '2022-02-03 14:19:36', '2022-02-03 14:19:36'),
+	(626, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-03 14:19:44', '2022-02-03 14:19:44'),
+	(627, 'default', 'Tambah Data User', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-03 14:20:25', '2022-02-03 14:20:25'),
+	(628, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-03 14:20:29', '2022-02-03 14:20:29'),
+	(629, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 484, '[]', NULL, '2022-02-03 14:20:35', '2022-02-03 14:20:35'),
+	(630, 'default', 'Tambah Data Product', NULL, NULL, NULL, 'App\\Models\\User', 484, '[]', NULL, '2022-02-03 14:21:25', '2022-02-03 14:21:25'),
+	(631, 'default', 'Ubah Data Product dengan ID = 61', NULL, NULL, NULL, 'App\\Models\\User', 484, '[]', NULL, '2022-02-03 14:21:39', '2022-02-03 14:21:39'),
+	(632, 'default', 'Hapus Data PO dengan ID = 21', NULL, NULL, NULL, 'App\\Models\\User', 484, '[]', NULL, '2022-02-03 14:35:02', '2022-02-03 14:35:02'),
+	(633, 'default', 'Tambah Data Product', NULL, NULL, NULL, 'App\\Models\\User', 484, '[]', NULL, '2022-02-03 14:46:28', '2022-02-03 14:46:28'),
+	(634, 'default', 'Ubah Data Product dengan ID = 62', NULL, NULL, NULL, 'App\\Models\\User', 484, '[]', NULL, '2022-02-03 14:46:36', '2022-02-03 14:46:36'),
+	(635, 'default', 'Tambah Data Product', NULL, NULL, NULL, 'App\\Models\\User', 484, '[]', NULL, '2022-02-03 15:18:19', '2022-02-03 15:18:19'),
+	(636, 'default', 'Hapus Data Product dengan ID = 63', NULL, NULL, NULL, 'App\\Models\\User', 484, '[]', NULL, '2022-02-03 15:19:26', '2022-02-03 15:19:26'),
+	(637, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 484, '[]', NULL, '2022-02-03 15:20:12', '2022-02-03 15:20:12'),
+	(638, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-03 15:20:16', '2022-02-03 15:20:16'),
+	(639, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-03 15:30:29', '2022-02-03 15:30:29'),
+	(640, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-03 15:30:36', '2022-02-03 15:30:36'),
+	(641, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-04 06:39:25', '2022-02-04 06:39:25'),
+	(642, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-04 10:06:30', '2022-02-04 10:06:30'),
+	(643, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-04 15:09:58', '2022-02-04 15:09:58'),
+	(644, 'default', 'Ubah Data Project Detail dengan ID = 22', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-04 15:34:52', '2022-02-04 15:34:52'),
+	(645, 'default', 'Ubah Data Project Detail dengan ID = 22', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-04 15:35:07', '2022-02-04 15:35:07'),
+	(646, 'default', 'Ubah Data Project Detail dengan ID = 22', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-04 17:31:59', '2022-02-04 17:31:59'),
+	(647, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-04 18:06:51', '2022-02-04 18:06:51'),
+	(648, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-04 18:08:16', '2022-02-04 18:08:16'),
+	(649, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-04 22:14:00', '2022-02-04 22:14:00'),
+	(650, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-04 22:26:16', '2022-02-04 22:26:16'),
+	(651, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-04 22:29:12', '2022-02-04 22:29:12'),
+	(652, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-04 22:31:04', '2022-02-04 22:31:04'),
+	(653, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-04 22:32:15', '2022-02-04 22:32:15'),
+	(654, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-05 06:07:45', '2022-02-05 06:07:45'),
+	(655, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-05 06:23:46', '2022-02-05 06:23:46'),
+	(656, 'default', 'Ubah Data Material dengan ID = 12', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-05 06:41:28', '2022-02-05 06:41:28'),
+	(657, 'default', 'Ubah Data Material dengan ID = 11', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-05 06:42:33', '2022-02-05 06:42:33'),
+	(658, 'default', 'Ubah Data Material dengan ID = 11', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-05 06:42:47', '2022-02-05 06:42:47'),
+	(659, 'default', 'Ubah Data Material dengan ID = 11', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-05 06:44:01', '2022-02-05 06:44:01'),
+	(660, 'default', 'Ubah Data Material dengan ID = 11', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-05 06:44:15', '2022-02-05 06:44:15'),
+	(661, 'default', 'Ubah Data Material dengan ID = 11', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-05 06:44:24', '2022-02-05 06:44:24'),
+	(662, 'default', 'Ubah Data Material dengan ID = 11', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-05 06:48:21', '2022-02-05 06:48:21'),
+	(663, 'default', 'Ubah Data Material dengan ID = 11', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-05 06:48:34', '2022-02-05 06:48:34'),
+	(664, 'default', 'Hapus Data Material dengan ID = 11', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-05 06:48:59', '2022-02-05 06:48:59'),
+	(665, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-05 06:59:02', '2022-02-05 06:59:02'),
+	(666, 'default', 'Hapus Data Material dengan ID = 13', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-05 06:59:12', '2022-02-05 06:59:12'),
+	(667, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-05 07:00:58', '2022-02-05 07:00:58'),
+	(668, 'default', 'Hapus Data Material dengan ID = 14', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-05 07:01:10', '2022-02-05 07:01:10'),
+	(669, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-05 07:04:32', '2022-02-05 07:04:32'),
+	(670, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-05 07:04:51', '2022-02-05 07:04:51'),
+	(671, 'default', 'Hapus Data Material dengan ID = 16', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-05 07:05:12', '2022-02-05 07:05:12'),
+	(672, 'default', 'Ubah Data Product dengan ID = 25', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-05 07:17:47', '2022-02-05 07:17:47'),
+	(673, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-05 07:20:04', '2022-02-05 07:20:04'),
+	(674, 'default', 'Hapus Data Material dengan ID = 17', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-05 07:20:12', '2022-02-05 07:20:12'),
+	(675, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-05 15:53:44', '2022-02-05 15:53:44'),
+	(676, 'default', 'Ubah Status Project Detail dengan ID = 22', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-05 18:16:17', '2022-02-05 18:16:17'),
+	(677, 'default', 'Ubah Status Project Detail dengan ID = 22', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-05 18:17:42', '2022-02-05 18:17:42'),
+	(678, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-05 21:03:31', '2022-02-05 21:03:31'),
+	(679, 'default', 'Ubah Status Project Detail dengan ID = 21', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-05 21:46:17', '2022-02-05 21:46:17'),
+	(680, 'default', 'Ubah Status Project Detail dengan ID = 20', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-05 22:34:21', '2022-02-05 22:34:21'),
+	(681, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-06 17:36:35', '2022-02-06 17:36:35'),
+	(682, 'default', 'Ubah Data Project Detail dengan ID = 10', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-06 17:59:34', '2022-02-06 17:59:34'),
+	(683, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-06 21:23:05', '2022-02-06 21:23:05'),
+	(684, 'default', 'Tambah Data Project', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-06 21:24:52', '2022-02-06 21:24:52'),
+	(685, 'default', 'Tambah Data Project Detail', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-06 21:28:37', '2022-02-06 21:28:37'),
+	(686, 'default', 'Tambah Data Project Detail', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-06 21:30:16', '2022-02-06 21:30:16'),
+	(687, 'default', 'Hapus Data Sub Menu Akses dengan ID = 40', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-06 21:31:15', '2022-02-06 21:31:15'),
+	(688, 'default', 'Hapus Data Sub Menu Akses dengan ID = 38', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-06 21:31:25', '2022-02-06 21:31:25'),
+	(689, 'default', 'Hapus Data Sub Menu dengan ID = 25', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-06 21:31:52', '2022-02-06 21:31:52'),
+	(690, 'default', 'Hapus Data Sub Menu dengan ID = 23', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-06 21:31:54', '2022-02-06 21:31:54'),
+	(691, 'default', 'Ubah Data Menu dengan ID = 15', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-06 21:32:03', '2022-02-06 21:32:03'),
+	(692, 'default', 'Tambah Data Project', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-06 21:33:10', '2022-02-06 21:33:10'),
+	(693, 'default', 'Tambah Data Project', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-06 21:37:38', '2022-02-06 21:37:38'),
+	(694, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-07 07:04:04', '2022-02-07 07:04:04'),
+	(695, 'default', 'Tambah Data Sub Menu', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-07 10:37:41', '2022-02-07 10:37:41'),
+	(696, 'default', 'Tambah Data Sub Menu Akses', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-07 10:38:10', '2022-02-07 10:38:10'),
+	(697, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-07 11:40:24', '2022-02-07 11:40:24'),
+	(698, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-07 11:40:43', '2022-02-07 11:40:43'),
+	(699, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-07 11:40:54', '2022-02-07 11:40:54'),
+	(700, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 484, '[]', NULL, '2022-02-07 11:41:02', '2022-02-07 11:41:02'),
+	(701, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 484, '[]', NULL, '2022-02-07 11:52:12', '2022-02-07 11:52:12'),
+	(702, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-07 11:52:16', '2022-02-07 11:52:16'),
+	(703, 'default', 'Tambah Data Project Detail', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-07 11:53:07', '2022-02-07 11:53:07'),
+	(704, 'default', 'Ubah Status Project Detail dengan ID = 19', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-07 14:15:31', '2022-02-07 14:15:31'),
+	(705, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 06:53:44', '2022-02-08 06:53:44'),
+	(706, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 09:59:27', '2022-02-08 09:59:27'),
+	(707, 'default', 'Ubah Data Project Detail dengan ID = 27', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 11:36:19', '2022-02-08 11:36:19'),
+	(708, 'default', 'Ubah Status Project Detail dengan ID = 25', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 13:31:57', '2022-02-08 13:31:57'),
+	(709, 'default', 'Ubah Status Project Detail dengan ID = 10', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 13:32:03', '2022-02-08 13:32:03'),
+	(710, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:24:17', '2022-02-08 15:24:17'),
+	(711, 'default', 'Hapus Data Material dengan ID = 18', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:24:39', '2022-02-08 15:24:39'),
+	(712, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:27:18', '2022-02-08 15:27:18'),
+	(713, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:29:05', '2022-02-08 15:29:05'),
+	(714, 'default', 'Ubah Data Material dengan ID = 20', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:29:45', '2022-02-08 15:29:45'),
+	(715, 'default', 'Ubah Data Material dengan ID = 20', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:30:08', '2022-02-08 15:30:08'),
+	(716, 'default', 'Hapus Data Material dengan ID = 19', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:30:16', '2022-02-08 15:30:16'),
+	(717, 'default', 'Hapus Data Material dengan ID = 20', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:30:19', '2022-02-08 15:30:19'),
+	(718, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:30:50', '2022-02-08 15:30:50'),
+	(719, 'default', 'Ubah Data Material dengan ID = 21', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:31:03', '2022-02-08 15:31:03'),
+	(720, 'default', 'Ubah Data Material dengan ID = 21', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:31:51', '2022-02-08 15:31:51'),
+	(721, 'default', 'Ubah Data Material dengan ID = 21', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:32:00', '2022-02-08 15:32:00'),
+	(722, 'default', 'Ubah Data Material dengan ID = 21', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:34:45', '2022-02-08 15:34:45'),
+	(723, 'default', 'Ubah Data Material dengan ID = 21', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:34:57', '2022-02-08 15:34:57'),
+	(724, 'default', 'Ubah Data Material dengan ID = 21', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:35:11', '2022-02-08 15:35:11'),
+	(725, 'default', 'Ubah Data Material dengan ID = 21', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:35:53', '2022-02-08 15:35:53'),
+	(726, 'default', 'Ubah Data Material dengan ID = 21', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:36:02', '2022-02-08 15:36:02'),
+	(727, 'default', 'Ubah Data Material dengan ID = 21', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:36:13', '2022-02-08 15:36:13'),
+	(728, 'default', 'Ubah Data Material dengan ID = 21', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:36:23', '2022-02-08 15:36:23'),
+	(729, 'default', 'Ubah Data Material dengan ID = 21', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:36:31', '2022-02-08 15:36:31'),
+	(730, 'default', 'Ubah Data Material dengan ID = 21', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:36:41', '2022-02-08 15:36:41'),
+	(731, 'default', 'Ubah Data Material dengan ID = 21', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:36:51', '2022-02-08 15:36:51'),
+	(732, 'default', 'Hapus Data Material dengan ID = 21', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:43:17', '2022-02-08 15:43:17'),
+	(733, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:43:32', '2022-02-08 15:43:32'),
+	(734, 'default', 'Ubah Data Material dengan ID = 22', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:44:29', '2022-02-08 15:44:29'),
+	(735, 'default', 'Ubah Data Material dengan ID = 23', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:44:43', '2022-02-08 15:44:43'),
+	(736, 'default', 'Ubah Data Material dengan ID = 24', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:44:59', '2022-02-08 15:44:59'),
+	(737, 'default', 'Ubah Data Material dengan ID = 25', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:45:59', '2022-02-08 15:45:59'),
+	(738, 'default', 'Ubah Data Material dengan ID = 26', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:46:12', '2022-02-08 15:46:12'),
+	(739, 'default', 'Ubah Data Material dengan ID = 27', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:46:19', '2022-02-08 15:46:19'),
+	(740, 'default', 'Ubah Data Material dengan ID = 28', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:46:28', '2022-02-08 15:46:28'),
+	(741, 'default', 'Ubah Data Material dengan ID = 29', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:46:36', '2022-02-08 15:46:36'),
+	(742, 'default', 'Ubah Data Material dengan ID = 30', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:46:51', '2022-02-08 15:46:51'),
+	(743, 'default', 'Ubah Data Material dengan ID = 31', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:47:11', '2022-02-08 15:47:11'),
+	(744, 'default', 'Ubah Data Material dengan ID = 32', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:47:19', '2022-02-08 15:47:19'),
+	(745, 'default', 'Ubah Data Material dengan ID = 33', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:47:25', '2022-02-08 15:47:25'),
+	(746, 'default', 'Ubah Data Material dengan ID = 34', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:49:10', '2022-02-08 15:49:10'),
+	(747, 'default', 'Ubah Data Material dengan ID = 35', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:49:25', '2022-02-08 15:49:25'),
+	(748, 'default', 'Ubah Data Material dengan ID = 36', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:49:36', '2022-02-08 15:49:36'),
+	(749, 'default', 'Ubah Data Material dengan ID = 37', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:49:46', '2022-02-08 15:49:46'),
+	(750, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:51:03', '2022-02-08 15:51:03'),
+	(751, 'default', 'Ubah Data Material dengan ID = 39', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:51:17', '2022-02-08 15:51:17'),
+	(752, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:52:46', '2022-02-08 15:52:46'),
+	(753, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:54:07', '2022-02-08 15:54:07'),
+	(754, 'default', 'Ubah Data Material dengan ID = 42', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:54:16', '2022-02-08 15:54:16'),
+	(755, 'default', 'Ubah Data Material dengan ID = 43', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:54:30', '2022-02-08 15:54:30'),
+	(756, 'default', 'Ubah Data Material dengan ID = 44', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:54:44', '2022-02-08 15:54:44'),
+	(757, 'default', 'Ubah Data Material dengan ID = 45', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:56:05', '2022-02-08 15:56:05'),
+	(758, 'default', 'Ubah Data Material dengan ID = 46', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 15:56:33', '2022-02-08 15:56:33'),
+	(759, 'default', 'Ubah Data Material dengan ID = 15', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 16:00:45', '2022-02-08 16:00:45'),
+	(760, 'default', 'Ubah Data Material dengan ID = 8', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 16:01:14', '2022-02-08 16:01:14'),
+	(761, 'default', 'Ubah Data Material dengan ID = 49', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 16:02:54', '2022-02-08 16:02:54'),
+	(762, 'default', 'Ubah Data Material dengan ID = 48', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 16:03:08', '2022-02-08 16:03:08'),
+	(763, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 16:18:35', '2022-02-08 16:18:35'),
+	(764, 'default', 'Hapus Data Material dengan ID = 52', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 16:18:45', '2022-02-08 16:18:45'),
+	(765, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-08 16:19:49', '2022-02-08 16:19:49'),
+	(766, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-10 10:01:17', '2022-02-10 10:01:17'),
+	(767, 'default', 'Tambah Data Menu', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-10 10:02:53', '2022-02-10 10:02:53'),
+	(768, 'default', 'Ubah Data Menu dengan ID = 4', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-10 10:03:06', '2022-02-10 10:03:06'),
+	(769, 'default', 'Ubah Data Menu dengan ID = 5', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-10 10:03:13', '2022-02-10 10:03:13'),
+	(770, 'default', 'Ubah Data Menu dengan ID = 14', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-10 10:03:21', '2022-02-10 10:03:21'),
+	(771, 'default', 'Ubah Data Menu dengan ID = 16', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-10 10:03:33', '2022-02-10 10:03:33'),
+	(772, 'default', 'Tambah Data Sub Menu', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-10 10:03:59', '2022-02-10 10:03:59'),
+	(773, 'default', 'Tambah Data Menu Akses', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-10 10:04:23', '2022-02-10 10:04:23'),
+	(774, 'default', 'Tambah Data Sub Menu Akses', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-10 10:04:41', '2022-02-10 10:04:41'),
+	(775, 'default', 'Tambah Data Tim', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-10 10:16:34', '2022-02-10 10:16:34'),
+	(776, 'default', 'Ubah Data Team dengan ID = 1', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-10 10:16:46', '2022-02-10 10:16:46'),
+	(777, 'default', 'Ubah Data Team dengan ID = 1', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-10 10:16:54', '2022-02-10 10:16:54'),
+	(778, 'default', 'Ubah Data Team dengan ID = 1', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-10 10:19:22', '2022-02-10 10:19:22'),
+	(779, 'default', 'Ubah Data Team dengan ID = 1', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-10 10:19:40', '2022-02-10 10:19:40'),
+	(780, 'default', 'Ubah Data Team dengan ID = 1', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-10 10:21:37', '2022-02-10 10:21:37'),
+	(781, 'default', 'Ubah Data Team dengan ID = 1', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-10 10:21:45', '2022-02-10 10:21:45'),
+	(782, 'default', 'Tambah Data Worker', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-10 10:45:20', '2022-02-10 10:45:20'),
+	(783, 'default', 'Ubah Data Worker dengan ID = 2', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-10 10:50:27', '2022-02-10 10:50:27'),
+	(784, 'default', 'Ubah Data Worker dengan ID = 2', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-10 10:50:35', '2022-02-10 10:50:35'),
+	(785, 'default', 'Hapus Data Worker dengan ID = 2', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-10 10:51:14', '2022-02-10 10:51:14'),
+	(786, 'default', 'Tambah Data Tim', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-10 11:06:18', '2022-02-10 11:06:18'),
+	(787, 'default', 'Ubah Data Team dengan ID = 1', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-10 11:06:32', '2022-02-10 11:06:32'),
+	(788, 'default', 'Tambah Data Tim', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-10 11:10:39', '2022-02-10 11:10:39'),
+	(789, 'default', 'Ubah Data Project Detail dengan ID = 27', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-10 11:30:03', '2022-02-10 11:30:03'),
+	(790, 'default', 'Ubah Data Project Detail dengan ID = 27', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-10 11:44:46', '2022-02-10 11:44:46'),
+	(791, 'default', 'Hapus Data Product dengan ID = 60', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-10 14:01:30', '2022-02-10 14:01:30'),
+	(792, 'default', 'Hapus Data Product dengan ID = 59', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-10 14:11:13', '2022-02-10 14:11:13'),
+	(793, 'default', 'Tambah Data Project Detail', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-10 14:13:49', '2022-02-10 14:13:49'),
+	(794, 'default', 'Ubah Status Project Detail dengan ID = 27', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-10 14:15:05', '2022-02-10 14:15:05'),
+	(795, 'default', 'Ubah Status Project Detail dengan ID = 11', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-10 14:15:24', '2022-02-10 14:15:24'),
+	(796, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-11 10:34:18', '2022-02-11 10:34:18'),
+	(797, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-11 14:39:52', '2022-02-11 14:39:52'),
+	(798, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-11 20:27:24', '2022-02-11 20:27:24'),
+	(799, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-12 10:55:02', '2022-02-12 10:55:02'),
+	(800, 'default', 'Tambah Data Product', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-12 11:25:30', '2022-02-12 11:25:30'),
+	(801, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-13 20:47:05', '2022-02-13 20:47:05'),
+	(802, 'default', 'Ubah Data Project Detail dengan ID = 9', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-13 20:51:42', '2022-02-13 20:51:42'),
+	(803, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-14 10:17:56', '2022-02-14 10:17:56'),
+	(804, 'default', 'Ubah Data Product dengan ID = 64', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-14 11:31:27', '2022-02-14 11:31:27'),
+	(805, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-14 17:08:24', '2022-02-14 17:08:24'),
+	(806, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-15 09:19:21', '2022-02-15 09:19:21'),
+	(807, 'default', 'Ubah Data Project dengan ID = 2', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-15 09:20:21', '2022-02-15 09:20:21'),
+	(808, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-21 10:10:42', '2022-02-21 10:10:42'),
+	(809, 'default', 'Ubah Data Material dengan ID = 47', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-21 11:51:57', '2022-02-21 11:51:57'),
+	(810, 'default', 'Ubah Data Material dengan ID = 54', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-21 11:53:17', '2022-02-21 11:53:17'),
+	(811, 'default', 'Ubah Data Material dengan ID = 55', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-21 11:53:27', '2022-02-21 11:53:27'),
+	(812, 'default', 'Ubah Data Outlet dengan ID = 2', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-21 12:01:19', '2022-02-21 12:01:19'),
+	(813, 'default', 'Ubah Data Outlet dengan ID = 1', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-21 12:01:40', '2022-02-21 12:01:40'),
+	(814, 'default', 'Ubah Data Outlet dengan ID = 2', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-21 12:01:55', '2022-02-21 12:01:55'),
+	(815, 'default', 'Ubah Data Outlet dengan ID = 2', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-21 12:02:50', '2022-02-21 12:02:50'),
+	(816, 'default', 'Ubah Data Profil dengan ID = 1', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-21 14:10:27', '2022-02-21 14:10:27'),
+	(817, 'default', 'Ubah Data Pengaturan', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-21 14:11:49', '2022-02-21 14:11:49'),
+	(818, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-21 14:25:46', '2022-02-21 14:25:46'),
+	(819, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 484, '[]', NULL, '2022-02-21 14:26:31', '2022-02-21 14:26:31'),
+	(820, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 484, '[]', NULL, '2022-02-21 14:36:33', '2022-02-21 14:36:33'),
+	(821, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-21 14:36:45', '2022-02-21 14:36:45'),
+	(822, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-21 14:38:50', '2022-02-21 14:38:50'),
+	(823, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 484, '[]', NULL, '2022-02-21 14:39:20', '2022-02-21 14:39:20'),
+	(824, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 484, '[]', NULL, '2022-02-21 14:50:21', '2022-02-21 14:50:21'),
+	(825, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-21 14:50:27', '2022-02-21 14:50:27'),
+	(826, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-22 10:13:07', '2022-02-22 10:13:07'),
+	(827, 'default', 'Ubah Data Setting', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-22 10:18:55', '2022-02-22 10:18:55'),
+	(828, 'default', 'Ubah Data Setting', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-22 10:18:59', '2022-02-22 10:18:59'),
+	(829, 'default', 'Ubah Data Setting', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-22 10:19:22', '2022-02-22 10:19:22'),
+	(830, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-22 10:19:33', '2022-02-22 10:19:33'),
+	(831, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-22 10:19:44', '2022-02-22 10:19:44'),
+	(832, 'default', 'Ubah Data Setting', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-22 10:19:55', '2022-02-22 10:19:55'),
+	(833, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-22 13:22:09', '2022-02-22 13:22:09'),
+	(834, 'default', 'Log Out', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-22 13:30:38', '2022-02-22 13:30:38'),
+	(835, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-02-22 15:43:58', '2022-02-22 15:43:58'),
+	(836, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-03-05 10:38:34', '2022-03-05 10:38:34'),
+	(837, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-03-05 16:49:38', '2022-03-05 16:49:38'),
+	(838, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-03-07 11:54:03', '2022-03-07 11:54:03'),
+	(839, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-03-07 14:59:26', '2022-03-07 14:59:26'),
+	(840, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-03-18 10:23:26', '2022-03-18 10:23:26'),
+	(841, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-03-18 15:16:43', '2022-03-18 15:16:43'),
+	(842, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-03-29 07:56:51', '2022-03-29 07:56:51'),
+	(843, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-03-29 07:56:53', '2022-03-29 07:56:53'),
+	(844, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-03-29 07:56:55', '2022-03-29 07:56:55'),
+	(845, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-03-29 21:48:14', '2022-03-29 21:48:14'),
+	(846, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-03-30 10:18:33', '2022-03-30 10:18:33'),
+	(847, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-03-30 10:43:31', '2022-03-30 10:43:31'),
+	(848, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-03-30 10:43:47', '2022-03-30 10:43:47'),
+	(849, 'default', 'Ubah Data Project Detail dengan ID = 26', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-03-30 10:45:43', '2022-03-30 10:45:43'),
+	(850, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-03-31 10:30:43', '2022-03-31 10:30:43'),
+	(851, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-03-31 14:56:46', '2022-03-31 14:56:46'),
+	(852, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-01 06:19:20', '2022-04-01 06:19:20'),
+	(853, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-04 14:57:52', '2022-04-04 14:57:52'),
+	(854, 'default', 'Ubah Data Product dengan ID = 64', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-04 16:59:49', '2022-04-04 16:59:49'),
+	(855, 'default', 'Ubah Data Product dengan ID = 64', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-04 17:07:17', '2022-04-04 17:07:17'),
+	(856, 'default', 'Ubah Data Product dengan ID = 64', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-04 17:10:47', '2022-04-04 17:10:47'),
+	(857, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-05 09:36:00', '2022-04-05 09:36:00'),
+	(858, 'default', 'Tambah Data Project Detail', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-05 10:20:32', '2022-04-05 10:20:32'),
+	(859, 'default', 'Hapus Data Project Detail dengan ID = 29', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-05 10:24:21', '2022-04-05 10:24:21'),
+	(860, 'default', 'Tambah Data Project Detail', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-05 10:24:49', '2022-04-05 10:24:49'),
+	(861, 'default', 'Ubah Data Project Detail dengan ID = 30', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-05 10:26:23', '2022-04-05 10:26:23'),
+	(862, 'default', 'Ubah Data Project Detail dengan ID = 30', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-05 10:27:42', '2022-04-05 10:27:42'),
+	(863, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-05 11:46:58', '2022-04-05 11:46:58'),
+	(864, 'default', 'Hapus Data Material dengan ID = 59', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-05 11:47:04', '2022-04-05 11:47:04'),
+	(865, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-06 08:10:07', '2022-04-06 08:10:07'),
+	(866, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-06 08:14:38', '2022-04-06 08:14:38'),
+	(867, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-06 08:25:38', '2022-04-06 08:25:38'),
+	(868, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-06 08:29:41', '2022-04-06 08:29:41'),
+	(869, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-06 08:31:57', '2022-04-06 08:31:57'),
+	(870, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-06 09:00:34', '2022-04-06 09:00:34'),
+	(871, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-06 10:22:11', '2022-04-06 10:22:11'),
+	(872, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-06 10:25:18', '2022-04-06 10:25:18'),
+	(873, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-06 10:26:53', '2022-04-06 10:26:53'),
+	(874, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-06 10:29:25', '2022-04-06 10:29:25'),
+	(875, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-06 10:35:30', '2022-04-06 10:35:30'),
+	(876, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-06 10:35:40', '2022-04-06 10:35:40'),
+	(877, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-06 10:39:08', '2022-04-06 10:39:08'),
+	(878, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-06 10:39:49', '2022-04-06 10:39:49'),
+	(879, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-06 10:40:50', '2022-04-06 10:40:50'),
+	(880, 'default', 'Hapus Data Material dengan ID = 147', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-06 10:42:20', '2022-04-06 10:42:20'),
+	(881, 'default', 'Hapus Data Material dengan ID = 146', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-06 10:42:23', '2022-04-06 10:42:23'),
+	(882, 'default', 'Hapus Data Material dengan ID = 56', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-06 10:42:26', '2022-04-06 10:42:26'),
+	(883, 'default', 'Hapus Data Material dengan ID = 142', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-06 10:42:29', '2022-04-06 10:42:29'),
+	(884, 'default', 'Hapus Data Material dengan ID = 123', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-06 10:42:31', '2022-04-06 10:42:31'),
+	(885, 'default', 'Hapus Data Material dengan ID = 122', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-06 10:42:35', '2022-04-06 10:42:35'),
+	(886, 'default', 'Hapus Data Material dengan ID = 103', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-06 10:42:38', '2022-04-06 10:42:38'),
+	(887, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-06 10:42:55', '2022-04-06 10:42:55'),
+	(888, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-06 10:44:01', '2022-04-06 10:44:01'),
+	(889, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-06 10:44:23', '2022-04-06 10:44:23'),
+	(890, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-06 10:45:05', '2022-04-06 10:45:05'),
+	(891, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-06 10:45:14', '2022-04-06 10:45:14'),
+	(892, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-06 10:45:34', '2022-04-06 10:45:34'),
+	(893, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-06 10:49:38', '2022-04-06 10:49:38'),
+	(894, 'default', 'Tambah Data Material', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-06 10:54:36', '2022-04-06 10:54:36'),
+	(895, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-06 13:45:27', '2022-04-06 13:45:27'),
+	(896, 'default', 'Tambah Data pembayaran', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-06 14:03:41', '2022-04-06 14:03:41'),
+	(897, 'default', 'Tambah Data pembayaran', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-06 14:07:02', '2022-04-06 14:07:02'),
+	(898, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-07 09:42:39', '2022-04-07 09:42:39'),
+	(899, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-07 13:25:26', '2022-04-07 13:25:26'),
+	(900, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-07 14:00:05', '2022-04-07 14:00:05'),
+	(901, 'default', 'Tambah Data pembayaran', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-07 14:16:37', '2022-04-07 14:16:37'),
+	(902, 'default', 'Tambah Data pembayaran', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-07 14:21:01', '2022-04-07 14:21:01'),
+	(903, 'default', 'Ubah Data Payment dengan ID = 2', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-07 14:37:18', '2022-04-07 14:37:18'),
+	(904, 'default', 'Ubah Data Payment dengan ID = 1', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-07 14:38:10', '2022-04-07 14:38:10'),
+	(905, 'default', 'Ubah Data Payment dengan ID = 2', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-07 14:38:16', '2022-04-07 14:38:16'),
+	(906, 'default', 'Hapus Data Payment dengan ID = 1', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-07 14:39:54', '2022-04-07 14:39:54'),
+	(907, 'default', 'Hapus Data Payment dengan ID = 2', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-07 14:39:57', '2022-04-07 14:39:57'),
+	(908, 'default', 'Tambah Data pembayaran', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-07 14:42:30', '2022-04-07 14:42:30'),
+	(909, 'default', 'Tambah Data pembayaran', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-07 14:44:16', '2022-04-07 14:44:16'),
+	(910, 'default', 'Hapus Data Payment dengan ID = 4', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-07 14:44:31', '2022-04-07 14:44:31'),
+	(911, 'default', 'Hapus Data Payment dengan ID = 3', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-07 14:44:34', '2022-04-07 14:44:34'),
+	(912, 'default', 'Tambah Data pembayaran', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-07 14:45:09', '2022-04-07 14:45:09'),
+	(913, 'default', 'Tambah Data pembayaran', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-07 14:45:17', '2022-04-07 14:45:17'),
+	(914, 'default', 'Ubah Data Payment dengan ID = 6', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-07 14:45:37', '2022-04-07 14:45:37'),
+	(915, 'default', 'Ubah Data Payment dengan ID = 6', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-07 14:45:51', '2022-04-07 14:45:51'),
+	(916, 'default', 'Ubah Data Payment dengan ID = 6', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-07 14:46:20', '2022-04-07 14:46:20'),
+	(917, 'default', 'Tambah Data pembayaran', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-07 14:47:02', '2022-04-07 14:47:02'),
+	(918, 'default', 'Hapus Data Payment dengan ID = 7', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-07 14:57:39', '2022-04-07 14:57:39'),
+	(919, 'default', 'Tambah Data pembayaran', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-07 14:58:14', '2022-04-07 14:58:14'),
+	(920, 'default', 'Hapus Data Payment dengan ID = 8', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-07 14:58:59', '2022-04-07 14:58:59'),
+	(921, 'default', 'Hapus Data Payment dengan ID = 6', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-07 14:59:02', '2022-04-07 14:59:02'),
+	(922, 'default', 'Hapus Data Payment dengan ID = 5', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-07 14:59:04', '2022-04-07 14:59:04'),
+	(923, 'default', 'Tambah Data pembayaran', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-07 15:00:49', '2022-04-07 15:00:49'),
+	(924, 'default', 'Tambah Data pembayaran', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-07 15:01:08', '2022-04-07 15:01:08'),
+	(925, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-08 22:11:09', '2022-04-08 22:11:09'),
+	(926, 'default', 'Tambah Data Worker', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-08 22:12:38', '2022-04-08 22:12:38'),
+	(927, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-11 10:27:33', '2022-04-11 10:27:33'),
+	(928, 'default', 'Tambah Data Pembayaran Aplicator', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-11 12:07:13', '2022-04-11 12:07:13'),
+	(929, 'default', 'Tambah Data Pembayaran Aplicator', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-11 12:07:40', '2022-04-11 12:07:40'),
+	(930, 'default', 'Ubah Data Worker Payment dengan ID = 3', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-11 12:19:27', '2022-04-11 12:19:27'),
+	(931, 'default', 'Ubah Data Worker Payment dengan ID = 3', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-11 12:19:33', '2022-04-11 12:19:33'),
+	(932, 'default', 'Ubah Data Worker Payment dengan ID = 1', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-11 12:20:44', '2022-04-11 12:20:44'),
+	(933, 'default', 'Hapus Data Payment dengan ID = 2', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-11 12:21:39', '2022-04-11 12:21:39'),
+	(934, 'default', 'Login', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-13 10:20:02', '2022-04-13 10:20:02'),
+	(935, 'default', 'Tambah Data pembayaran', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-13 11:09:38', '2022-04-13 11:09:38'),
+	(936, 'default', 'Ubah Data Payment dengan ID = 4', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-13 11:14:33', '2022-04-13 11:14:33'),
+	(937, 'default', 'Tambah Data pembayaran', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-13 11:14:51', '2022-04-13 11:14:51'),
+	(938, 'default', 'Tambah Data pembayaran', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-13 11:15:46', '2022-04-13 11:15:46'),
+	(939, 'default', 'Tambah Data pembayaran', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-13 11:15:56', '2022-04-13 11:15:56'),
+	(940, 'default', 'Ubah Data Payment dengan ID = 5', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-13 11:19:48', '2022-04-13 11:19:48'),
+	(941, 'default', 'Ubah Data Payment dengan ID = 5', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-13 11:19:55', '2022-04-13 11:19:55'),
+	(942, 'default', 'Ubah Data Payment dengan ID = 5', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-13 11:20:01', '2022-04-13 11:20:01'),
+	(943, 'default', 'Hapus Data Payment dengan ID = 5', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-13 11:20:37', '2022-04-13 11:20:37'),
+	(944, 'default', 'Tambah Data pembayaran', NULL, NULL, NULL, 'App\\Models\\User', 1, '[]', NULL, '2022-04-13 11:20:54', '2022-04-13 11:20:54');
 /*!40000 ALTER TABLE `activity_log` ENABLE KEYS */;
+
+-- membuang struktur untuk table db_parau.categories
+CREATE TABLE IF NOT EXISTS `categories` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `category_name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Membuang data untuk tabel db_parau.categories: ~8 rows (lebih kurang)
+/*!40000 ALTER TABLE `categories` DISABLE KEYS */;
+INSERT INTO `categories` (`id`, `category_name`, `description`, `created_at`, `updated_at`) VALUES
+	(1, 'Kayu', '', '2022-01-20 07:39:39', '2022-01-20 07:42:14'),
+	(2, 'Baja', '', '2022-01-20 07:42:20', '2022-01-20 07:42:20'),
+	(3, 'Besi', '', '2022-01-20 07:42:26', '2022-01-20 07:42:26'),
+	(4, 'Plafon', '', '2022-01-20 10:20:11', '2022-01-20 10:20:11'),
+	(5, 'Atap', 'Bahan bangunan untuk atap', '2022-01-25 09:32:46', '2022-01-25 09:32:46'),
+	(6, 'Lantai', 'Bahan bangunan untuk lantai', '2022-01-25 09:32:46', '2022-01-25 09:32:46'),
+	(7, 'Dinding', 'Bahan bangunan untuk dinding', '2022-01-25 09:32:46', '2022-01-25 09:32:46'),
+	(8, 'Perabotan', '', '2022-01-25 09:32:46', '2022-01-25 09:32:46');
+/*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 
 -- membuang struktur untuk table db_parau.failed_jobs
 CREATE TABLE IF NOT EXISTS `failed_jobs` (
@@ -421,20 +1023,155 @@ CREATE TABLE IF NOT EXISTS `failed_jobs` (
 -- membuang struktur untuk table db_parau.group_tbl
 CREATE TABLE IF NOT EXISTS `group_tbl` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `group_name` varchar(18) DEFAULT NULL,
+  `group_name` varchar(100) DEFAULT NULL,
   `status` int(11) NOT NULL DEFAULT 0,
   `user_id` int(11) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
--- Membuang data untuk tabel db_parau.group_tbl: ~2 rows (lebih kurang)
+-- Membuang data untuk tabel db_parau.group_tbl: ~3 rows (lebih kurang)
 /*!40000 ALTER TABLE `group_tbl` DISABLE KEYS */;
 INSERT INTO `group_tbl` (`id`, `group_name`, `status`, `user_id`, `created_at`, `updated_at`) VALUES
-	(1, 'Editor', 0, 1, '2022-01-11 13:01:48', '2022-01-18 16:01:05'),
-	(2, 'Kasir', 0, 1, '2022-01-11 13:01:57', '2022-01-18 16:00:57');
+	(1, 'Administrator', 0, 1, '2022-01-11 13:01:48', '2022-01-18 16:01:05'),
+	(2, 'Editor', 0, 1, '2022-01-11 13:01:57', '2022-01-18 16:00:57'),
+	(3, 'Kasir', 0, 1, '2022-02-03 09:52:32', '2022-02-03 09:52:32');
 /*!40000 ALTER TABLE `group_tbl` ENABLE KEYS */;
+
+-- membuang struktur untuk table db_parau.inventories
+CREATE TABLE IF NOT EXISTS `inventories` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `product_id` bigint(20) unsigned NOT NULL,
+  `in_stock` int(11) NOT NULL,
+  `min_stock` int(11) NOT NULL,
+  `full_stock` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `inventories_product_id_foreign` (`product_id`),
+  CONSTRAINT `inventories_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Membuang data untuk tabel db_parau.inventories: ~38 rows (lebih kurang)
+/*!40000 ALTER TABLE `inventories` DISABLE KEYS */;
+INSERT INTO `inventories` (`id`, `product_id`, `in_stock`, `min_stock`, `full_stock`, `created_at`, `updated_at`) VALUES
+	(1, 25, 121, 50, 150, '2022-01-25 09:32:47', '2022-04-06 10:54:31'),
+	(2, 27, 38, 10, 80, '2022-01-25 09:32:47', '2022-04-06 10:07:38'),
+	(3, 28, 30, 10, 60, '2022-01-25 09:32:47', '2022-04-06 10:43:37'),
+	(4, 29, 25, 25, 105, '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(5, 30, 92, 30, 120, '2022-01-25 09:32:47', '2022-04-06 10:42:35'),
+	(6, 31, 47, 25, 70, '2022-01-25 09:32:47', '2022-04-06 10:43:54'),
+	(7, 32, 20, 20, 100, '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(8, 33, 107, 45, 140, '2022-01-25 09:32:47', '2022-04-06 10:42:38'),
+	(9, 34, 54, 30, 90, '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(10, 35, 42, 25, 55, '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(11, 36, 92, 25, 120, '2022-01-25 09:32:47', '2022-04-06 10:42:31'),
+	(12, 37, 26, 15, 95, '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(13, 38, 56, 15, 65, '2022-01-25 09:32:47', '2022-04-06 10:45:23'),
+	(14, 39, 30, 25, 60, '2022-01-25 09:32:47', '2022-04-06 10:25:14'),
+	(15, 40, 113, 40, 140, '2022-01-25 09:32:47', '2022-04-06 10:42:29'),
+	(16, 41, 84, 30, 95, '2022-01-25 09:32:47', '2022-02-14 11:01:41'),
+	(17, 42, 20, 25, 80, '2022-01-25 09:32:47', '2022-01-30 22:39:03'),
+	(18, 43, 54, 40, 65, '2022-01-25 09:32:47', '2022-04-06 10:25:16'),
+	(19, 44, 35, 50, 90, '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(20, 45, 35, 10, 45, '2022-01-25 09:32:47', '2022-04-06 10:45:31'),
+	(21, 46, 69, 50, 115, '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(22, 47, 53, 30, 90, '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(23, 48, 19, 40, 50, '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(24, 49, 17, 10, 30, '2022-01-25 09:32:47', '2022-01-27 14:05:06'),
+	(25, 50, 37, 40, 60, '2022-01-25 09:32:47', '2022-02-14 11:01:41'),
+	(26, 51, 58, 40, 65, '2022-01-25 09:32:47', '2022-04-05 15:01:52'),
+	(27, 52, 66, 45, 105, '2022-01-25 09:32:47', '2022-04-01 07:21:14'),
+	(28, 53, 30, 50, 65, '2022-01-25 09:32:47', '2022-02-10 11:49:16'),
+	(29, 54, 47, 30, 50, '2022-01-25 09:32:47', '2022-02-14 11:26:35'),
+	(30, 55, 45, 35, 70, '2022-01-25 09:32:47', '2022-03-30 11:28:28'),
+	(31, 56, 51, 50, 75, '2022-01-25 09:32:47', '2022-04-06 10:07:41'),
+	(32, 57, 17, 25, 110, '2022-01-25 09:32:47', '2022-04-06 09:45:19'),
+	(33, 58, 40, 25, 100, '2022-01-27 11:43:02', '2022-04-06 10:51:51'),
+	(35, 60, 95, 55, 150, NULL, '2022-02-07 10:58:33'),
+	(36, 59, 95, 50, 100, NULL, '2022-02-11 14:48:16'),
+	(37, 61, 350, 100, 500, '2022-02-03 14:21:25', '2022-02-03 14:49:59'),
+	(38, 62, 250, 101, 300, '2022-02-03 14:46:28', '2022-02-03 14:47:19'),
+	(40, 64, 32, 20, 70, '2022-02-12 11:25:30', '2022-04-06 10:51:53');
+/*!40000 ALTER TABLE `inventories` ENABLE KEYS */;
+
+-- membuang struktur untuk table db_parau.materials
+CREATE TABLE IF NOT EXISTS `materials` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `project_detail_id` bigint(20) unsigned NOT NULL,
+  `product_id` bigint(20) unsigned NOT NULL,
+  `product_name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `outlet_name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `purchase_place` enum('IN','OUT') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `price` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `unit` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `amount` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  `status` int(11) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_materials_project_details` (`project_detail_id`),
+  KEY `FK_materials_products` (`product_id`),
+  CONSTRAINT `FK_materials_project_details` FOREIGN KEY (`project_detail_id`) REFERENCES `project_details` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=161 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Membuang data untuk tabel db_parau.materials: ~18 rows (lebih kurang)
+/*!40000 ALTER TABLE `materials` DISABLE KEYS */;
+INSERT INTO `materials` (`id`, `project_detail_id`, `product_id`, `product_name`, `outlet_name`, `purchase_place`, `price`, `unit`, `amount`, `date`, `status`, `created_at`, `updated_at`) VALUES
+	(3, 19, 58, NULL, 'Outlet Kendari', 'IN', '400000', NULL, '1', '2022-02-02', 1, '2022-02-02 06:19:59', '2022-02-02 06:19:59'),
+	(4, 19, 25, NULL, 'Outlet Kendari', 'IN', '9000', NULL, '1', '2022-02-02', 1, '2022-02-04 18:06:51', '2022-02-04 18:06:51'),
+	(7, 19, 25, NULL, 'Toko x', 'OUT', '9000', NULL, NULL, '2022-02-02', 1, '2022-02-04 18:08:16', '2022-02-04 18:08:16'),
+	(10, 22, 0, 'r4454545', 'Toko x', 'OUT', '2333', 'fdf', '1', '0002-04-02', 1, '2022-02-04 22:31:04', '2022-02-04 22:31:04'),
+	(12, 22, 0, 'xxxx', 'Toko x', 'OUT', '111111', 'biji', '1', '2022-02-05', 1, '2022-02-05 06:23:46', '2022-02-05 06:41:28'),
+	(50, 22, 25, 'Kayu Dolken', 'Outlet Kendari', 'IN', '9000', 'xx', '2', '2022-02-02', 1, '2022-02-08 16:02:54', '2022-02-08 16:02:54'),
+	(51, 22, 25, 'Kayu Dolken', 'Outlet Kendari', 'IN', '9000', 'xx', '4', '2022-02-05', 1, '2022-02-08 16:03:08', '2022-02-08 16:03:08'),
+	(53, 22, 27, 'Paku Beton', 'Outlet Kendari', 'IN', '26000', 'Dos Kecil', '2', '2022-02-08', 1, '2022-02-08 16:19:49', '2022-02-08 16:19:49'),
+	(57, 25, 25, 'Kayu Dolken', 'Outlet Kendari', 'IN', '9000', 'xx', '2', '2022-03-30', 1, '2022-03-30 10:43:31', '2022-03-30 10:43:31'),
+	(58, 25, 27, 'Paku Beton', 'Outlet Kendari', 'IN', '26000', 'Dos Kecil', '2', '2022-03-30', 1, '2022-03-30 10:43:47', '2022-03-30 10:43:47'),
+	(104, 30, 31, 'Produk Cayadi', 'Outlet Kendari', 'IN', '5750', NULL, '2', '2022-04-06', 1, '2022-04-06 08:17:56', '2022-04-06 08:31:57'),
+	(105, 30, 33, 'Produk Amalia', 'Outlet Kendari', 'IN', '12000', 'Batang', '3', '2022-04-06', 1, '2022-04-06 08:22:30', '2022-04-06 08:31:57'),
+	(151, 27, 25, 'Kayu Dolken', 'Outlet Kendari', 'IN', '9000', 'xx', '2', '2022-04-06', 1, '2022-04-06 10:42:50', '2022-04-06 10:49:38'),
+	(152, 27, 28, 'Produk Irma', 'Outlet Kendari', 'IN', '22000', NULL, '2', '2022-04-06', 1, '2022-04-06 10:43:37', '2022-04-06 10:44:01'),
+	(153, 27, 31, 'Produk Cayadi', 'Outlet Kendari', 'IN', '5750', NULL, '2', '2022-04-06', 1, '2022-04-06 10:43:40', '2022-04-06 10:44:01'),
+	(155, 27, 0, 'xxxxx', 'xxxxx', 'OUT', '123333', 'xxxxx', '1', '2022-06-04', 1, '2022-04-06 10:44:23', '2022-04-06 10:44:23'),
+	(156, 27, 38, 'Produk Gara', 'Outlet Kendari', 'IN', '10500', NULL, '5', '2022-04-06', 1, '2022-04-06 10:45:23', '2022-04-06 10:45:34'),
+	(157, 27, 45, 'Produk Lanjar', 'Outlet Kendari', 'IN', '15750', NULL, '1', '2022-04-06', 1, '2022-04-06 10:45:31', '2022-04-06 10:45:34'),
+	(160, 27, 25, 'Kayu Dolken', 'Outlet Kendari', 'IN', '9000', 'xx', '4', '2022-04-06', 1, '2022-04-06 10:54:09', '2022-04-06 10:54:36');
+/*!40000 ALTER TABLE `materials` ENABLE KEYS */;
+
+-- membuang struktur untuk table db_parau.members
+CREATE TABLE IF NOT EXISTS `members` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `member_name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Membuang data untuk tabel db_parau.members: ~15 rows (lebih kurang)
+/*!40000 ALTER TABLE `members` DISABLE KEYS */;
+INSERT INTO `members` (`id`, `member_name`, `phone`, `address`, `description`, `created_at`, `updated_at`) VALUES
+	(1, 'UMUM', '-', '-', '-', '2022-02-07 10:43:36', '2022-02-07 10:43:36'),
+	(2, 'Suci Hartati', '(+62) 734 9158 040', 'Kpg. Bara No. 339, Subulussalam 78089, Sulsel', 'Molestias quaerat nihil tempora sit rerum sit. Suscipit non dolores exercitationem neque repellendus suscipit labore ducimus. Et error et officia consequuntur rerum et.', '2022-02-07 10:43:36', '2022-02-07 10:43:36'),
+	(3, 'Kemal Mahdi Halim', '(+62) 638 2256 180', 'Jr. Rumah Sakit No. 628, Bandung 84277, Bali', 'Sunt dolore unde porro eum ab dicta. Vel voluptatibus veniam eius non veniam. Repellat numquam est delectus error.', '2022-02-07 10:43:36', '2022-02-07 10:43:36'),
+	(4, 'Novi Purnawati', '0281 9665 861', 'Dk. Madiun No. 504, Langsa 20148, Kaltim', 'Atque doloribus consequatur reiciendis et esse rerum et nulla. Voluptas unde eveniet explicabo at. At debitis quia sequi dolore sed.', '2022-02-07 10:43:36', '2022-02-07 10:43:36'),
+	(5, 'Mujur Siregar S.E.', '(+62) 561 2945 1890', 'Jln. Haji No. 371, Ternate 70780, NTT', 'Itaque esse sit nisi dolorem. Voluptas commodi qui et quia. Itaque voluptates maxime quis doloribus et neque. Porro ea fuga sapiente dolores sed iure porro.', '2022-02-07 10:43:36', '2022-02-07 10:43:36'),
+	(6, 'Lanjar Gunawan', '0664 9650 757', 'Dk. Salam No. 799, Langsa 90667, Babel', 'Nihil id nihil provident reiciendis quia molestiae. Est et minima nulla quia beatae. Ad pariatur corrupti architecto quia non. Ea culpa ut et alias.', '2022-02-07 10:43:36', '2022-02-07 10:43:36'),
+	(7, 'Gamblang Anom Ardianto', '(+62) 592 1149 4180', 'Jln. Perintis Kemerdekaan No. 294, Banda Aceh 33595, Jateng', 'Quia eveniet nesciunt dolorem explicabo. Molestias itaque ut rerum sunt. Deleniti nisi et dolores ea sint enim. Omnis ab amet praesentium quis.', '2022-02-07 10:43:36', '2022-02-07 10:43:36'),
+	(8, 'Hardi Suwarno', '0874 4180 8394', 'Ds. Kiaracondong No. 884, Kotamobagu 49841, Riau', 'Ipsa aut exercitationem voluptatem. Illum cum voluptatibus dignissimos illum nulla officia est voluptas. Dignissimos eos aperiam est omnis. Consequuntur expedita est est aut.', '2022-02-07 10:43:36', '2022-02-07 10:43:36'),
+	(9, 'Kawaya Siregar', '0223 5846 7781', 'Psr. Bara Tambar No. 308, Serang 40535, Kalbar', 'Non sit qui delectus ut est tenetur. Dolorem voluptatem a sequi beatae qui esse. Officiis eaque ipsam delectus illo.', '2022-02-07 10:43:36', '2022-02-07 10:43:36'),
+	(10, 'Anita Suartini', '0827 1585 566', 'Ki. Banal No. 928, Kediri 72286, Sulut', 'Nam suscipit voluptatem exercitationem aliquid. Aliquid officiis quo aut animi corporis vel eum. Et non sint rerum fugit assumenda dolorem.', '2022-02-07 10:43:36', '2022-02-07 10:43:36'),
+	(11, 'Chelsea Halimah', '0829 7690 7791', 'Dk. Tambak No. 850, Cirebon 46856, Maluku', 'Nemo deserunt incidunt praesentium suscipit. Natus qui est ut. Deleniti necessitatibus architecto veniam vel sit. Et illum occaecati qui quaerat adipisci.', '2022-02-07 10:43:36', '2022-02-07 10:43:36'),
+	(12, 'Dartono Yahya Uwais S.Farm', '(+62) 25 6346 7214', 'Ki. Gotong Royong No. 551, Serang 77724, Kalbar', 'Voluptate molestias excepturi quod pariatur. Fugit eligendi sapiente qui nisi aut quia. Voluptatem necessitatibus eos tenetur est occaecati sunt aliquam.', '2022-02-07 10:43:36', '2022-02-07 10:43:36'),
+	(13, 'Lamar Pradana', '(+62) 633 4795 6831', 'Jr. Mahakam No. 283, Makassar 63148, Kalteng', 'Assumenda nostrum placeat natus ratione ratione magni blanditiis. In dolorem atque ad nemo provident quos et. Placeat earum quod adipisci quos qui voluptas perspiciatis cupiditate.', '2022-02-07 10:43:36', '2022-02-07 10:43:36'),
+	(14, 'Daruna Nasim Lazuardi M.Farm', '(+62) 411 5494 621', 'Ki. Jakarta No. 477, Batu 79476, Bengkulu', 'Est consequatur ipsam eius aliquam expedita aliquam sint. Minus aut aliquam eos culpa in optio. Velit aut quia aperiam nostrum est magni. Deserunt quia vero dolore iste facilis.', '2022-02-07 10:43:36', '2022-02-07 10:43:36'),
+	(15, 'Diah Mayasari', '(+62) 725 3712 774', 'Kpg. Flora No. 661, Administrasi Jakarta Barat 15322, NTT', 'Earum debitis molestias veritatis soluta nisi. Natus aut qui similique officia eaque. Aliquid vel porro ut eius ut aut.', '2022-02-07 10:43:36', '2022-02-07 10:43:36');
+/*!40000 ALTER TABLE `members` ENABLE KEYS */;
 
 -- membuang struktur untuk table db_parau.menu_access_tbl
 CREATE TABLE IF NOT EXISTS `menu_access_tbl` (
@@ -454,23 +1191,27 @@ CREATE TABLE IF NOT EXISTS `menu_access_tbl` (
   KEY `menu_id` (`menu_id`),
   CONSTRAINT `FK_access_tbl_group_tbl` FOREIGN KEY (`group_id`) REFERENCES `group_tbl` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_access_tbl_menu_tbl` FOREIGN KEY (`menu_id`) REFERENCES `menu_tbl` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
--- Membuang data untuk tabel db_parau.menu_access_tbl: ~5 rows (lebih kurang)
+-- Membuang data untuk tabel db_parau.menu_access_tbl: ~6 rows (lebih kurang)
 /*!40000 ALTER TABLE `menu_access_tbl` DISABLE KEYS */;
 INSERT INTO `menu_access_tbl` (`id`, `group_id`, `menu_id`, `create`, `read`, `update`, `delete`, `print`, `user_id`, `created_at`, `updated_at`) VALUES
-	(1, 1, 4, 1, 1, 1, 1, 1, 1, '2022-01-13 11:02:25', '2022-01-13 11:02:25'),
 	(7, 1, 5, 1, 1, 1, 1, 1, 1, '2022-01-14 17:59:17', '2022-01-18 15:37:21'),
 	(15, 1, 13, 1, 1, 1, 0, 0, 1, '2022-01-18 15:31:31', '2022-01-18 15:37:02'),
-	(17, 1, 14, 1, 1, 1, 1, 1, 1, '2022-01-19 12:22:00', '2022-01-19 12:22:00');
+	(17, 1, 14, 1, 1, 1, 1, 1, 1, '2022-01-19 12:22:00', '2022-01-19 12:22:00'),
+	(18, 1, 15, 1, 1, 1, 1, 1, 1, '2022-01-24 15:23:55', '2022-01-24 15:23:55'),
+	(19, 1, 4, 1, 1, 1, 1, 1, 1, '2022-02-03 09:53:00', '2022-02-03 09:53:00'),
+	(20, 2, 5, 1, 1, 1, 1, 1, 1, '2022-02-03 14:15:39', '2022-02-03 14:15:39'),
+	(21, 2, 13, 1, 1, 1, 1, 1, 1, '2022-02-03 14:16:03', '2022-02-03 14:16:03'),
+	(22, 1, 16, 1, 1, 1, 1, 1, 1, '2022-02-10 10:04:23', '2022-02-10 10:04:23');
 /*!40000 ALTER TABLE `menu_access_tbl` ENABLE KEYS */;
 
 -- membuang struktur untuk table db_parau.menu_tbl
 CREATE TABLE IF NOT EXISTS `menu_tbl` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `menu_name` varchar(18) DEFAULT NULL,
-  `link` varchar(50) DEFAULT NULL,
-  `attribute` varchar(50) DEFAULT NULL,
+  `menu_name` varchar(100) DEFAULT NULL,
+  `link` varchar(100) DEFAULT NULL,
+  `attribute` varchar(100) DEFAULT NULL,
   `position` int(11) NOT NULL DEFAULT 0,
   `desc` tinytext DEFAULT NULL,
   `category` int(11) NOT NULL DEFAULT 0,
@@ -479,15 +1220,17 @@ CREATE TABLE IF NOT EXISTS `menu_tbl` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
--- Membuang data untuk tabel db_parau.menu_tbl: ~4 rows (lebih kurang)
+-- Membuang data untuk tabel db_parau.menu_tbl: ~6 rows (lebih kurang)
 /*!40000 ALTER TABLE `menu_tbl` DISABLE KEYS */;
 INSERT INTO `menu_tbl` (`id`, `menu_name`, `link`, `attribute`, `position`, `desc`, `category`, `status`, `user_id`, `created_at`, `updated_at`) VALUES
-	(4, 'Pengaturan', '#', 'fa fa-cogs', 4, NULL, 1, 1, 1, '2022-01-12 11:05:31', '2022-01-16 18:50:22'),
-	(5, 'Log Activity', 'log', 'fa fa-clock', 3, NULL, 2, 1, 1, '2022-01-14 17:59:00', '2022-01-14 19:12:32'),
-	(13, 'Manajemen Stok', '#', 'fa fa-list', 1, NULL, 2, 1, 1, '2022-01-18 13:24:06', '2022-01-18 15:50:16'),
-	(14, 'Laporan', '#', 'fa fa-list', 2, NULL, 2, 1, 1, '2022-01-19 12:20:35', '2022-01-19 12:23:43');
+	(4, 'Pengaturan', '#', 'fa fa-cogs', 6, NULL, 1, 1, 1, '2022-01-12 11:05:31', '2022-02-10 10:03:06'),
+	(5, 'Log Activity', 'log', 'fa fa-clock', 5, NULL, 2, 1, 1, '2022-01-14 17:59:00', '2022-02-10 10:03:13'),
+	(13, 'Manajemen Stok', '#', 'fa fa-archive', 1, NULL, 2, 1, 1, '2022-01-18 13:24:06', '2022-01-19 23:09:41'),
+	(14, 'Laporan', '#', 'fa fa-list', 4, NULL, 2, 1, 1, '2022-01-19 12:20:35', '2022-02-10 10:03:21'),
+	(15, 'Manajemen Project', 'project', 'fa fa-list', 2, NULL, 2, 1, 1, '2022-01-24 15:20:57', '2022-02-06 21:32:03'),
+	(16, 'Manajemen Harga', '#', 'fa fa-list', 3, NULL, 2, 1, 1, '2022-02-10 10:02:53', '2022-02-10 10:03:33');
 /*!40000 ALTER TABLE `menu_tbl` ENABLE KEYS */;
 
 -- membuang struktur untuk table db_parau.migrations
@@ -496,9 +1239,9 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Membuang data untuk tabel db_parau.migrations: ~10 rows (lebih kurang)
+-- Membuang data untuk tabel db_parau.migrations: ~26 rows (lebih kurang)
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 	(1, '2014_10_12_000000_create_users_table', 1),
@@ -510,8 +1253,48 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 	(7, '2021_05_11_132318_create_events_table', 3),
 	(8, '2021_10_28_132348_create_activity_log_table', 4),
 	(9, '2021_10_28_132349_add_event_column_to_activity_log_table', 4),
-	(10, '2021_10_28_132350_add_batch_uuid_column_to_activity_log_table', 4);
+	(10, '2021_10_28_132350_add_batch_uuid_column_to_activity_log_table', 4),
+	(11, '2022_01_19_132840_create_products_table', 5),
+	(12, '2022_01_19_144934_create_categories_table', 5),
+	(13, '2022_01_19_150050_create_product_categories_table', 5),
+	(14, '2022_01_19_151151_create_inventories_table', 5),
+	(15, '2022_01_19_152741_create_suppliers_table', 5),
+	(16, '2022_01_19_153414_create_purchase_transactions_table', 5),
+	(17, '2022_01_19_154510_create_purchase_details_table', 5),
+	(18, '2022_01_24_151008_create_projects_table', 6),
+	(19, '2022_01_24_151644_create_projects_table', 7),
+	(21, '2022_01_25_172607_create_project_details_table', 8),
+	(22, '2022_01_31_102348_create_outlets_table', 9),
+	(23, '2022_01_31_115057_create_materials_table', 10),
+	(24, '2022_02_04_154022_create_members_table', 11),
+	(25, '2022_02_04_154028_create_selling_transactions_table', 12),
+	(26, '2022_02_04_154326_create_selling_details_table', 13),
+	(27, '2022_02_07_165923_create_teams_table', 14),
+	(28, '2022_02_07_170533_create_workers_table', 15),
+	(30, '2022_04_11_103512_create_worker_payments_table', 17),
+	(31, '2022_04_06_132040_create_payments_table', 18);
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
+
+-- membuang struktur untuk table db_parau.outlets
+CREATE TABLE IF NOT EXISTS `outlets` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `outlet_name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `lat` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `long` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Membuang data untuk tabel db_parau.outlets: ~2 rows (lebih kurang)
+/*!40000 ALTER TABLE `outlets` DISABLE KEYS */;
+INSERT INTO `outlets` (`id`, `outlet_name`, `phone`, `address`, `lat`, `long`, `description`, `created_at`, `updated_at`) VALUES
+	(1, 'Outlet Kendari', '-', '-', '-3.976078620363547', '122.51696569309779', '-', '2022-01-31 10:48:34', '2022-02-21 12:01:40'),
+	(2, 'Outlet Bombana', '-', '-', '-4.76423146241102', '122.03471940784205', '-', '2022-01-31 10:48:33', '2022-02-21 12:02:50');
+/*!40000 ALTER TABLE `outlets` ENABLE KEYS */;
 
 -- membuang struktur untuk table db_parau.password_resets
 CREATE TABLE IF NOT EXISTS `password_resets` (
@@ -521,161 +1304,34 @@ CREATE TABLE IF NOT EXISTS `password_resets` (
   KEY `password_resets_email_index` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Membuang data untuk tabel db_parau.password_resets: ~0 rows (lebih kurang)
+-- Membuang data untuk tabel db_parau.password_resets: ~1 rows (lebih kurang)
 /*!40000 ALTER TABLE `password_resets` DISABLE KEYS */;
+INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
+	('adri.saputra.ibrahim@gmail.com', '$2y$10$ZAV9M6Cttz/pKX4BR5fXWeXt7pXX69Idkm.v8KFnNwXC3XclD8YxC', '2022-03-01 11:05:09');
 /*!40000 ALTER TABLE `password_resets` ENABLE KEYS */;
 
--- membuang struktur untuk table db_parau.pegawai_tbl
-CREATE TABLE IF NOT EXISTS `pegawai_tbl` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nip` varchar(18) DEFAULT NULL,
-  `nama_pegawai` varchar(100) DEFAULT NULL,
-  `tempat_lahir` varchar(50) DEFAULT NULL,
-  `tanggal_lahir` date DEFAULT NULL,
-  `jenis_kelamin` varchar(50) DEFAULT NULL,
-  `alamat` text DEFAULT NULL,
-  `agama` varchar(300) DEFAULT NULL,
-  `gol_darah` varchar(50) DEFAULT NULL,
-  `email` varchar(100) DEFAULT NULL,
-  `foto_formal` varchar(50) DEFAULT NULL,
-  `foto_kedinasan` varchar(50) DEFAULT NULL,
-  `status` varchar(50) DEFAULT NULL,
-  `status_hapus` int(11) DEFAULT 0,
-  `user_id` int(11) DEFAULT NULL,
+-- membuang struktur untuk table db_parau.payments
+CREATE TABLE IF NOT EXISTS `payments` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `project_id` bigint(20) unsigned NOT NULL,
+  `desc` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `down_payment` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `date` date DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=98 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
+  PRIMARY KEY (`id`),
+  KEY `payments_project_id_foreign` (`project_id`),
+  CONSTRAINT `payments_project_id_foreign` FOREIGN KEY (`project_id`) REFERENCES `projects` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Membuang data untuk tabel db_parau.pegawai_tbl: ~94 rows (lebih kurang)
-/*!40000 ALTER TABLE `pegawai_tbl` DISABLE KEYS */;
-INSERT INTO `pegawai_tbl` (`id`, `nip`, `nama_pegawai`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `alamat`, `agama`, `gol_darah`, `email`, `foto_formal`, `foto_kedinasan`, `status`, `status_hapus`, `user_id`, `created_at`, `updated_at`) VALUES
-	(1, '196406211985032009', 'Hj. Sitti Saleha, SE, M.Si', 'sasa', '1964-06-21', 'Wanita', 'ssa', 'Islam', NULL, 'a@gmail.com', '1635393285.jpg', '1635393266.jpg', 'PNS', 0, 1, '2021-05-03 14:20:18', '2021-10-28 11:54:45'),
-	(2, '196412311998011000', 'Ir. Laode Hamalin, M.Si', NULL, '1970-01-01', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:18', '2021-06-21 01:18:44'),
-	(3, '196312301986072000', 'Wa Ode Nuryani, SE', NULL, '1963-12-30', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:18', '2021-05-03 14:20:18'),
-	(4, '196602011984111000', 'Sutomo, SP, M. Si', NULL, '1966-02-01', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:18', '2021-05-03 14:20:18'),
-	(5, '196302081993031000', 'Ir. Irmanuddin', NULL, '1963-02-08', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:18', '2021-05-03 14:20:18'),
-	(6, '196412301994031000', 'Ir. Sapoan, M.Si', NULL, '1970-01-01', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:18', '2021-06-21 02:34:09'),
-	(7, '196207171983022000', 'Rukmini, SE', NULL, '1962-07-17', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:18', '2021-05-03 14:20:18'),
-	(8, '196504101985031000', 'Najamuddin Pidani,S.Sos', NULL, '1965-04-10', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:18', '2021-05-03 14:20:18'),
-	(9, '198005222006041000', 'La Ode. Muh. Rusdin Jaya, S.IP, M.Si', NULL, '1980-05-22', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:18', '2021-05-03 14:20:18'),
-	(10, '196608121994041000', 'Drs. Muslimin', NULL, '1966-08-12', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:18', '2021-05-03 14:20:18'),
-	(11, '196605291995031000', 'Sulkifli Saleh,ST.M.Si', NULL, '1966-05-29', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:18', '2021-05-03 14:20:18'),
-	(12, '196603071994032000', 'Hasnawati, SE', NULL, '1966-03-07', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:18', '2021-05-03 14:20:18'),
-	(13, '196605101995032000', 'Andi Indriani P.U, SH', NULL, '1966-11-10', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:18', '2021-05-03 14:20:18'),
-	(14, '197102211991032000', 'Darmawati Gamma, SH', NULL, '1971-02-21', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:18', '2021-05-03 14:20:18'),
-	(15, '196303021985032000', 'Nursan, S.Sos', NULL, '1963-02-03', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:18', '2021-05-03 14:20:18'),
-	(16, '196412311985031000', 'Kasman,S.Pd', NULL, '1964-12-12', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:19', '2021-05-03 14:20:19'),
-	(17, '196712311993111000', 'Abdul Latif, S.Sos', NULL, '1967-12-12', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:19', '2021-05-03 14:20:19'),
-	(18, '197312262001121000', 'Monasman, ST', 'uuu', '1973-12-26', 'Pria', 'uuu', 'Islam', 'A', NULL, NULL, NULL, 'PNS', 0, 1, '2021-05-03 14:20:19', '2021-10-28 12:02:52'),
-	(19, '197605252001122000', 'Nahrida, ST', NULL, '1976-05-25', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:19', '2021-05-03 14:20:19'),
-	(20, '196508081994032000', 'Tina Sidupa, S.E', NULL, '1965-08-08', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:19', '2021-05-03 14:20:19'),
-	(21, '196705271994031000', 'La Ode Amirul Mukminin, A.Md', NULL, '1967-05-27', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:19', '2021-05-03 14:20:19'),
-	(22, '196602182007012000', 'Sachiko Isamu, SE', NULL, '1966-02-18', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:19', '2021-05-03 14:20:19'),
-	(23, '197301012006041000', 'Akra Sipa,ST', NULL, '1973-01-01', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:19', '2021-05-03 14:20:19'),
-	(24, '198011212005022000', 'Veradela Nandha Tiara, ST', NULL, '1980-11-21', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:19', '2021-05-03 14:20:19'),
-	(25, '197006062005022000', 'Halimah Saleh Putri,SH', NULL, '1970-06-03', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:19', '2021-05-03 14:20:19'),
-	(26, '197809272002121000', 'Adyanto Halyawan, S.E', NULL, '1978-09-27', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:19', '2021-05-03 14:20:19'),
-	(27, '197709102006042000', 'Wahyuni, S.Si', NULL, '1977-09-10', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:19', '2021-05-03 14:20:19'),
-	(28, '198305062011011000', 'Muh. Yasser Tuwu, SE., M.Sc', NULL, '1983-05-06', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:19', '2021-05-03 14:20:19'),
-	(29, '198404062011011000', 'La Ode Muh. Fitrah Arsyad, SE. M. Si', NULL, '1984-04-06', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:19', '2021-05-03 14:20:19'),
-	(30, '196410101988011000', 'Haryanto', NULL, '1964-10-10', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:19', '2021-05-03 14:20:19'),
-	(31, '197009181996031000', 'Moh. Iskandar Azis, A.Md', NULL, '1970-09-18', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:20', '2021-05-03 14:20:20'),
-	(32, '198205212006041000', 'Kemal Jusra, S.Si, M.Si', NULL, '1982-05-21', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:20', '2021-05-03 14:20:20'),
-	(33, '196812311994031000', 'Khaidir, S.Si', NULL, '1968-12-31', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:20', '2021-05-03 14:20:20'),
-	(34, '198011112010012000', 'Rosmaidar HS S.Sos', NULL, '1980-11-14', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:20', '2021-05-03 14:20:20'),
-	(35, '197809212010011000', 'Oon Sulfikar,SH.MM', NULL, '1978-09-21', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:20', '2021-05-03 14:20:20'),
-	(36, '197810052008012000', 'Siti Nurhanti, S.Pi', NULL, '1978-10-05', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:20', '2021-05-03 14:20:20'),
-	(37, '198408112010012000', 'Andi Zakiah Wahidah, ST. M.Si', NULL, '1984-08-11', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:20', '2021-05-03 14:20:20'),
-	(38, '198411072008032000', 'Anisyah Ringgasa, S.Si', NULL, '1984-11-07', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:20', '2021-05-03 14:20:20'),
-	(39, '197803162008011000', 'Hasmindar, S.P', NULL, '1978-03-16', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:20', '2021-05-03 14:20:20'),
-	(40, '198106202010011000', 'Andi Puhu, S.Pd', NULL, '1981-06-20', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:20', '2021-05-03 14:20:20'),
-	(41, '19857142006021000', 'La Ode Muh. Qamal Jogugu S, STP, ME', NULL, '1985-07-14', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:20', '2021-05-03 14:20:20'),
-	(42, '197312152009011000', 'Bachar, ST', NULL, '1973-12-15', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:20', '2021-05-03 14:20:20'),
-	(43, '197902222009012000', 'Ariskha Sazriany HS, ST', NULL, '1979-02-22', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:20', '2021-05-03 14:20:20'),
-	(44, '198111022009012000', 'Indri, S. Pi', NULL, '1981-11-02', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:20', '2021-05-03 14:20:20'),
-	(45, '197905022009042000', 'Wa Ode Hardiana, SE', NULL, '1979-05-02', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:20', '2021-05-03 14:20:20'),
-	(46, '198304182009042000', 'Wa Ode Hasniati, S. Si', NULL, '1983-04-18', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:20', '2021-05-03 14:20:20'),
-	(47, '198510222010012000', 'Henny Savitri Oktaviana, S. Si, M.Si', NULL, '1985-10-22', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:21', '2021-05-03 14:20:21'),
-	(48, '197805152010011000', 'Mardan, SE', NULL, '1978-05-15', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:21', '2021-05-03 14:20:21'),
-	(49, '198301122011011000', 'Ikbal Hidayat, S.T', NULL, '1983-01-12', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:21', '2021-05-03 14:20:21'),
-	(50, '198203102010012000', 'Jumarlian Santi Rafiun,SP', NULL, '1982-03-10', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:21', '2021-05-03 14:20:21'),
-	(51, '198402152011012000', 'Febriani Arumi, ST', NULL, '1984-02-15', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:21', '2021-05-03 14:20:21'),
-	(52, '198209222011012000', 'Sitti Aisyah, SE', NULL, '1982-09-22', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:21', '2021-05-03 14:20:21'),
-	(53, '196411021986032000', 'Suryamin', NULL, '1964-11-02', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:21', '2021-05-03 14:20:21'),
-	(54, '196310111985031000', 'Hamzah', NULL, '1963-10-11', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:21', '2021-05-03 14:20:21'),
-	(55, '197212122007012000', 'Indriyani Sudibyo,S.Sos', NULL, '1972-12-12', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:21', '2021-05-03 14:20:21'),
-	(56, '198103172010012000', 'Windi Dianovita, ST', NULL, '1981-03-17', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:21', '2021-05-03 14:20:21'),
-	(57, '198304192010012000', 'Sulistiany Tamrin, ST', NULL, '1983-04-19', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:21', '2021-05-03 14:20:21'),
-	(58, '198705132011012000', 'Dian Sulistyowati,S.Kom,M.E', NULL, '1987-05-13', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:21', '2021-05-03 14:20:21'),
-	(59, '198503262011012000', 'Imayanti Suhardin, SE', NULL, '1985-03-26', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:21', '2021-05-03 14:20:21'),
-	(60, '198010132009011000', 'Dian Hidayah S,Sos', NULL, '1980-10-13', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:21', '2021-05-03 14:20:21'),
-	(61, '197911112009011000', 'La Ode Muhammad Ihsan Abdi, SP', NULL, '1979-11-11', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:21', '2021-05-03 14:20:21'),
-	(62, '196608192006042000', 'Sitti Salma, ST, M.Si', NULL, '1966-08-19', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:22', '2021-05-03 14:20:22'),
-	(63, '196306101994031000', 'Asrul Suaeb', NULL, '1963-06-10', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:22', '2021-05-03 14:20:22'),
-	(64, '198509252009012000', 'Sitti Wahyuni, S.TP', NULL, '1985-09-24', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:22', '2021-05-03 14:20:22'),
-	(65, '197806032005021000', 'Mauliddun, SH', NULL, '1978-06-03', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:22', '2021-05-03 14:20:22'),
-	(66, '197512082007012000', 'Jusanti, S.Sos', NULL, '1975-12-08', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:22', '2021-05-03 14:20:22'),
-	(67, '198412062014032000', 'Wa Ode Kasmila, S. Si, M.Si', NULL, '1984-12-06', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:22', '2021-05-03 14:20:22'),
-	(68, '198702202010012000', 'Sufiati, A. Md,SE', NULL, '1987-02-20', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:22', '2021-05-03 14:20:22'),
-	(69, '197710262007122000', 'Reniati, S. Sos', NULL, '1977-10-26', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:22', '2021-05-03 14:20:22'),
-	(70, '196707072014082000', 'Sitti Asniah, SE', NULL, '1967-07-07', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:22', '2021-05-03 14:20:22'),
-	(71, '197912212014082000', 'Mulyani Abuhari, SE', NULL, '1979-12-21', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:22', '2021-05-03 14:20:22'),
-	(72, '198510032010011000', 'Amir Pae, A.Md,SE', NULL, '1985-10-03', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:22', '2021-05-03 14:20:22'),
-	(73, '197906112007011000', 'E m i, S.Si', NULL, '1979-06-11', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:22', '2021-05-03 14:20:22'),
-	(74, '196904012008011000', 'Basri, SH', NULL, '1969-04-01', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:22', '2021-05-03 14:20:22'),
-	(75, '198003112009011000', 'Agus, S.Si', NULL, '1980-03-11', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:22', '2021-05-03 14:20:22'),
-	(76, '196708261989032000', 'Nurlina Malik', NULL, '1967-12-12', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:22', '2021-05-03 14:20:22'),
-	(77, '196601101991031000', 'Sapiuddin', NULL, '1966-01-10', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:22', '2021-05-03 14:20:22'),
-	(78, '197503072008012000', 'Bahrain, SE', NULL, '1975-03-07', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:23', '2021-05-03 14:20:23'),
-	(79, '198504262008011000', 'La Ode Muh. Ikbal Beau,S.Sos', NULL, '1985-04-06', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:23', '2021-05-03 14:20:23'),
-	(80, '197909172009011000', 'Muhammad Zailani Sanusi, S.E', NULL, '1979-09-17', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:23', '2021-05-03 14:20:23'),
-	(81, '198407022014081000', 'Samsuddin,SH', NULL, '1984-07-02', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:23', '2021-05-03 14:20:23'),
-	(82, '198910182015022000', 'Erika Ayu Christanti, A.Md', NULL, '1989-10-18', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:23', '2021-05-03 14:20:23'),
-	(83, '197809022014071000', 'Asjan Husain,ST', NULL, '1978-09-02', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:23', '2021-05-03 14:20:23'),
-	(84, '198301052009012000', 'Hamira, A. Md. Kom', NULL, '1983-01-05', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:23', '2021-05-03 14:20:23'),
-	(85, '197409042014062000', 'Riny astuti, S. Sos', NULL, '1974-09-04', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:23', '2021-05-03 14:20:23'),
-	(86, '198912272015021000', 'Mardiono, A.Md', NULL, '1989-12-27', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:23', '2021-05-03 14:20:23'),
-	(87, '196412312006041000', 'Asikin Jamal', NULL, '1964-12-12', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:23', '2021-05-03 14:20:23'),
-	(88, '196312312007011000', 'La Ode Hafilu', NULL, '1963-12-12', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:23', '2021-05-03 14:20:23'),
-	(89, '198302142008011000', 'Wahyuddin Amir Manab', NULL, '1983-02-14', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:23', '2021-05-03 14:20:23'),
-	(90, '198201102009012000', 'Misna Haseng', NULL, '1982-01-10', 'Wanita', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:23', '2021-05-03 14:20:23'),
-	(91, '197908272011011000', 'Agus Herdianto, A.Md', NULL, '1979-08-27', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:23', '2021-05-03 14:20:23'),
-	(92, '198306192010011000', 'Munandar ', NULL, '1983-06-19', 'Pria', NULL, NULL, NULL, NULL, NULL, NULL, 'PNS', 0, NULL, '2021-05-03 14:20:23', '2021-05-03 14:20:23'),
-	(93, '197412022014081000', 'Faisal', 'xxx', '1974-12-02', 'Pria', 'xx', 'Islam', NULL, NULL, NULL, NULL, 'PNS', 0, 1, '2021-05-03 14:20:24', '2021-10-29 10:30:57'),
-	(97, '197412022014081002', 'ADRI SAPUTRA IBRAHIM', 'KENDARI', '1991-10-16', 'Pria', 'KENDARI', 'Islam', NULL, NULL, NULL, NULL, 'PNS', 0, 1, '2021-10-29 14:30:33', '2021-10-29 14:35:48');
-/*!40000 ALTER TABLE `pegawai_tbl` ENABLE KEYS */;
-
--- membuang struktur untuk table db_parau.pengaturan_tbl
-CREATE TABLE IF NOT EXISTS `pengaturan_tbl` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nama_aplikasi` varchar(200) DEFAULT NULL,
-  `singkatan_nama_aplikasi` varchar(200) DEFAULT NULL,
-  `nama_kepala_dinas` varchar(100) DEFAULT NULL,
-  `tentang_dinas` varchar(500) DEFAULT NULL,
-  `tentang_aplikasi` varchar(500) DEFAULT NULL,
-  `alamat` varchar(100) DEFAULT NULL,
-  `no_hp` varchar(100) DEFAULT NULL,
-  `email` varchar(100) DEFAULT NULL,
-  `text_pegawai` varchar(100) DEFAULT NULL,
-  `logo_kecil` varchar(100) DEFAULT NULL,
-  `logo_besar` varchar(100) DEFAULT NULL,
-  `foto_kepala_dinas` varchar(100) DEFAULT NULL,
-  `instagram` varchar(100) DEFAULT NULL,
-  `facebook` varchar(100) DEFAULT NULL,
-  `twitter` varchar(100) DEFAULT NULL,
-  `background_login` varchar(100) DEFAULT NULL,
-  `user_id` int(11) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
-
--- Membuang data untuk tabel db_parau.pengaturan_tbl: ~0 rows (lebih kurang)
-/*!40000 ALTER TABLE `pengaturan_tbl` DISABLE KEYS */;
-INSERT INTO `pengaturan_tbl` (`id`, `nama_aplikasi`, `singkatan_nama_aplikasi`, `nama_kepala_dinas`, `tentang_dinas`, `tentang_aplikasi`, `alamat`, `no_hp`, `email`, `text_pegawai`, `logo_kecil`, `logo_besar`, `foto_kepala_dinas`, `instagram`, `facebook`, `twitter`, `background_login`, `user_id`, `created_at`, `updated_at`) VALUES
-	(1, 'PARAU', 'PARAU', 'ILHAM JAYA, ST., MM', 'Badan Kepegawaian dan Pengembangan Sumber Daya Manusia Kabupaten Konawe', 'Sistem Informasi Manajemen ASN Daerah atau bisa disebut dengan SIMANDARA adalah sistem yang mengelola data kepegawaian ASN Kabupaten Konawe yang terintegrasi dengan data MySAPK Badan Kepegawaian Nasional', 'Konawe, Jl. Konggoasa', '082188980782', 'simpeg@gmail.com', NULL, '16424717931.jpg', '16424759582.png', '16387574644.png', 'instagram.com', 'facebook.com', 'twitter.com', '16425072313.jpg', 1, '2021-10-29 10:58:27', '2022-01-18 20:00:31');
-/*!40000 ALTER TABLE `pengaturan_tbl` ENABLE KEYS */;
+-- Membuang data untuk tabel db_parau.payments: ~0 rows (lebih kurang)
+/*!40000 ALTER TABLE `payments` DISABLE KEYS */;
+INSERT INTO `payments` (`id`, `project_id`, `desc`, `down_payment`, `date`, `created_at`, `updated_at`) VALUES
+	(4, 16, NULL, '1000000', '2022-04-13', '2022-04-13 11:09:38', '2022-04-13 11:14:33'),
+	(6, 14, '-', '1600000', '2022-04-13', '2022-04-13 11:15:46', '2022-04-13 11:15:46'),
+	(7, 14, 'pelunasan', '70000', '2022-04-13', '2022-04-13 11:15:56', '2022-04-13 11:15:56'),
+	(8, 16, NULL, '3460805', '2022-04-13', '2022-04-13 11:20:54', '2022-04-13 11:20:54');
+/*!40000 ALTER TABLE `payments` ENABLE KEYS */;
 
 -- membuang struktur untuk table db_parau.personal_access_tokens
 CREATE TABLE IF NOT EXISTS `personal_access_tokens` (
@@ -697,6 +1353,400 @@ CREATE TABLE IF NOT EXISTS `personal_access_tokens` (
 /*!40000 ALTER TABLE `personal_access_tokens` DISABLE KEYS */;
 /*!40000 ALTER TABLE `personal_access_tokens` ENABLE KEYS */;
 
+-- membuang struktur untuk table db_parau.products
+CREATE TABLE IF NOT EXISTS `products` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `code` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `product_name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `unit` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `purchase_price` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `selling_price` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `discount_amount` int(11) DEFAULT 0,
+  `discount_reason` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `outlet_id` bigint(20) unsigned DEFAULT NULL,
+  `status` int(10) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_products_outlets` (`outlet_id`),
+  CONSTRAINT `FK_products_outlets` FOREIGN KEY (`outlet_id`) REFERENCES `outlets` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Membuang data untuk tabel db_parau.products: ~38 rows (lebih kurang)
+/*!40000 ALTER TABLE `products` DISABLE KEYS */;
+INSERT INTO `products` (`id`, `code`, `product_name`, `unit`, `image`, `purchase_price`, `selling_price`, `discount_amount`, `discount_reason`, `description`, `outlet_id`, `status`, `created_at`, `updated_at`) VALUES
+	(25, '1256789188', 'Kayu Dolken', 'xx', NULL, '8000', '9000', 0, NULL, NULL, 1, 1, '2022-01-20 19:05:16', '2022-02-14 11:01:41'),
+	(27, '1256789112', 'Paku Beton', 'Dos Kecil', NULL, '24000', '26000', 0, NULL, NULL, 1, 1, '2022-01-20 19:07:49', '2022-01-20 19:07:49'),
+	(28, '9797625085659', 'Produk Irma', NULL, '', '20000', '22000', 0, NULL, 'Aperiam accusantium adipisci animi doloremque id ut error labore. Quam ut rerum at quia. Repudiandae similique ullam doloribus consequatur laboriosam.', 1, 1, '2022-01-25 09:32:46', '2022-01-25 09:32:46'),
+	(29, '9785901709535', 'Produk Najwa', NULL, '', '5000', '5500', 0, NULL, 'Saepe id natus molestiae repellendus. Repudiandae veniam aut ut. Eligendi et eius sequi doloremque voluptates sint.', 1, 1, '2022-01-25 09:32:46', '2022-01-25 09:32:46'),
+	(30, '9790585299869', 'Produk Cinta', NULL, '', '10000', '12000', 0, NULL, 'Voluptas perferendis assumenda perspiciatis aut ut. Voluptate recusandae repellat rerum eum debitis ut iure aperiam. Accusantium in laboriosam est maiores temporibus dolor.', 1, 1, '2022-01-25 09:32:46', '2022-01-25 09:32:46'),
+	(31, '9787384223362', 'Produk Cayadi', NULL, '', '5000', '5750', 0, NULL, 'Minus quis molestiae nam. Soluta dolores laboriosam vero in ipsum officia. Et accusantium voluptatem omnis voluptatem quo voluptas ut. Nisi molestiae ut totam molestiae ab.', 1, 1, '2022-01-25 09:32:46', '2022-01-25 09:32:46'),
+	(32, '9793187478380', 'Produk Tantri', NULL, '', '25000', '30000', 0, NULL, 'Voluptatem mollitia voluptatum ut possimus. Autem magni rerum maxime iure ut est. Accusamus ut inventore quidem optio.', 1, 1, '2022-01-25 09:32:46', '2022-01-25 09:32:46'),
+	(33, '9780666586179', 'Produk Amalia', 'Batang', '', '10000', '12000', 0, NULL, 'Deserunt soluta voluptates perspiciatis corrupti. Et et in dolor. Excepturi itaque necessitatibus eveniet quos.', 1, 1, '2022-01-25 09:32:46', '2022-01-25 09:36:48'),
+	(34, '9796245006921', 'Produk Enteng', NULL, '', '10000', '11000', 0, NULL, 'Quo facere itaque aut. Voluptate quia excepturi molestiae voluptatem repudiandae. Aliquid tempora dignissimos aut minima perspiciatis eum. Sit autem animi totam qui corrupti et aut.', 1, 1, '2022-01-25 09:32:46', '2022-01-25 09:32:46'),
+	(35, '9789032616809', 'Produk Halima', NULL, '', '15000', '17250', 0, NULL, 'Nihil est distinctio amet eaque laudantium omnis perspiciatis. Aliquam molestias tempora aperiam saepe beatae modi ratione.', 1, 1, '2022-01-25 09:32:46', '2022-01-25 09:32:46'),
+	(36, '9791479858094', 'Produk Murti', NULL, '', '15000', '15750', 0, NULL, 'Non perferendis est illum natus aut. Assumenda omnis placeat mollitia sit amet ut sunt. Vero et occaecati similique est dicta vel.', 1, 1, '2022-01-25 09:32:46', '2022-01-25 09:32:46'),
+	(37, '9784678092840', 'Produk Martana', NULL, '', '20000', '24000', 0, NULL, 'Est explicabo et optio enim quos quo. Sed atque assumenda corporis et facere ab dolorem. Molestias quo dolorem impedit cupiditate consequatur id.', 1, 1, '2022-01-25 09:32:46', '2022-01-25 09:32:46'),
+	(38, '9783357997681', 'Produk Gara', NULL, '', '10000', '10500', 0, NULL, 'Molestiae amet cupiditate itaque adipisci temporibus eos natus. Voluptas ipsam nisi porro et cupiditate laboriosam. Dolor unde magnam temporibus fugit qui. Ad non voluptas est est temporibus.', 1, 1, '2022-01-25 09:32:46', '2022-01-25 09:32:46'),
+	(39, '9794006713415', 'Produk Unjani', NULL, '', '5000', '5500', 0, NULL, 'In est praesentium qui est. In recusandae ratione totam autem animi.', 1, 1, '2022-01-25 09:32:46', '2022-01-25 09:32:46'),
+	(40, '9797960738630', 'Produk Jane', NULL, '', '20000', '21000', 0, NULL, 'Dignissimos fuga ut in et eos quae quod sapiente. Placeat quo quos totam eaque. Ut saepe eius reiciendis nulla.', 1, 1, '2022-01-25 09:32:46', '2022-01-25 09:32:46'),
+	(41, '9792959370884', 'Produk Maryanto', NULL, '', '25000', '26500', 0, NULL, 'Est aut dolor ex dolorem. Neque recusandae eaque atque et non reprehenderit porro. Nulla hic non explicabo consequatur at ipsum quae. Nam tempore id vel provident placeat commodi aut.', 1, 1, '2022-01-25 09:32:46', '2022-02-14 11:01:41'),
+	(42, '9784748534157', 'Produk Unjani', NULL, '', '20000', '24000', 0, NULL, 'Et vel dolor dolorem accusantium eligendi quasi aut. Voluptatem assumenda perferendis molestias ea iure voluptas nesciunt perspiciatis. Animi dolore aut non.', 1, 1, '2022-01-25 09:32:46', '2022-01-25 09:32:46'),
+	(43, '9792343274705', 'Produk Bakda', NULL, '', '5000', '5500', 0, NULL, 'Eum est qui ad aut qui numquam in ipsum. Aspernatur voluptas voluptatem quos consequatur. Aliquid eos optio cumque totam eveniet aliquam ratione.', 1, 1, '2022-01-25 09:32:46', '2022-01-25 09:32:46'),
+	(44, '9780390631596', 'Produk Kairav', NULL, '', '5000', '6000', 0, NULL, 'Aut doloremque dolorem officia eveniet minima quia saepe. Deleniti sunt molestiae omnis eos tempora cupiditate iure eum.', 1, 1, '2022-01-25 09:32:46', '2022-01-25 09:32:46'),
+	(45, '9780074348369', 'Produk Lanjar', NULL, '', '15000', '15750', 0, NULL, 'Ipsa adipisci eum voluptatibus fuga ducimus consequuntur. Voluptas laborum maiores quasi commodi minima illo rerum. Excepturi et alias aperiam accusantium numquam nihil.', 1, 1, '2022-01-25 09:32:46', '2022-01-25 09:32:46'),
+	(46, '9780488376125', 'Produk Manah', NULL, '', '5000', '5250', 0, NULL, 'Ut vel quod libero voluptate doloremque ut. Quam expedita placeat et et molestias. Aut error earum placeat quasi.', 1, 1, '2022-01-25 09:32:46', '2022-01-25 09:32:46'),
+	(47, '9785695871500', 'Produk Wulan', NULL, '', '15000', '17250', 0, NULL, 'Assumenda dolorem ut sint est cumque voluptatem eos quo. Nihil et eum dolorem enim. Saepe sed omnis enim rem.', 1, 1, '2022-01-25 09:32:46', '2022-01-25 09:32:46'),
+	(48, '9784221565203', 'Produk Drajat', NULL, '', '10000', '12000', 0, NULL, 'Sed officia officia illum accusamus. Ullam nihil ea nobis sint est dolor eius. Eos dicta eum quidem voluptatum nemo.', 1, 1, '2022-01-25 09:32:46', '2022-01-25 09:32:46'),
+	(49, '9793207265563', 'Produk Kartika', NULL, '', '15000', '17250', 0, NULL, 'Sequi vel nam commodi dolores. Architecto et sit doloribus est voluptas est. Vitae repellendus illo est enim.', 1, 1, '2022-01-25 09:32:46', '2022-01-25 09:32:46'),
+	(50, '9789259408270', 'Produk Calista', NULL, '', '20000', '23500', 0, NULL, 'Blanditiis rerum odit porro doloribus sit. Amet dolorum ut praesentium laborum non. Eos non et quo officia asperiores maiores. Neque molestiae aliquam ut sit qui possimus.', 1, 1, '2022-01-25 09:32:46', '2022-02-14 11:01:41'),
+	(51, '9786681906626', 'Produk Naradi', NULL, '', '5000', '6000', 0, NULL, 'Et molestiae maxime repellat nemo corrupti voluptatem dolores. Rem odit architecto quasi sit dolores consequatur quos voluptas. Et autem reiciendis ad est consequatur inventore culpa corrupti.', 1, 1, '2022-01-25 09:32:46', '2022-02-14 11:01:41'),
+	(52, '9798663356442', 'Produk Darmanto', NULL, '', '20000', '25000', 0, NULL, 'Qui consequuntur ut eveniet ullam aut laborum totam. Nihil et et distinctio quia et.', 1, 1, '2022-01-25 09:32:46', '2022-02-14 11:28:51'),
+	(53, '9798636636007', 'Produk Praba', NULL, '', '5000', '5750', 0, NULL, 'Cum cumque explicabo nobis quia nihil asperiores. Debitis id sint ut explicabo. Consequuntur maxime laborum nostrum nemo sint fugit error.', 1, 1, '2022-01-25 09:32:46', '2022-01-25 09:32:46'),
+	(54, '9798075358751', 'Produk Opung', NULL, '', '15000', '17250', 0, NULL, 'Nisi nobis suscipit architecto amet eos. Aut voluptatem ut recusandae nemo. Aut quae odio eius ut. Architecto dolorem qui facilis.', 1, 1, '2022-01-25 09:32:46', '2022-01-25 09:32:46'),
+	(55, '9782386339318', 'Produk Endra', NULL, '', '25000', '27500', 0, NULL, 'Sed beatae quam libero sit similique perspiciatis. Illo quis quia ex exercitationem ipsam placeat qui iste.', 1, 1, '2022-01-25 09:32:46', '2022-01-25 09:32:46'),
+	(56, '9793492816822', 'Produk Janet', NULL, '', '20000', '24000', 0, NULL, 'Aut delectus qui tempora debitis sint fugiat tenetur. Et quia veniam aut perspiciatis eaque. Tempore accusamus ut voluptates impedit perferendis.', 1, 1, '2022-01-25 09:32:46', '2022-01-25 09:32:46'),
+	(57, '9784041085158', 'Produk Hasan', 'xx', '1643078555.jpg', '10000', '11000', 0, NULL, 'Quo itaque est modi omnis debitis quo. Praesentium temporibus et qui amet aut voluptas. Voluptatem consequatur qui quia pariatur quod omnis.', 1, 1, '2022-01-25 09:32:46', '2022-01-25 10:42:36'),
+	(58, '9784041063772', 'Meja Rias', 'Paket', '1643078945.jpg', '400000', '500000', 0, NULL, NULL, 1, 1, '2022-01-25 10:48:42', '2022-01-25 10:49:05'),
+	(59, '1234567890', 'Baja Ringan 3 Meter', 'batang', NULL, '45000', '48600', 0, NULL, NULL, 1, 0, '2022-02-03 10:43:51', '2022-02-10 14:11:13'),
+	(60, '1987654321', 'Baja Ringan 5 meter', 'Batang', NULL, '60000', '64800', 0, NULL, NULL, 1, 0, '2022-02-03 10:45:24', '2022-02-10 14:01:30'),
+	(61, '1234444', 'XXXX', 'Batang', '1643869298.jpg', '30000', '39000', 0, NULL, NULL, 2, 1, '2022-02-03 14:21:25', '2022-02-03 14:38:26'),
+	(62, '24343454545', 'AAAA', 'Pcs', NULL, '40000', '50000', 0, NULL, NULL, 2, 1, '2022-02-03 14:46:28', '2022-02-03 14:46:28'),
+	(64, '8994397000021', 'Keramik Granit Alam', 'Botol', NULL, '23000', '25000', 0, NULL, NULL, 1, 1, '2022-02-12 11:25:30', '2022-04-04 17:10:47');
+/*!40000 ALTER TABLE `products` ENABLE KEYS */;
+
+-- membuang struktur untuk table db_parau.product_categories
+CREATE TABLE IF NOT EXISTS `product_categories` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `product_id` bigint(20) unsigned NOT NULL,
+  `category_id` bigint(20) unsigned NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `product_categories_category_id_foreign` (`category_id`),
+  KEY `product_categories_product_id_foreign` (`product_id`),
+  CONSTRAINT `product_categories_category_id_foreign` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `product_categories_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=104 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Membuang data untuk tabel db_parau.product_categories: ~45 rows (lebih kurang)
+/*!40000 ALTER TABLE `product_categories` DISABLE KEYS */;
+INSERT INTO `product_categories` (`id`, `product_id`, `category_id`, `created_at`, `updated_at`) VALUES
+	(37, 27, 2, '2022-01-20 19:07:59', '2022-01-20 19:07:59'),
+	(38, 27, 4, '2022-01-20 19:07:59', '2022-01-20 19:07:59'),
+	(40, 27, 4, '2022-01-25 09:32:46', '2022-01-25 09:32:46'),
+	(41, 28, 1, '2022-01-25 09:32:46', '2022-01-25 09:32:46'),
+	(42, 29, 4, '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(43, 30, 6, '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(44, 31, 4, '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(45, 32, 5, '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(47, 34, 7, '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(48, 35, 4, '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(49, 36, 5, '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(50, 37, 3, '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(51, 38, 8, '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(52, 39, 7, '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(53, 40, 4, '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(54, 41, 3, '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(55, 42, 5, '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(56, 43, 7, '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(57, 44, 8, '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(58, 45, 2, '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(59, 46, 3, '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(60, 47, 6, '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(61, 48, 7, '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(62, 49, 6, '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(63, 50, 3, '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(64, 51, 4, '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(65, 52, 5, '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(66, 53, 7, '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(67, 54, 8, '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(68, 55, 1, '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(69, 56, 8, '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(71, 33, 2, '2022-01-25 09:36:48', '2022-01-25 09:36:48'),
+	(72, 33, 5, '2022-01-25 09:36:48', '2022-01-25 09:36:48'),
+	(73, 57, 2, '2022-01-25 10:42:36', '2022-01-25 10:42:36'),
+	(78, 58, 1, '2022-01-25 10:49:05', '2022-01-25 10:49:05'),
+	(79, 58, 2, '2022-01-25 10:49:05', '2022-01-25 10:49:05'),
+	(80, 59, 1, '2022-02-03 10:43:51', '2022-02-03 10:43:51'),
+	(81, 59, 2, '2022-02-03 10:43:51', '2022-02-03 10:43:51'),
+	(86, 60, 2, '2022-02-03 13:17:55', '2022-02-03 13:17:55'),
+	(88, 61, 3, '2022-02-03 14:21:39', '2022-02-03 14:21:39'),
+	(90, 62, 6, '2022-02-03 14:46:36', '2022-02-03 14:46:36'),
+	(92, 25, 1, '2022-02-05 07:17:47', '2022-02-05 07:17:47'),
+	(93, 25, 2, '2022-02-05 07:17:47', '2022-02-05 07:17:47'),
+	(102, 64, 1, '2022-04-04 17:10:47', '2022-04-04 17:10:47'),
+	(103, 64, 4, '2022-04-04 17:10:47', '2022-04-04 17:10:47');
+/*!40000 ALTER TABLE `product_categories` ENABLE KEYS */;
+
+-- membuang struktur untuk table db_parau.projects
+CREATE TABLE IF NOT EXISTS `projects` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `project_name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `client_name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `lat` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `long` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `outlet_id` bigint(191) unsigned DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_projects_outlets` (`outlet_id`),
+  CONSTRAINT `FK_projects_outlets` FOREIGN KEY (`outlet_id`) REFERENCES `outlets` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Membuang data untuk tabel db_parau.projects: ~14 rows (lebih kurang)
+/*!40000 ALTER TABLE `projects` DISABLE KEYS */;
+INSERT INTO `projects` (`id`, `project_name`, `client_name`, `phone`, `address`, `lat`, `long`, `outlet_id`, `created_at`, `updated_at`) VALUES
+	(1, 'project-6226', 'Nasab Maulana M.Pd', '(+62) 958 2713 448', 'Jr. Ciwastra No. 684, Sabang 98087, Kaltim', '-4.004153317050505', '122.48457456230547', 1, '2022-01-25 15:37:22', '2022-01-25 15:37:22'),
+	(2, 'project-7407', 'Zaenab Pratiwi', '08851335406', 'Jr. Gajah Mada No. 345, Samarinda 93166, Jambi', '-4.003281050865468', '122.49871087512595', 1, '2022-01-25 15:37:22', '2022-02-15 09:20:21'),
+	(3, 'project-1752', 'Elvina Laksmiwati', '(+62) 654 7975 1628', 'Kpg. Sutarjo No. 963, Bogor 36082, Sulbar', '-4.004153317050505', '122.48457456230547', 1, '2022-01-25 15:37:22', '2022-01-25 15:37:22'),
+	(4, 'project-1053', 'Dariati Slamet Prakasa', '(+62) 22 1955 271', 'Dk. Banceng Pondok No. 876, Solok 90015, Sulsel', '-4.004153317050505', '122.48457456230547', 1, '2022-01-25 15:37:22', '2022-01-25 15:37:22'),
+	(5, 'project-0399', 'Julia Rahmawati S.T.', '(+62) 234 6402 4649', 'Jr. Jagakarsa No. 777, Ambon 40466, Kalsel', '-4.004153317050505', '122.48457456230547', 1, '2022-01-25 15:37:22', '2022-01-25 15:37:22'),
+	(6, 'project-2412', 'Salwa Suryatmi', '(+62) 25 5265 684', 'Gg. Jayawijaya No. 560, Tebing Tinggi 84280, Kalteng', '-4.004153317050505', '122.48457456230547', 1, '2022-01-25 15:37:22', '2022-01-25 15:37:22'),
+	(7, 'project-5594', 'Zamira Keisha Pratiwi S.Ked', '0697 5343 868', 'Jr. Jamika No. 137, Lhokseumawe 48863, NTT', '-4.004153317050505', '122.48457456230547', 1, '2022-01-25 15:37:22', '2022-01-25 15:37:22'),
+	(8, 'project-6669', 'Damar Jasmani Simbolon M.TI.', '(+62) 250 6669 5703', 'Psr. Bazuka Raya No. 873, Banjarmasin 30270, Sulsel', '-4.004153317050505', '122.48457456230547', 1, '2022-01-25 15:37:22', '2022-01-25 15:37:22'),
+	(9, 'project-0871', 'Sakti Daryani Tarihoran S.E.', '0322 1441 961', 'Kpg. Babah No. 320, Tarakan 27863, Kalbar', '-4.004153317050505', '122.48457456230547', 1, '2022-01-25 15:37:22', '2022-01-25 15:37:22'),
+	(10, 'project-7274', 'Ulya Aryani', '(+62) 888 9116 420', 'Kpg. Abdul. Muis No. 38, Denpasar 98665, Jatim', '-3.967099', '122.565334', 1, '2022-01-25 15:37:22', '2022-01-25 15:37:22'),
+	(11, 'project-7222', 'Adri Saputra Ibrahim', '082259504093', 'JL. ANAWAIx', '-4.004153317050505', '122.48457456230547', 1, '2022-01-25 17:18:41', '2022-01-25 19:24:41'),
+	(12, 'project-1236', 'Dirman', '0856666666', 'xxxx', '-3.966306', '122.484120', 1, '2022-01-26 14:24:39', '2022-01-26 14:24:39'),
+	(14, 'project-060220221', 'ADRI SAPUTRA IBRAHIM', '082259504093', 'BTN PERMATA ANAWAI BLOK D6 NO 12', '-3.998054', '122.549245', 1, '2022-02-06 21:24:52', '2022-02-06 21:24:52'),
+	(16, 'project-060220222', 'RAHMAT', '324343', 'SASASA', '-3.972336083472978', '122.51134814707672', 1, '2022-02-06 21:37:38', '2022-02-06 21:37:38');
+/*!40000 ALTER TABLE `projects` ENABLE KEYS */;
+
+-- membuang struktur untuk table db_parau.project_details
+CREATE TABLE IF NOT EXISTS `project_details` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `project_id` bigint(20) unsigned NOT NULL,
+  `team_id` bigint(20) unsigned NOT NULL,
+  `work_name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `service_value` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `volume` int(11) DEFAULT NULL,
+  `image` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `work_start` date DEFAULT NULL,
+  `work_end` date DEFAULT NULL,
+  `estimation` int(11) DEFAULT 0,
+  `status` enum('ON LIST','ON PROGRESS','DONE') COLLATE utf8mb4_unicode_ci DEFAULT 'ON LIST',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `project_details_project_id_foreign` (`project_id`),
+  KEY `FK_project_details_teams` (`team_id`),
+  CONSTRAINT `FK_project_details_teams` FOREIGN KEY (`team_id`) REFERENCES `teams` (`id`),
+  CONSTRAINT `project_details_project_id_foreign` FOREIGN KEY (`project_id`) REFERENCES `projects` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Membuang data untuk tabel db_parau.project_details: ~19 rows (lebih kurang)
+/*!40000 ALTER TABLE `project_details` DISABLE KEYS */;
+INSERT INTO `project_details` (`id`, `project_id`, `team_id`, `work_name`, `description`, `service_value`, `volume`, `image`, `work_start`, `work_end`, `estimation`, `status`, `created_at`, `updated_at`) VALUES
+	(1, 1, 1, 'Buat Wallmolding', 'Mollitia quo a nesciunt aut facere temporibus magnam impedit. Aut exercitationem iusto a ab quaerat dolorum eos nesciunt. Consequatur iure voluptate odit iste atque aut et illum.', NULL, 1, '', '2022-01-21', '2022-02-02', 5, 'ON LIST', '2022-01-26 14:46:45', '2022-01-26 14:46:45'),
+	(3, 3, 1, 'Buat Rak Buku', 'Voluptatem eveniet molestias ad ut. Necessitatibus officiis quia nam temporibus qui doloremque. Minus cumque inventore sequi voluptatem. Voluptatem iusto sit sit quis alias pariatur non.', NULL, 1, '', '2022-01-28', '2022-01-27', 3, 'ON LIST', '2022-01-26 14:46:45', '2022-01-26 14:46:45'),
+	(4, 4, 3, 'Buat Lemari', 'Voluptatem aut veniam eos saepe occaecati. Ex ut nobis et quia et et perferendis.', NULL, 1, '', '2022-01-19', '2022-01-22', 1, 'ON LIST', '2022-01-26 14:46:45', '2022-01-26 14:46:45'),
+	(5, 5, 3, 'Buat Wallmolding', 'Ducimus quasi illum cumque officiis sequi eum. Rem rerum optio voluptatum quis amet aliquam autem. Ab voluptas exercitationem necessitatibus. Commodi porro repellat eius consectetur quia.', NULL, 1, '', '2022-01-28', '2022-01-24', 4, 'ON LIST', '2022-01-26 14:46:45', '2022-01-26 14:46:45'),
+	(6, 6, 3, 'Buat Wallmolding', 'Voluptas consequatur atque nostrum voluptatum aspernatur. Qui velit odit doloribus ut ducimus enim impedit est. Sed eum nobis tempora animi. Et cum iusto impedit enim dolor.', NULL, 1, '', '2022-01-31', '2022-01-20', 4, 'ON LIST', '2022-01-26 14:46:45', '2022-01-26 14:46:45'),
+	(7, 7, 1, 'Buat Wallmolding', 'Quis sit est accusamus aut ratione nemo eum. Expedita quas suscipit officiis quos corporis quo omnis. Laboriosam veritatis atque similique qui. Aut impedit magni ea veritatis sit nemo.', NULL, 1, '', '2022-01-24', '2022-01-29', 1, 'ON LIST', '2022-01-26 14:46:45', '2022-01-26 14:46:45'),
+	(8, 8, 2, 'Buat Plafon', 'Nobis veniam aliquid architecto perspiciatis illo error iure. Id beatae aspernatur suscipit sit voluptates dolore.', NULL, 1, '', '2022-01-21', '2022-01-27', 2, 'ON LIST', '2022-01-26 14:46:45', '2022-01-26 14:46:45'),
+	(9, 9, 2, 'Buat Rak Buku', 'Aut quasi repellendus nostrum vel quo saepe quis. Porro dolores nostrum cupiditate saepe voluptas qui. Deleniti aspernatur ipsum architecto illum optio voluptas.', '0', 1, '', '2022-02-13', '2022-02-15', 3, 'ON PROGRESS', '2022-01-26 14:46:45', '2022-02-13 20:51:42'),
+	(10, 10, 3, 'Buat Lemari', 'Magni libero nihil molestiae rerum iure. Perspiciatis optio itaque sit. Dolor distinctio dolorem est porro consequuntur earum consequatur.', '0', 1, '', '2022-02-06', '2022-02-08', 3, 'DONE', '2022-01-26 14:46:45', '2022-02-08 13:32:03'),
+	(11, 11, 3, 'Buat Wallmolding', 'Cum mollitia magni quibusdam et. Fugit possimus sed aut architecto quis perferendis. Itaque laudantium maxime deserunt et. Dolore expedita corporis et placeat eius.', '0', 1, '', '2022-02-02', '2022-02-03', 2, 'DONE', '2022-01-26 14:46:45', '2022-02-10 14:15:24'),
+	(19, 12, 1, 'Wallmolding', NULL, '1000000', 1, '1643599857.jpg', '2022-02-02', '2022-02-05', 3, 'DONE', '2022-01-27 14:10:22', '2022-02-07 14:15:30'),
+	(20, 12, 1, 'kanopi', NULL, '1000000', 1, NULL, '2022-02-02', '2022-02-04', 3, 'DONE', '2022-02-02 09:24:58', '2022-02-05 22:34:21'),
+	(21, 12, 1, 'xx', NULL, '1000000', 1, NULL, '2022-02-03', '2022-02-04', 2, 'DONE', '2022-02-03 10:10:41', '2022-02-05 21:46:17'),
+	(22, 12, 2, 'aaa', 'zazaza', '1000000', 1, NULL, '2022-02-04', '2022-02-05', 2, 'DONE', '2022-02-03 10:16:28', '2022-02-05 18:17:42'),
+	(25, 14, 2, 'Pembuatan Wallmolding', 'Pembuatan Wallmolding ini', '1000000', 1, '1644154117.jpg', '2022-02-07', '2022-02-08', 2, 'DONE', '2022-02-06 21:28:37', '2022-02-08 13:31:57'),
+	(26, 14, 2, 'Pembuatan Kanopi', 'Pembuatan Kanopi', '600000', 1, NULL, '2022-03-30', '2022-04-01', 3, 'ON LIST', '2022-02-06 21:30:16', '2022-03-30 10:45:43'),
+	(27, 16, 2, 'Kitchen Set', NULL, '4000000', 2, NULL, '2022-02-08', '2022-02-09', 2, 'DONE', '2022-02-07 11:53:07', '2022-02-10 14:15:05'),
+	(28, 2, 3, 'Buat Wallmolding', NULL, '1000000', 1, NULL, '2022-02-10', '2022-02-11', 2, 'ON PROGRESS', '2022-02-10 14:13:49', '2022-02-10 14:13:49'),
+	(30, 16, 1, 'xxx', 'xx', '112222', 122, '1649125656.JPG', '2022-04-05', '2022-04-06', 2, 'ON LIST', '2022-04-05 10:24:49', '2022-04-05 10:27:42');
+/*!40000 ALTER TABLE `project_details` ENABLE KEYS */;
+
+-- membuang struktur untuk table db_parau.purchase_details
+CREATE TABLE IF NOT EXISTS `purchase_details` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `purchase_transaction_id` bigint(20) unsigned NOT NULL,
+  `product_id` bigint(20) unsigned NOT NULL,
+  `amount` bigint(20) unsigned NOT NULL DEFAULT 0,
+  `price` bigint(20) unsigned NOT NULL DEFAULT 0,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `purchase_details_purchase_transaction_id_foreign` (`purchase_transaction_id`),
+  KEY `purchase_details_product_id_foreign` (`product_id`),
+  CONSTRAINT `purchase_details_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `purchase_details_purchase_transaction_id_foreign` FOREIGN KEY (`purchase_transaction_id`) REFERENCES `purchase_transactions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Membuang data untuk tabel db_parau.purchase_details: ~0 rows (lebih kurang)
+/*!40000 ALTER TABLE `purchase_details` DISABLE KEYS */;
+INSERT INTO `purchase_details` (`id`, `purchase_transaction_id`, `product_id`, `amount`, `price`, `created_at`, `updated_at`) VALUES
+	(1, 37, 58, 100, 40000000, '2022-03-18 10:43:17', '2022-03-18 10:43:17');
+/*!40000 ALTER TABLE `purchase_details` ENABLE KEYS */;
+
+-- membuang struktur untuk table db_parau.purchase_transactions
+CREATE TABLE IF NOT EXISTS `purchase_transactions` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `transaction_number` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` enum('CART','PO','DONE') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_id` bigint(20) unsigned NOT NULL,
+  `supplier_id` bigint(20) unsigned NOT NULL DEFAULT 1,
+  `pay_cost` bigint(20) unsigned NOT NULL DEFAULT 0,
+  `total_price` bigint(20) unsigned NOT NULL DEFAULT 0,
+  `transaction_date` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `purchase_transactions_user_id_foreign` (`user_id`),
+  KEY `purchase_transactions_supplier_id_foreign` (`supplier_id`),
+  CONSTRAINT `purchase_transactions_supplier_id_foreign` FOREIGN KEY (`supplier_id`) REFERENCES `suppliers` (`id`),
+  CONSTRAINT `purchase_transactions_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Membuang data untuk tabel db_parau.purchase_transactions: ~1 rows (lebih kurang)
+/*!40000 ALTER TABLE `purchase_transactions` DISABLE KEYS */;
+INSERT INTO `purchase_transactions` (`id`, `transaction_number`, `status`, `user_id`, `supplier_id`, `pay_cost`, `total_price`, `transaction_date`, `created_at`, `updated_at`) VALUES
+	(37, 'TRX16475714150', 'DONE', 1, 1, 40000000, 40000000, '', '2022-03-18 10:43:11', '2022-03-18 10:43:35'),
+	(38, 'PO-16485118452', 'CART', 1, 1, 0, 0, '', '2022-03-29 07:57:25', '2022-03-29 07:57:25');
+/*!40000 ALTER TABLE `purchase_transactions` ENABLE KEYS */;
+
+-- membuang struktur untuk table db_parau.selling_details
+CREATE TABLE IF NOT EXISTS `selling_details` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `selling_transaction_id` bigint(20) unsigned NOT NULL,
+  `product_id` bigint(20) unsigned NOT NULL,
+  `amount` bigint(20) unsigned NOT NULL DEFAULT 0,
+  `price` bigint(20) unsigned NOT NULL DEFAULT 0,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `selling_details_selling_transaction_id_foreign` (`selling_transaction_id`),
+  KEY `selling_details_product_id_foreign` (`product_id`),
+  CONSTRAINT `selling_details_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
+  CONSTRAINT `selling_details_selling_transaction_id_foreign` FOREIGN KEY (`selling_transaction_id`) REFERENCES `selling_transactions` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Membuang data untuk tabel db_parau.selling_details: ~55 rows (lebih kurang)
+/*!40000 ALTER TABLE `selling_details` DISABLE KEYS */;
+INSERT INTO `selling_details` (`id`, `selling_transaction_id`, `product_id`, `amount`, `price`, `created_at`, `updated_at`) VALUES
+	(1, 37, 58, 2, 1000000, '2022-03-18 10:56:01', '2022-03-18 10:56:01'),
+	(2, 38, 58, 1, 500000, '2022-03-18 11:16:24', '2022-03-18 11:16:24'),
+	(3, 38, 57, 1, 11000, '2022-03-18 11:16:26', '2022-03-18 11:16:26'),
+	(4, 39, 58, 1, 500000, '2022-03-18 11:17:00', '2022-03-18 11:17:00'),
+	(5, 39, 64, 1, 25000, '2022-03-18 11:17:02', '2022-03-18 11:17:02'),
+	(6, 40, 58, 2, 1000000, '2022-03-18 11:18:42', '2022-03-18 11:18:42'),
+	(7, 40, 57, 2, 22000, '2022-03-18 11:18:45', '2022-03-18 11:18:45'),
+	(8, 40, 64, 3, 75000, '2022-03-18 11:18:48', '2022-03-18 11:18:48'),
+	(9, 41, 58, 3, 1500000, '2022-03-18 15:18:15', '2022-03-18 15:18:15'),
+	(10, 42, 64, 2, 50000, '2022-03-18 15:23:34', '2022-03-18 15:23:34'),
+	(11, 42, 57, 1, 11000, '2022-03-18 15:23:40', '2022-03-18 15:23:40'),
+	(12, 42, 55, 2, 55000, '2022-03-18 15:23:50', '2022-03-18 15:23:50'),
+	(13, 43, 64, 1, 25000, '2022-03-18 15:26:25', '2022-03-18 15:26:25'),
+	(14, 43, 57, 2, 22000, '2022-03-18 15:26:29', '2022-03-18 15:26:29'),
+	(15, 44, 64, 2, 50000, '2022-03-18 15:28:46', '2022-03-18 15:28:46'),
+	(16, 45, 52, 1, 25000, '2022-03-18 15:30:38', '2022-03-18 15:30:38'),
+	(17, 46, 52, 2, 50000, '2022-03-18 15:33:55', '2022-03-18 15:33:55'),
+	(18, 47, 45, 2, 31500, '2022-03-18 15:34:33', '2022-03-18 15:34:33'),
+	(19, 48, 45, 1, 15750, '2022-03-18 15:35:03', '2022-03-18 15:35:03'),
+	(20, 48, 58, 1, 500000, '2022-03-18 15:35:07', '2022-03-18 15:35:07'),
+	(21, 49, 58, 1, 500000, '2022-03-18 15:35:32', '2022-03-18 15:35:32'),
+	(22, 50, 58, 1, 500000, '2022-03-18 15:36:01', '2022-03-18 15:36:01'),
+	(23, 51, 40, 1, 21000, '2022-03-18 15:36:48', '2022-03-18 15:36:48'),
+	(24, 52, 64, 1, 25000, '2022-03-18 15:37:09', '2022-03-18 15:37:09'),
+	(25, 53, 57, 2, 22000, '2022-03-18 15:37:33', '2022-03-18 15:37:33'),
+	(26, 54, 64, 22, 550000, '2022-03-29 23:09:16', '2022-03-29 23:09:16'),
+	(27, 54, 57, 3, 33000, '2022-03-29 23:09:22', '2022-03-29 23:09:22'),
+	(28, 55, 58, 7, 3500000, '2022-03-30 11:17:01', '2022-03-30 11:17:01'),
+	(29, 55, 64, 4, 100000, '2022-03-30 11:17:06', '2022-03-30 11:17:06'),
+	(30, 59, 64, 10, 250000, '2022-03-30 11:23:05', '2022-03-30 11:23:05'),
+	(31, 59, 58, 20, 10000000, '2022-03-30 11:23:14', '2022-03-30 11:23:20'),
+	(32, 60, 64, 1, 25000, '2022-03-30 11:25:25', '2022-03-30 11:25:25'),
+	(33, 60, 58, 3, 1500000, '2022-03-30 11:25:30', '2022-03-30 11:25:30'),
+	(34, 61, 64, 3, 75000, '2022-03-30 11:26:01', '2022-03-30 11:26:01'),
+	(35, 61, 58, 2, 1000000, '2022-03-30 11:26:28', '2022-03-30 11:26:28'),
+	(36, 62, 58, 2, 1000000, '2022-03-30 11:28:21', '2022-03-30 11:28:21'),
+	(37, 62, 64, 1, 25000, '2022-03-30 11:28:24', '2022-03-30 11:28:24'),
+	(38, 62, 55, 4, 110000, '2022-03-30 11:28:28', '2022-03-30 11:28:28'),
+	(39, 62, 52, 5, 125000, '2022-03-30 11:28:32', '2022-03-30 11:28:32'),
+	(40, 63, 64, 1, 25000, '2022-03-30 11:33:15', '2022-03-30 11:33:15'),
+	(41, 64, 58, 2, 1000000, '2022-03-30 11:34:06', '2022-03-30 11:34:06'),
+	(43, 66, 64, 1, 25000, '2022-03-30 11:35:15', '2022-03-30 11:35:15'),
+	(44, 67, 64, 1, 25000, '2022-03-30 11:35:51', '2022-03-30 11:35:51'),
+	(45, 68, 58, 3, 1500000, '2022-03-30 11:37:48', '2022-03-30 11:37:48'),
+	(46, 69, 58, 3, 1500000, '2022-03-30 11:38:14', '2022-03-30 11:38:14'),
+	(47, 70, 64, 2, 50000, '2022-03-30 11:52:13', '2022-03-30 11:52:13'),
+	(48, 70, 58, 3, 1500000, '2022-03-30 11:52:17', '2022-03-30 11:52:17'),
+	(49, 71, 64, 1, 25000, '2022-03-31 15:14:33', '2022-03-31 15:14:33'),
+	(50, 72, 64, 1, 25000, '2022-03-31 15:15:01', '2022-03-31 15:15:01'),
+	(51, 73, 64, 1, 25000, '2022-03-31 15:20:43', '2022-03-31 15:20:43'),
+	(52, 74, 58, 1, 500000, '2022-04-01 07:04:03', '2022-04-01 07:04:03'),
+	(53, 74, 57, 2, 22000, '2022-04-01 07:04:11', '2022-04-01 07:04:11'),
+	(54, 75, 58, 5, 2500000, '2022-04-01 07:21:06', '2022-04-01 07:21:06'),
+	(55, 75, 52, 11, 275000, '2022-04-01 07:21:14', '2022-04-01 07:21:14');
+/*!40000 ALTER TABLE `selling_details` ENABLE KEYS */;
+
+-- membuang struktur untuk table db_parau.selling_transactions
+CREATE TABLE IF NOT EXISTS `selling_transactions` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `transaction_number` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` enum('CART','DONE') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pay_cost` bigint(20) unsigned NOT NULL DEFAULT 0,
+  `total_price` bigint(20) unsigned NOT NULL DEFAULT 0,
+  `transaction_date` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `user_id` bigint(20) unsigned NOT NULL,
+  `member_id` bigint(20) unsigned NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `selling_transactions_user_id_foreign` (`user_id`),
+  KEY `member_id` (`member_id`),
+  CONSTRAINT `FK_selling_transactions_members` FOREIGN KEY (`member_id`) REFERENCES `members` (`id`),
+  CONSTRAINT `selling_transactions_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=77 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Membuang data untuk tabel db_parau.selling_transactions: ~33 rows (lebih kurang)
+/*!40000 ALTER TABLE `selling_transactions` DISABLE KEYS */;
+INSERT INTO `selling_transactions` (`id`, `transaction_number`, `status`, `pay_cost`, `total_price`, `transaction_date`, `user_id`, `member_id`, `created_at`, `updated_at`) VALUES
+	(37, 'TRX16475721672', 'DONE', 1200000, 1000000, '2022-03-18 10:55:57', 1, 1, '2022-03-18 10:55:57', '2022-03-18 10:56:07'),
+	(38, 'TRX16475733933', 'DONE', 600000, 511000, '2022-03-18 11:16:16', 1, 1, '2022-03-18 11:16:16', '2022-03-18 11:16:33'),
+	(39, 'TRX16475734274', 'DONE', 600000, 525000, '2022-03-18 11:16:56', 1, 1, '2022-03-18 11:16:56', '2022-03-18 11:17:07'),
+	(40, 'TRX16475736375', 'DONE', 1500000, 1097000, '2022-03-18 11:20:16', 1, 1, '2022-03-18 11:18:38', '2022-03-18 11:20:37'),
+	(41, 'TRX16475879056', 'DONE', 1500000, 1500000, '2022-03-18 15:17:30', 1, 1, '2022-03-18 15:17:28', '2022-03-18 15:18:25'),
+	(42, 'TRX16475882417', 'DONE', 150000, 116000, '2022-03-18 15:23:29', 1, 1, '2022-03-18 15:23:15', '2022-03-18 15:24:01'),
+	(43, 'TRX16475883958', 'DONE', 50000, 47000, '2022-03-18 15:24:03', 1, 1, '2022-03-18 15:24:03', '2022-03-18 15:26:35'),
+	(44, 'TRX16475885309', 'DONE', 50000, 50000, '2022-03-18 15:28:35', 1, 1, '2022-03-18 15:27:06', '2022-03-18 15:28:50'),
+	(45, 'TRX164758864310', 'DONE', 25000, 25000, '2022-03-18 15:28:52', 1, 1, '2022-03-18 15:28:52', '2022-03-18 15:30:43'),
+	(46, 'TRX164758884111', 'DONE', 50000, 50000, '2022-03-18 15:32:36', 1, 1, '2022-03-18 15:32:36', '2022-03-18 15:34:01'),
+	(47, 'TRX164758887912', 'DONE', 50000, 31500, '2022-03-18 15:34:06', 1, 1, '2022-03-18 15:34:06', '2022-03-18 15:34:39'),
+	(48, 'TRX164758891513', 'DONE', 600000, 515750, '2022-03-18 15:34:45', 1, 1, '2022-03-18 15:34:44', '2022-03-18 15:35:15'),
+	(49, 'TRX164758893814', 'DONE', 500000, 500000, '2022-03-18 15:35:17', 1, 1, '2022-03-18 15:35:17', '2022-03-18 15:35:38'),
+	(50, 'TRX164758896615', 'DONE', 500000, 500000, '2022-03-18 15:35:40', 1, 1, '2022-03-18 15:35:40', '2022-03-18 15:36:06'),
+	(51, 'TRX164758901416', 'DONE', 50000, 21000, '2022-03-18 15:36:11', 1, 1, '2022-03-18 15:36:11', '2022-03-18 15:36:54'),
+	(52, 'TRX164758903717', 'DONE', 50000, 25000, '2022-03-18 15:36:59', 1, 1, '2022-03-18 15:36:59', '2022-03-18 15:37:17'),
+	(53, 'TRX164758905818', 'DONE', 50000, 22000, '2022-03-18 15:37:18', 1, 1, '2022-03-18 15:37:18', '2022-03-18 15:37:38'),
+	(54, 'TRX164856657119', 'DONE', 600000, 583000, '2022-03-29 22:38:55', 1, 1, '2022-03-18 15:37:44', '2022-03-29 23:09:31'),
+	(55, 'TRX164861023620', 'DONE', 4000000, 3600000, '2022-03-30 11:16:52', 1, 1, '2022-03-29 23:09:34', '2022-03-30 11:17:16'),
+	(59, 'TRX164861063721', 'DONE', 11000000, 10250000, '2022-03-30 11:22:54', 1, 1, '2022-03-30 11:22:54', '2022-03-30 11:23:57'),
+	(60, 'TRX164861074922', 'DONE', 2000000, 1525000, '2022-03-30 11:25:34', 1, 1, '2022-03-30 11:24:46', '2022-03-30 11:25:49'),
+	(61, 'TRX164861079723', 'DONE', 1100000, 1075000, '2022-03-30 11:26:11', 1, 1, '2022-03-30 11:25:50', '2022-03-30 11:26:37'),
+	(62, 'TRX164861094024', 'DONE', 1300000, 1260000, '2022-03-30 11:27:39', 1, 1, '2022-03-30 11:27:39', '2022-03-30 11:29:00'),
+	(63, 'TRX164861120125', 'DONE', 25000, 25000, '2022-03-30 11:29:01', 1, 1, '2022-03-30 11:29:01', '2022-03-30 11:33:21'),
+	(64, 'TRX164861125326', 'DONE', 1000000, 1000000, '2022-03-30 11:33:21', 1, 1, '2022-03-30 11:33:21', '2022-03-30 11:34:13'),
+	(66, 'TRX164861132027', 'DONE', 30000, 25000, '2022-03-30 11:34:33', 1, 1, '2022-03-30 11:34:33', '2022-03-30 11:35:20'),
+	(67, 'TRX164861135628', 'DONE', 30000, 25000, '2022-03-30 11:35:21', 1, 1, '2022-03-30 11:35:21', '2022-03-30 11:35:56'),
+	(68, 'TRX164861147529', 'DONE', 1500000, 1500000, '2022-03-30 11:37:26', 1, 1, '2022-03-30 11:35:57', '2022-03-30 11:37:55'),
+	(69, 'TRX164861150530', 'DONE', 1600000, 1500000, '2022-03-30 11:37:56', 1, 1, '2022-03-30 11:37:56', '2022-03-30 11:38:25'),
+	(70, 'TRX164861234431', 'DONE', 2000000, 1550000, '2022-03-30 11:44:18', 1, 1, '2022-03-30 11:38:25', '2022-03-30 11:52:24'),
+	(71, 'TRX164871088432', 'DONE', 30000, 25000, '2022-03-31 15:14:28', 1, 1, '2022-03-30 11:52:24', '2022-03-31 15:14:44'),
+	(72, 'TRX164871117933', 'DONE', 40000, 25000, '2022-03-31 15:19:33', 1, 1, '2022-03-31 15:14:55', '2022-03-31 15:19:39'),
+	(73, 'TRX164871124834', 'DONE', 30000, 25000, '2022-03-31 15:20:39', 1, 1, '2022-03-31 15:20:22', '2022-03-31 15:20:48'),
+	(74, 'TRX164876785935', 'DONE', 600000, 522000, '2022-04-01 07:03:53', 1, 1, '2022-03-31 15:20:49', '2022-04-01 07:04:19'),
+	(75, 'TRX164876888136', 'DONE', 3000000, 2775000, '2022-04-01 07:18:09', 1, 1, '2022-04-01 07:17:53', '2022-04-01 07:21:21'),
+	(76, 'CART164876888436', 'CART', 0, 0, '', 1, 1, '2022-04-01 07:21:24', '2022-04-01 07:21:24');
+/*!40000 ALTER TABLE `selling_transactions` ENABLE KEYS */;
+
 -- membuang struktur untuk table db_parau.sessions
 CREATE TABLE IF NOT EXISTS `sessions` (
   `id` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -710,12 +1760,33 @@ CREATE TABLE IF NOT EXISTS `sessions` (
   KEY `sessions_last_activity_index` (`last_activity`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Membuang data untuk tabel db_parau.sessions: ~2 rows (lebih kurang)
+-- Membuang data untuk tabel db_parau.sessions: ~3 rows (lebih kurang)
 /*!40000 ALTER TABLE `sessions` DISABLE KEYS */;
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-	('A4SrnDIwT5TfZsJpflSU6zrLEoKSn8bKXPKU9aFn', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36 Edg/97.0.1072.62', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiM1dWT050amhXYWJqcjcxb3pVVG1aN29UcDA2bjdSa3FhOFVqT1E3WiI7czozOiJ1cmwiO2E6MTp7czo4OiJpbnRlbmRlZCI7czoyNjoiaHR0cDovL2xvY2FsaG9zdC9wYXJhdS9sb2ciO31zOjk6Il9wcmV2aW91cyI7YToxOntzOjM6InVybCI7czoyODoiaHR0cDovL2xvY2FsaG9zdC9wYXJhdS9sb2dpbiI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1642564340),
-	('TM9gOozJ9919wE1oMFlUnbDJhYkkGNKtnyiGMa0P', 1, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiWktzSGsxSmdxUWVFZ29haTg5UWY0dUkzbnR3TjNrOFlSRFg3N1gxQiI7czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTtzOjE3OiJwYXNzd29yZF9oYXNoX3dlYiI7czo2MDoiJDJ5JDEwJFJjLmVDdWQ1SVlnYUpBZUZJYWVUMk9RTTlMNE1pcWRWa1YuLnAxd2JRdm5QeHhHNkw2N215IjtzOjk6Il9wcmV2aW91cyI7YToxOntzOjM6InVybCI7czozMjoiaHR0cDovL2xvY2FsaG9zdC9wYXJhdS9kYXNoYm9hcmQiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1642568658);
+	('j2NUrns3NniOWvgq9dWaNAn8m7oAUgpqDIyqiDsg', 1, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiTVJwdG9wMGtMa0FSTmJGRnBjRVN1VHdtbGI4OWNEVGdMY1M0MGdxeiI7czozOiJ1cmwiO2E6MTp7czo4OiJpbnRlbmRlZCI7czoyNToiaHR0cDovL2xvY2FsaG9zdC9wYXJhdS10cyI7fXM6OToiX3ByZXZpb3VzIjthOjE6e3M6MzoidXJsIjtzOjQwOiJodHRwOi8vbG9jYWxob3N0L3BhcmF1LXRzL3Byb2plY3QvY3JlYXRlIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTtzOjE3OiJwYXNzd29yZF9oYXNoX3dlYiI7czo2MDoiJDJ5JDEwJFpMcnpraldBRTJNdnV6Y0k0VjVjeXV6V3E3a0lpZXRPRHYzdEppRDc5M1FEYWN0OE9zRjRlIjt9', 1649820275),
+	('Tch8yCRKaxHmQJSA45Cuy3B9zSleeCNvtw3Gd2Gw', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoieVA0RThldWpmOEZCZGpVMEZLWGNDbzM2dUxyald2bXlQMW4yTmRqZyI7czozOiJ1cmwiO2E6MTp7czo4OiJpbnRlbmRlZCI7czoyNToiaHR0cDovL2xvY2FsaG9zdC9wYXJhdS10cyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1649816374);
 /*!40000 ALTER TABLE `sessions` ENABLE KEYS */;
+
+-- membuang struktur untuk table db_parau.settings
+CREATE TABLE IF NOT EXISTS `settings` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama_aplikasi` varchar(200) DEFAULT NULL,
+  `singkatan_nama_aplikasi` varchar(200) DEFAULT NULL,
+  `tentang_aplikasi` varchar(500) DEFAULT NULL,
+  `logo_kecil` varchar(100) DEFAULT NULL,
+  `logo_besar` varchar(100) DEFAULT NULL,
+  `background_login` varchar(100) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
+
+-- Membuang data untuk tabel db_parau.settings: ~0 rows (lebih kurang)
+/*!40000 ALTER TABLE `settings` DISABLE KEYS */;
+INSERT INTO `settings` (`id`, `nama_aplikasi`, `singkatan_nama_aplikasi`, `tentang_aplikasi`, `logo_kecil`, `logo_besar`, `background_login`, `user_id`, `created_at`, `updated_at`) VALUES
+	(1, 'PARAU', 'PARAU', 'Sistem Informasi Manajemen ASN Daerah atau bisa disebut dengan SIMANDARA adalah sistem yang mengelola data kepegawaian ASN Kabupaten Konawe yang terintegrasi dengan data MySAPK Badan Kepegawaian Nasional', '16424717931.jpg', '16424759582.png', '16454963953.jpg', 1, '2021-10-29 10:58:27', '2022-02-22 10:19:55');
+/*!40000 ALTER TABLE `settings` ENABLE KEYS */;
 
 -- membuang struktur untuk table db_parau.sub_menu_access_tbl
 CREATE TABLE IF NOT EXISTS `sub_menu_access_tbl` (
@@ -738,32 +1809,40 @@ CREATE TABLE IF NOT EXISTS `sub_menu_access_tbl` (
   CONSTRAINT `FK_sub_menu_access_tbl_group_tbl` FOREIGN KEY (`group_id`) REFERENCES `group_tbl` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_sub_menu_access_tbl_menu_access_tbl_2` FOREIGN KEY (`menu_id`) REFERENCES `menu_access_tbl` (`menu_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_sub_menu_access_tbl_sub_menu_tbl` FOREIGN KEY (`sub_menu_id`) REFERENCES `sub_menu_tbl` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
--- Membuang data untuk tabel db_parau.sub_menu_access_tbl: ~12 rows (lebih kurang)
+-- Membuang data untuk tabel db_parau.sub_menu_access_tbl: ~19 rows (lebih kurang)
 /*!40000 ALTER TABLE `sub_menu_access_tbl` DISABLE KEYS */;
 INSERT INTO `sub_menu_access_tbl` (`id`, `group_id`, `menu_id`, `sub_menu_id`, `create`, `read`, `update`, `delete`, `print`, `user_id`, `created_at`, `updated_at`) VALUES
-	(20, 1, 4, 6, 1, 1, 1, 1, 1, 1, '2022-01-17 10:57:44', '2022-01-17 10:57:44'),
-	(21, 1, 4, 7, 1, 1, 1, 1, 1, 1, '2022-01-17 10:57:56', '2022-01-17 11:30:40'),
-	(22, 1, 4, 8, 1, 1, 1, 1, 1, 1, '2022-01-17 10:58:06', '2022-01-17 10:58:06'),
 	(29, 1, 13, 11, 1, 1, 1, 1, 1, 1, '2022-01-18 16:01:57', '2022-01-18 16:01:57'),
 	(30, 1, 13, 15, 1, 1, 1, 1, 1, 1, '2022-01-18 16:02:15', '2022-01-18 16:02:15'),
-	(31, 1, 13, 16, 1, 1, 1, 1, 1, 1, '2022-01-19 12:19:38', '2022-01-19 12:19:38'),
+	(31, 1, 13, 16, 1, 1, 1, 1, 1, 1, '2022-01-19 12:19:38', '2022-01-20 10:16:12'),
 	(32, 1, 14, 17, 1, 1, 1, 1, 1, 1, '2022-01-19 12:23:15', '2022-01-19 12:23:15'),
 	(33, 1, 14, 18, 1, 1, 1, 1, 1, 1, '2022-01-19 12:23:28', '2022-01-19 12:23:28'),
 	(34, 1, 14, 20, 1, 1, 1, 1, 1, 1, '2022-01-19 12:36:52', '2022-01-19 12:36:52'),
 	(35, 1, 14, 21, 1, 1, 1, 1, 1, 1, '2022-01-19 12:37:05', '2022-01-19 12:37:05'),
 	(36, 1, 13, 19, 1, 1, 1, 1, 1, 1, '2022-01-19 12:37:24', '2022-01-19 12:37:24'),
-	(37, 1, 13, 22, 1, 1, 1, 1, 1, 1, '2022-01-19 12:57:01', '2022-01-19 12:57:01');
+	(37, 1, 13, 22, 1, 1, 1, 1, 1, 1, '2022-01-19 12:57:01', '2022-01-19 12:57:01'),
+	(42, 1, 4, 8, 1, 1, 1, 1, 1, 1, '2022-02-03 14:10:55', '2022-02-03 14:10:56'),
+	(43, 1, 4, 6, 1, 1, 1, 1, 1, 1, '2022-02-03 14:13:58', '2022-02-03 14:13:58'),
+	(44, 1, 4, 7, 1, 1, 1, 1, 1, 1, '2022-02-03 14:14:13', '2022-02-03 14:14:13'),
+	(45, 1, 4, 24, 1, 1, 1, 1, 1, 1, '2022-02-03 14:14:25', '2022-02-03 14:14:25'),
+	(46, 2, 13, 16, 1, 1, 1, 1, 1, 1, '2022-02-03 14:16:20', '2022-02-03 14:16:20'),
+	(47, 2, 13, 11, 1, 1, 1, 1, 1, 1, '2022-02-03 14:16:31', '2022-02-03 14:16:31'),
+	(48, 2, 13, 15, 1, 1, 1, 1, 1, 1, '2022-02-03 14:16:44', '2022-02-03 14:16:44'),
+	(49, 2, 13, 19, 1, 1, 1, 1, 1, 1, '2022-02-03 14:16:56', '2022-02-03 14:16:56'),
+	(50, 2, 13, 22, 1, 1, 1, 1, 1, 1, '2022-02-03 14:17:07', '2022-02-03 14:17:07'),
+	(51, 1, 13, 26, 1, 1, 1, 1, 1, 1, '2022-02-07 10:38:10', '2022-02-07 10:38:10'),
+	(52, 1, 16, 27, 1, 1, 1, 1, 1, 1, '2022-02-10 10:04:41', '2022-02-10 10:04:41');
 /*!40000 ALTER TABLE `sub_menu_access_tbl` ENABLE KEYS */;
 
 -- membuang struktur untuk table db_parau.sub_menu_tbl
 CREATE TABLE IF NOT EXISTS `sub_menu_tbl` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `menu_id` int(11) NOT NULL,
-  `sub_menu_name` varchar(18) DEFAULT NULL,
-  `link` varchar(50) DEFAULT NULL,
-  `attribute` varchar(50) DEFAULT NULL,
+  `sub_menu_name` varchar(100) DEFAULT NULL,
+  `link` varchar(100) DEFAULT NULL,
+  `attribute` varchar(100) DEFAULT NULL,
   `position` int(11) NOT NULL DEFAULT 0,
   `desc` tinytext DEFAULT NULL,
   `status` int(11) NOT NULL DEFAULT 0,
@@ -773,24 +1852,86 @@ CREATE TABLE IF NOT EXISTS `sub_menu_tbl` (
   PRIMARY KEY (`id`) USING BTREE,
   KEY `menu_id` (`menu_id`),
   CONSTRAINT `FK_sub_menu_tbl_group_tbl` FOREIGN KEY (`menu_id`) REFERENCES `menu_tbl` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
--- Membuang data untuk tabel db_parau.sub_menu_tbl: ~12 rows (lebih kurang)
+-- Membuang data untuk tabel db_parau.sub_menu_tbl: ~15 rows (lebih kurang)
 /*!40000 ALTER TABLE `sub_menu_tbl` DISABLE KEYS */;
 INSERT INTO `sub_menu_tbl` (`id`, `menu_id`, `sub_menu_name`, `link`, `attribute`, `position`, `desc`, `status`, `user_id`, `created_at`, `updated_at`) VALUES
-	(6, 4, 'User', 'user', 'fa-circle-notch', 1, NULL, 1, 1, '2022-01-12 13:42:20', '2022-01-14 20:01:44'),
+	(6, 4, 'User', 'user', 'fa-circle-notch', 2, NULL, 1, 1, '2022-01-12 13:42:20', '2022-01-31 10:33:56'),
 	(7, 4, 'Menu', 'menu', 'fa-circle-notch', 3, NULL, 1, 1, '2022-01-12 13:43:01', '2022-01-12 13:43:01'),
-	(8, 4, 'Group', 'group', 'fa-circle-notch', 2, NULL, 1, 1, '2022-01-12 13:43:18', '2022-01-12 13:43:18'),
+	(8, 4, 'Group', 'group', 'fa-circle-notch', 4, NULL, 1, 1, '2022-01-12 13:43:18', '2022-01-31 10:34:10'),
 	(11, 13, 'Gudang', 'inventory', NULL, 3, NULL, 1, 1, '2022-01-18 13:47:53', '2022-01-19 12:30:02'),
-	(15, 13, 'Pre Order (PO)', 'pre_order', NULL, 4, NULL, 1, 1, '2022-01-18 16:00:15', '2022-01-19 12:30:09'),
+	(15, 13, 'Pre Order (PO)', 'preorder', NULL, 4, NULL, 1, 1, '2022-01-18 16:00:15', '2022-01-24 12:08:32'),
 	(16, 13, 'Produk', 'product', NULL, 1, NULL, 1, 1, '2022-01-19 12:08:49', '2022-01-19 12:09:56'),
 	(17, 14, 'Pembelian', 'purchase', NULL, 1, NULL, 1, 1, '2022-01-19 12:22:43', '2022-01-19 12:22:43'),
 	(18, 14, 'Penjualan', 'selling', NULL, 2, NULL, 1, 1, '2022-01-19 12:22:55', '2022-01-19 12:22:55'),
-	(19, 13, 'Kategori Produk', 'product_category', NULL, 2, NULL, 1, 1, '2022-01-19 12:29:50', '2022-01-19 12:30:14'),
+	(19, 13, 'Kategori Produk', 'category', NULL, 2, NULL, 1, 1, '2022-01-19 12:29:50', '2022-01-20 07:34:19'),
 	(20, 14, 'Keuangan', 'finance', NULL, 3, NULL, 1, 1, '2022-01-19 12:31:13', '2022-01-19 12:31:13'),
 	(21, 14, 'Gaji', 'salary', NULL, 4, NULL, 1, 1, '2022-01-19 12:34:37', '2022-01-19 12:34:37'),
-	(22, 13, 'Supplier', 'supplier', NULL, 5, NULL, 1, 1, '2022-01-19 12:56:35', '2022-01-19 12:56:35');
+	(22, 13, 'Supplier', 'supplier', NULL, 5, NULL, 1, 1, '2022-01-19 12:56:35', '2022-01-19 12:56:35'),
+	(24, 4, 'Outlet', 'outlet', 'fa-circle-notch', 1, NULL, 1, 1, '2022-01-31 10:33:08', '2022-01-31 10:33:21'),
+	(26, 13, 'Kasir', 'cashier', NULL, 7, NULL, 1, 1, '2022-02-07 10:37:41', '2022-02-07 10:37:41'),
+	(27, 16, 'Tim', 'team', NULL, 1, NULL, 1, 1, '2022-02-10 10:03:59', '2022-02-10 10:03:59');
 /*!40000 ALTER TABLE `sub_menu_tbl` ENABLE KEYS */;
+
+-- membuang struktur untuk table db_parau.suppliers
+CREATE TABLE IF NOT EXISTS `suppliers` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `supplier_name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Membuang data untuk tabel db_parau.suppliers: ~16 rows (lebih kurang)
+/*!40000 ALTER TABLE `suppliers` DISABLE KEYS */;
+INSERT INTO `suppliers` (`id`, `supplier_name`, `phone`, `address`, `description`, `created_at`, `updated_at`) VALUES
+	(1, 'UMUM', '', '', '', '2022-01-20 19:33:51', '2022-01-20 19:33:51'),
+	(2, 'Perum Prastuti Santoso', '(+62) 374 2911 913', 'Psr. Padang No. 883, Administrasi Jakarta Selatan 35638, Kalsel', 'Iure ab illo tempora ipsum reiciendis occaecati aut. Totam porro rerum est cumque a pariatur.', '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(3, 'Perum Haryanti Widiastuti Tbk', '(+62) 700 1707 8186', 'Kpg. Ujung No. 27, Bontang 75237, Bengkulu', 'Suscipit aliquid consequatur numquam est. Et vero neque aut veniam in. Fugiat reprehenderit aut provident eaque totam. Modi necessitatibus labore dolor enim cupiditate consequatur.', '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(4, 'UD Damanik Nasyidah', '(+62) 323 5312 3172', 'Gg. Babadan No. 429, Bontang 25500, DIY', 'Aut eum minus consequatur veniam. Excepturi corrupti incidunt sit architecto quae consequatur. Quo vitae cum recusandae mollitia fuga itaque ipsum.', '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(5, 'PT Kusmawati Winarsih Tbk', '0301 2634 6970', 'Jln. Cikapayang No. 381, Sorong 17474, Sulut', 'Tempore et qui quod. Velit dolores qui repudiandae tempore maiores sunt dolor. Qui rerum placeat quia quos iure.', '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(6, 'PT Kuswandari Jailani', '(+62) 658 2330 737', 'Dk. Krakatau No. 24, Ambon 24069, Bali', 'Ea numquam error esse sed eveniet. Minima maxime aut nihil sit aut provident occaecati. Asperiores iste ea dolorum impedit voluptatibus.', '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(7, 'PT Hassanah', '0872 902 558', 'Jln. Ketandan No. 638, Tangerang Selatan 16032, DIY', 'Sunt aut optio vero quia aperiam. Consequatur corporis nemo quo et. Harum ipsam et eos suscipit velit laudantium dolorum.', '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(8, 'PT Simbolon (Persero) Tbk', '(+62) 420 6362 1843', 'Jln. Salam No. 661, Cilegon 89257, Bali', 'Omnis eum enim nihil. Odio sed qui vel minima et fugiat rem. Et laboriosam dolore quia est doloribus minima odio.', '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(9, 'CV Agustina Maryati (Persero) Tbk', '0264 0308 7417', 'Jln. Bayam No. 904, Sabang 95323, Kaltim', 'Libero quia cupiditate odio voluptas et a. Temporibus officia perspiciatis hic dolor.', '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(10, 'UD Suryatmi Tbk', '0264 7633 5675', 'Ki. Merdeka No. 435, Tegal 57534, Jateng', 'Consequuntur beatae dignissimos quasi facere est est voluptas. Quis esse fuga officia in iure animi. Asperiores rem nisi reiciendis explicabo expedita vel.', '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(11, 'UD Hariyah', '0273 8077 197', 'Ki. Sampangan No. 153, Samarinda 42754, Pabar', 'Nisi atque inventore et vel rem porro accusantium voluptate. Doloremque quis sed molestiae voluptas. Ut sapiente delectus culpa eligendi et et aut.', '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(12, 'UD Maryadi Tbk', '(+62) 972 6636 5910', 'Ds. Yohanes No. 941, Kotamobagu 79051, Sulteng', 'Ratione earum consectetur qui natus qui reprehenderit eveniet. Tempora dolore ut error est similique. Qui voluptates omnis sed expedita temporibus. Ea dolorum magnam amet iusto et in.', '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(13, 'CV Wulandari Lailasari (Persero) Tbk', '0218 9089 218', 'Jln. Jambu No. 58, Semarang 97440, Jatim', 'Maiores sunt minus consequatur ratione. Dolore doloremque repellat sint aut et voluptatibus.', '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(14, 'PD Kuswandari (Persero) Tbk', '(+62) 879 2160 7471', 'Jln. Baranang Siang Indah No. 551, Administrasi Jakarta Barat 48182, Malut', 'Quisquam sint voluptates quas repellat. Labore cumque doloribus ea aliquam tempora similique quaerat eligendi. Saepe officiis cumque omnis vero.', '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(15, 'UD Usada Tbk', '0752 6552 1753', 'Kpg. Sudiarto No. 3, Batu 92714, Kepri', 'Tempore et et amet tempore qui cum fugiat. Asperiores pariatur unde in est. Corporis eos voluptatem ipsam et adipisci sit nisi. Voluptatibus sit in eos similique ut placeat.', '2022-01-25 09:32:47', '2022-01-25 09:32:47'),
+	(16, 'PT Hidayat (Persero) Tbk', '(+62) 22 9945 448', 'Ds. Bakaru No. 640, Administrasi Jakarta Pusat 80865, Gorontalo', 'Et minus nam aut est repudiandae fugiat. Omnis aut nihil est et error officiis occaecati nostrum. Vel veritatis qui vitae neque nihil.', '2022-01-25 09:32:47', '2022-01-25 09:32:47');
+/*!40000 ALTER TABLE `suppliers` ENABLE KEYS */;
+
+-- membuang struktur untuk table db_parau.teams
+CREATE TABLE IF NOT EXISTS `teams` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `outlet_id` bigint(20) unsigned NOT NULL DEFAULT 0,
+  `team_name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_teams_outlets` (`outlet_id`),
+  CONSTRAINT `FK_teams_outlets` FOREIGN KEY (`outlet_id`) REFERENCES `outlets` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Membuang data untuk tabel db_parau.teams: ~3 rows (lebih kurang)
+/*!40000 ALTER TABLE `teams` DISABLE KEYS */;
+INSERT INTO `teams` (`id`, `outlet_id`, `team_name`, `description`, `created_at`, `updated_at`) VALUES
+	(1, 1, 'Tim A', NULL, '2022-02-10 10:16:34', '2022-02-10 11:06:32'),
+	(2, 1, 'Tim B', NULL, '2022-02-10 11:06:17', '2022-02-10 11:06:17'),
+	(3, 1, 'Tim C', NULL, '2022-02-10 11:10:39', '2022-02-10 11:10:39');
+/*!40000 ALTER TABLE `teams` ENABLE KEYS */;
+
+-- membuang struktur untuk event db_parau.update_status_on_progress_project
+DELIMITER //
+CREATE EVENT `update_status_on_progress_project` ON SCHEDULE EVERY 1 SECOND STARTS '2022-02-02 06:20:35' ON COMPLETION NOT PRESERVE ENABLE DO update project_details SET STATUS = "ON PROGRESS" WHERE work_start = CURRENT_DATE()//
+DELIMITER ;
 
 -- membuang struktur untuk table db_parau.users
 CREATE TABLE IF NOT EXISTS `users` (
@@ -803,20 +1944,67 @@ CREATE TABLE IF NOT EXISTS `users` (
   `two_factor_recovery_codes` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `group_id` int(11) DEFAULT NULL,
+  `outlet_id` bigint(191) unsigned DEFAULT NULL,
   `foto` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `status` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=483 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  UNIQUE KEY `users_email_unique` (`email`),
+  KEY `FK_users_outlets` (`outlet_id`),
+  KEY `FK_users_group_tbl` (`group_id`),
+  CONSTRAINT `FK_users_group_tbl` FOREIGN KEY (`group_id`) REFERENCES `group_tbl` (`id`),
+  CONSTRAINT `FK_users_outlets` FOREIGN KEY (`outlet_id`) REFERENCES `outlets` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=485 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Membuang data untuk tabel db_parau.users: ~2 rows (lebih kurang)
+-- Membuang data untuk tabel db_parau.users: ~4 rows (lebih kurang)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `remember_token`, `group_id`, `foto`, `status`, `created_at`, `updated_at`) VALUES
-	(1, 'administrator', 'administrator@gmail.com', NULL, '$2y$10$Rc.eCud5IYgaJAeFIaeT2OQM9L4MiqdVkV..p1wbQvnPxxG6L67my', NULL, NULL, 'ywZkHRO5jDIV0EX7ehFaBNkYqb1GeyaqF33AaLt1X2iFnPAlUYtWP5hCww6z', 1, '1641869792.jpg', 1, '2021-04-05 14:20:00', '2022-01-11 10:56:32'),
-	(482, 'operator', 'operator@gmail.com', NULL, '$2y$10$RFfcHMYYV/VNaeZZXsZiBuYURin.uYGD9BMBDfhpbxxI./GOWqf3.', NULL, NULL, NULL, 2, '1635474811.jpg', 1, '2021-10-28 12:09:14', '2022-01-18 13:09:23');
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `remember_token`, `group_id`, `outlet_id`, `foto`, `status`, `created_at`, `updated_at`) VALUES
+	(1, 'administrator', 'administrator@gmail.com', NULL, '$2y$10$ZLrzkjWAE2MvuzcI4V5cyuzWq7kIietODv3tJiD793QDact8OsF4e', NULL, NULL, '6Y2wUU4W2P3vBvqx3aSMP1LUa7eczagfn1FdPjPkhkpWWFTcxvf7844s59OL', 1, 1, '1641869792.jpg', 1, '2021-04-05 14:20:00', '2022-02-03 09:53:40'),
+	(482, 'operator', 'adri.saputra.ibrahim@gmail.com', NULL, '$2y$10$97lwKvhqPnb2hHctG84aEuC3wjRAmhjeZeMr3ZIDlzaNJWb.88oaq', NULL, NULL, 'ObqvVY0apo1uBFjKSL6jsYjHlyKgyjZYoBEQHKO8PD7s07pmLrlL32ubkjkX', 3, 1, '1635474811.jpg', 0, '2021-10-28 12:09:14', '2022-01-20 20:07:51'),
+	(483, 'editor_kendari', 'editor_kendari@gmail.com', NULL, '$2y$10$74J6TkoX.DgaBs4HTZzMOODUc5J4/9xNqxnbk37IySlpaJKHuoIHC', NULL, NULL, 'bSokLrCx2PbYaQUpDScAfKcahKiPgjJLzFmDZMAxwMWhT0Q44F6LnjHEpUKf', 2, 1, NULL, 1, '2022-02-03 09:48:10', '2022-02-03 09:48:10'),
+	(484, 'editor_bombana', 'editor_bombana@gmail.com', NULL, '$2y$10$UGCsoUCEF7kQA/Ar4eVgdO2a27.Ss2qGRc9s7/4FS36eJce3tj4X6', NULL, NULL, NULL, 2, 2, NULL, 1, '2022-02-03 14:20:25', '2022-02-03 14:20:25');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
+
+-- membuang struktur untuk table db_parau.workers
+CREATE TABLE IF NOT EXISTS `workers` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `team_id` bigint(20) unsigned NOT NULL,
+  `worker_name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `salary` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `workers_team_id_foreign` (`team_id`),
+  CONSTRAINT `workers_team_id_foreign` FOREIGN KEY (`team_id`) REFERENCES `teams` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Membuang data untuk tabel db_parau.workers: ~0 rows (lebih kurang)
+/*!40000 ALTER TABLE `workers` DISABLE KEYS */;
+INSERT INTO `workers` (`id`, `team_id`, `worker_name`, `salary`, `created_at`, `updated_at`) VALUES
+	(3, 3, 'Aco', '0', '2022-04-08 22:12:38', '2022-04-08 22:12:38');
+/*!40000 ALTER TABLE `workers` ENABLE KEYS */;
+
+-- membuang struktur untuk table db_parau.worker_payments
+CREATE TABLE IF NOT EXISTS `worker_payments` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `worker_id` bigint(20) unsigned NOT NULL,
+  `desc` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `down_payment` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `worker_payments_worker_id_id_foreign` (`worker_id`),
+  CONSTRAINT `worker_payments_worker_id_id_foreign` FOREIGN KEY (`worker_id`) REFERENCES `workers` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Membuang data untuk tabel db_parau.worker_payments: ~2 rows (lebih kurang)
+/*!40000 ALTER TABLE `worker_payments` DISABLE KEYS */;
+INSERT INTO `worker_payments` (`id`, `worker_id`, `desc`, `down_payment`, `date`, `created_at`, `updated_at`) VALUES
+	(1, 3, 'Panjar Aco', '5000000', '2022-04-11', '2022-04-11 11:39:51', '2022-04-11 12:20:44'),
+	(3, 3, 'Panjar Acox', '200000', '2022-04-11', '2022-04-11 12:07:40', '2022-04-11 12:19:33');
+/*!40000 ALTER TABLE `worker_payments` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;

@@ -67,6 +67,14 @@
 											@if ($errors->has('password_confirmation'))<small><div class="error">{{ $errors->first('password_confirmation') }}</div></small>@endif
 										</div>
 										<div class="input-field col s12">
+											<select class="select2 browser-default" name="outlet_id">
+												<option value="">- Pilih Outlet -</option>
+												@foreach($outlet as $v)
+													<option value="{{ $v->id }}" @if($user->outlet_id=="$v->id") selected @endif>{{ $v->outlet_name }}</option>
+												@endforeach
+											</select>
+										</div>
+										<div class="input-field col s12">
 											<select class="select2 browser-default" name="group_id">
 												<option value="">- Pilih Group -</option>
 												@foreach($group as $v)

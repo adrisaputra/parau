@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Group extends Model
 {
     // use HasFactory;
-	protected $table = 'group_tbl';
-	protected $fillable =[
+    protected $table = 'group_tbl';
+    protected $fillable = [
         'group_name',
         'user_id'
     ];
@@ -18,7 +18,7 @@ class Group extends Model
     {
         return $this->hasOne('App\Models\User');
     }
-    
+
     public function menu_access()
     {
         return $this->hasOne('App\Models\MenuAccess');

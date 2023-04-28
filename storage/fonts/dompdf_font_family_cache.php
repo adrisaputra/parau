@@ -101,6 +101,16 @@
     'normal' => $fontDir . '/permanent_marker_normal_4db3868a06c9dc12e24204651a0d1d11',
   ),
   'quicksand' => array(
-    'normal' => $fontDir . '/quicksand_normal_99620bb031f4522fc0f673be0752bc59',
+    'normal' => $fontDir . '/quicksand_normal_74567fd384675bb93d605f132ccaee0f',
+  ),
+  'material icons' => array(
+    'normal' => $fontDir . '/material_icons_normal_92188a1192da5f2b2ca487b1bdf98b86',
+  ),
+  'font awesome 5 brands' => array(
+    'normal' => $fontDir . '/font_awesome_5_brands_normal_93724a10e70b7d2594476bd57189d9c7',
+  ),
+  'font awesome 5 free' => array(
+    'normal' => $fontDir . '/font_awesome_5_free_normal_42f38a8a0c8d593cd7b7e5a1a0ce726d',
+    '900' => $fontDir . '/font_awesome_5_free_900_9631835c3726284cdb4ae56964b57ea8',
   ),
 ) ?>
